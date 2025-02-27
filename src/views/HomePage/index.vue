@@ -2,82 +2,62 @@
 import { onMounted, nextTick } from "vue";
 import { gsap } from "gsap";
 
-const artwork = new URL("../../assets/artworks/01.jpg", import.meta.url).href;
-const logo = new URL("../../assets/ncut_white.png", import.meta.url).href;
+const artwork = new URL("../../assets/artworks/02.jpg", import.meta.url).href;
+const logo = new URL("../../assets/ncut.png", import.meta.url).href;
 
 onMounted(() => {
   nextTick(() => {
-    gsap.from(".left .logo", {
+    var tl = gsap.timeline();
+    tl.from(".first .background", {
       duration: 2,
       opacity: 0,
-      y: 100,
+      scale: 4,
       ease: "power2.out",
     });
-    gsap.from(".left .title", {
-      duration: 2.2,
-      opacity: 0,
-      y: 100,
-      ease: "power1.out",
-    });
-    gsap.from(".left .button", {
+    tl.from(".first .logo", {
       duration: 2,
       opacity: 0,
-      y: 100,
       ease: "power2.out",
     });
-    gsap.to(".right .mask", {
-      duration: 1,
-      y: 800,
-      ease: "power1.out",
-    });
+    tl.from(".first .text", {
+      duration: 2,
+      opacity: 0,
+      ease: "power2.out",
+    },"<");
   });
 });
 </script>
 
 <template>
+  <!-- <header>
+    <div class="item">策展總論</div>
+    <div class="item">勤益簡介</div>
+    <div class="item">創辦人簡介</div>
+    <div class="item">張明王國秀基金會簡介</div>
+    <div class="item">勤益風華-藝術家眼中的勤益校景</div>
+  </header> -->
   <section class="first">
-    <div class="left">
-      <div class="logo">
-        <img :src="logo" />
-        <div class="text">
+    <div class="content">
+      <div class="background" :style="{ backgroundImage: `url(${artwork})` }">
+        <div class="logo">
+          <img :src="logo" />
           <h2>國立勤益科技大學</h2>
-          <h2>文化創意事業系</h2>
+        </div>
+        <div class="text">
+          <p>策　　展：游惠遠</p>
+          <p>撰　　研：游惠遠 翁瑄孺</p>
+          <p>藝術家　：呂金龍 吳清川 施世昱(依姓氏筆劃排列)</p>
+          <p>英　　譯：林珞帆 翁瑄孺</p>
+          <p>歷史照片：陳碧貞 蘇啟昌 游惠遠</p>
+          <p>校園攝影：黃昶承</p>
+          <p>插　　圖：宮浣芯</p>
+          <p>網頁設計：吳彥呈</p>
+          <p>展覽日期：2025 年4 月1 日-2030 年12 月31 日</p>
+          <p>展覽地點：張明王國秀文教基金會</p>
+          <p>製作單位：文化創意事業系</p>
+          <p>主辦單位：張明王國秀文教基金會</p>
         </div>
       </div>
-      <div class="title">
-        <h1>CHIN-YI</h1>
-        <h1>GLORY</h1>
-        <h1>勤益風華</h1>
-      </div>
-      <div class="button">
-        <h2>Welcome !</h2>
-      </div>
-    </div>
-    <div class="right">
-      <div class="img" :style="{ backgroundImage: `url(${artwork})` }">
-        <div class="mask"></div>
-      </div>
-    </div>
-  </section>
-  <section class="second">
-    <div class="left">
-      <h1>OUR</h1>
-      <h1>CURATORIAL TEAM</h1>
-      <h1>策展團隊</h1>
-    </div>
-    <div class="right">
-      <p>策　　展：游惠遠</p>
-      <p>撰　　研：游惠遠 翁瑄孺</p>
-      <p>藝術家　：呂金龍 吳清川 施世昱(依姓氏筆劃排列)</p>
-      <p>英　　譯：林珞帆 翁瑄孺</p>
-      <p>歷史照片：陳碧貞 蘇啟昌 游惠遠</p>
-      <p>校園攝影：黃昶承</p>
-      <p>插　　圖：宮浣芯</p>
-      <p>網頁設計：吳彥呈</p>
-      <p>展覽日期：2025 年4 月1 日-2030 年12 月31 日</p>
-      <p>展覽地點：張明王國秀文教基金會</p>
-      <p>製作單位：文化創意事業系</p>
-      <p>主辦單位：張明王國秀文教基金會</p>
     </div>
   </section>
   <footer>
@@ -95,137 +75,83 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
+header {
+  top: 0;
+  right: 0;
+  position: fixed;
+  z-index: 1;
+  display: flex;
+}
 .first {
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  .left {
-    width: 50%;
-    height: 100%;
-    background-color: #161616;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 100px;
-    .logo {
-      height: 50px;
-      display: flex;
-      align-items: flex-end;
-      position: absolute;
-      left: 100px;
-      top: 100px;
-      img {
-        width: 50px;
-        height: 50px;
-      }
-      h2 {
-        color: #fff;
-        font-size: 18px;
-        margin-left: 10px;
-      }
-    }
-    .title {
-      h1 {
-        color: #af8cde;
-        font-size: 7vw;
-        line-height: 110%;
-        font-family: "Oswald", sans-serif;
-        letter-spacing: 3px;
-        &:nth-child(3) {
-          color: #fff;
-          letter-spacing: 0px;
-        }
-      }
-    }
-    .button {
-      font-size: 22px;
-      color: #fff;
-      background: #af8cde;
-      position: absolute;
-      left: 100px;
-      bottom: 100px;
-      font-family: "Oswald", sans-serif;
-      padding: 0.1% 7%;
-    }
-  }
-  .right {
-    width: 50%;
-    height: 100%;
-    background-color: #af8cde;
+  .content {
+    width: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 70px;
-    .mask {
-      width: 100%;
-      height: 100%;
-      background-color: #af8cde;
-    }
-    .img {
+    overflow: hidden;
+    .background {
       width: 100%;
       height: 100%;
       background-size: cover;
       background-position: center;
-      overflow: hidden;
     }
   }
-}
-.second {
-  padding-top: 150px;
-  background: #161616;
-  width: 100%;
-  display: flex;
-  .left {
-    width: 45%;
-    padding: 100px;
+  .logo {
+    position: absolute;
+    left: 100px;
+    top: 100px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    h1 {
-      color: #fff;
-      font-size: 4.5vw;
-      line-height: 110%;
-      font-family: "Oswald", sans-serif;
-      letter-spacing: 3px;
-      &:nth-child(3) {
-        color: #af8cde;
-        letter-spacing: 0px;
-      }
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+    h2{
+      margin-left: 14px;
+      color: #161616;
+      font-size: 30px;
+      font-weight: 700;
+      font-family: "LXGW WenKai Mono TC", serif;
+      transform: translateY(2px);
     }
   }
-  .right {
-    padding: 100px;
-    width: 55%;
-    height: 100%;
+  .text {
+    position: absolute;
+    right: 100px;
+    top: 50px;
     p {
-      color: #fff;
-      font-size: 22px;
-      line-height: 175%;
+      color: #161616;
       font-family: "LXGW WenKai Mono TC", serif;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 150%;
     }
   }
 }
-footer{
-    background: #af8cde;
-    padding: 70px 40px;
-    p{
-        color: #fff;
-        line-height: 200%;
-        font-size: 16px;
-        &:nth-child(2){
-            margin-top: 20px;
-        }
+footer {
+  background: #161616;
+  padding: 70px 40px;
+  p {
+    color: #fff;
+    line-height: 200%;
+    font-size: 16px;
+    &:nth-child(2) {
+      margin-top: 20px;
     }
-    a{
-        color: #fff;
-        text-decoration: none;
-        &:hover{
-            text-decoration: underline;
-        }
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
     }
+  }
 }
 </style>
