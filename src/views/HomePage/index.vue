@@ -3,27 +3,32 @@ import { onMounted, nextTick } from "vue";
 import { gsap } from "gsap";
 
 const artwork = new URL("../../assets/artworks/02.jpg", import.meta.url).href;
-const logo = new URL("../../assets/ncut.png", import.meta.url).href;
+const logo = new URL("../../assets/ncut_blue.png", import.meta.url).href;
 
 onMounted(() => {
   nextTick(() => {
     var tl = gsap.timeline();
     tl.from(".first .background", {
-      duration: 2,
+      duration: 3,
       opacity: 0,
-      scale: 4,
+      scale: 3,
       ease: "power2.out",
     });
     tl.from(".first .logo", {
-      duration: 2,
+      duration: 4,
       opacity: 0,
       ease: "power2.out",
+      delay: -1,
     });
-    tl.from(".first .text", {
-      duration: 2,
-      opacity: 0,
-      ease: "power2.out",
-    },"<");
+    tl.from(
+      ".first .text",
+      {
+        duration: 4,
+        opacity: 0,
+        ease: "power2.out",
+      },
+      "<"
+    );
   });
 });
 </script>
@@ -41,7 +46,10 @@ onMounted(() => {
       <div class="background" :style="{ backgroundImage: `url(${artwork})` }">
         <div class="logo">
           <img :src="logo" />
-          <h2>國立勤益科技大學</h2>
+          <div class="title">
+            <h2>勤益風華</h2>
+            <h2>國立勤益科技大學</h2>
+          </div>
         </div>
         <div class="text">
           <p>策　　展：游惠遠</p>
@@ -104,30 +112,54 @@ header {
   }
   .logo {
     position: absolute;
-    left: 100px;
+    left: 120px;
     top: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    img {
-      width: 50px;
-      height: 50px;
+    @media (max-width: 1100px) {
+      position: relative;
+      top: 0;
+      left: 0;
+      justify-content: flex-start;
+      margin: 50px;
     }
-    h2{
+    img {
+      width: 85px;
+      height: 85px;
+    }
+    .title {
       margin-left: 14px;
-      color: #161616;
-      font-size: 30px;
-      font-weight: 700;
-      font-family: "LXGW WenKai Mono TC", serif;
-      transform: translateY(2px);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      h2 {
+        color: #283149;
+        font-size: 55px;
+        font-weight: 800;
+        transform: translateY(7px);
+        letter-spacing: 5px;
+        line-height: 110%;
+        &:nth-child(2) {
+          font-size: 29px;
+          font-weight: bolder;
+          letter-spacing: 0;
+        }
+      }
     }
   }
   .text {
     position: absolute;
     right: 100px;
     top: 50px;
+    @media (max-width: 1100px) {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
     p {
-      color: #161616;
+      color: #4c4c4c;
       font-family: "LXGW WenKai Mono TC", serif;
       font-size: 20px;
       font-weight: 500;
