@@ -34,13 +34,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <!-- <header>
-    <div class="item">策展總論</div>
-    <div class="item">勤益簡介</div>
-    <div class="item">創辦人簡介</div>
-    <div class="item">張明王國秀基金會簡介</div>
-    <div class="item">勤益風華-藝術家眼中的勤益校景</div>
-  </header> -->
   <section class="first">
     <div class="content">
       <div class="background" :style="{ backgroundImage: `url(${artwork})` }">
@@ -83,13 +76,6 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
-header {
-  top: 0;
-  right: 0;
-  position: fixed;
-  z-index: 1;
-  display: flex;
-}
 .first {
   width: 100%;
   height: 100vh;
