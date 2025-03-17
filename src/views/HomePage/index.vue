@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { onMounted, nextTick } from "vue";
+import { onMounted, nextTick, ref } from "vue";
 import { gsap } from "gsap";
 
 const artwork = new URL("../../assets/artworks/02.jpg", import.meta.url).href;
 const logo = new URL("../../assets/ncut_blue.png", import.meta.url).href;
+const isInfoOpen = ref(true);
 
 onMounted(() => {
   nextTick(() => {
@@ -23,9 +24,9 @@ onMounted(() => {
     tl.from(
       ".first .text",
       {
-        duration: 4,
-        opacity: 0,
+        display: "none",
         ease: "power2.out",
+        delay: 2.5,
       },
       "<"
     );
@@ -44,16 +45,20 @@ onMounted(() => {
             <h2>國立勤益科技大學</h2>
           </div>
         </div>
-        <div class="text">
+        <div class="info-icon">
+          <i class="material-icons" @click="isInfoOpen = !isInfoOpen">info</i>
+        </div>
+        <div class="text" :class="{ expand: isInfoOpen, close: !isInfoOpen }">
           <p>策　　展：游惠遠</p>
           <p>撰　　研：游惠遠 翁瑄孺</p>
-          <p>藝術家　：呂金龍 吳清川 施世昱(依姓氏筆劃排列)</p>
+          <p>畫作命名：游惠遠</p>
+          <p>藝 術 家：呂金龍 吳清川 施世昱(依姓氏筆劃排列)</p>
           <p>英　　譯：林珞帆 翁瑄孺</p>
           <p>歷史照片：陳碧貞 蘇啟昌 游惠遠</p>
           <p>校園攝影：黃昶承</p>
           <p>插　　圖：宮浣芯</p>
           <p>網頁設計：吳彥呈</p>
-          <p>展覽日期：2025 年4 月1 日-2030 年12 月31 日</p>
+          <p>展覽日期：2025年4月1日 - 2030年12月31日</p>
           <p>展覽地點：張明王國秀文教基金會</p>
           <p>製作單位：文化創意事業系</p>
           <p>主辦單位：張明王國秀文教基金會</p>
@@ -63,14 +68,14 @@ onMounted(() => {
   </section>
   <footer>
     <p>
-      ※重要公告：本網頁資源屬於全球勤益人的公共文化財，歡迎免費利用。如果需要藝術家校景彩繪高階圖檔製作紀念品，請逕洽張明王國
-      秀基金會。請尊重著作權，註明作品出處，並將完稿設計品寄送一份回傳給張明王國秀基金會存檔。
+      ※重要公告：本網頁資源屬於全球勤益人的公共文化財，歡迎免費利用。如果需要藝術家校景彩繪高階圖檔製作紀念品，請逕洽張明王國秀基金會。請尊重著作權，註明作品出處，並將完稿設計品寄送一份回傳給張明王國秀基金會存檔。
     </p>
     <p>
       ※其他本校老照片連結：<a
         href="https://chinyihalloffame.blogspot.com/p/blog-page_7.html"
         >https://chinyihalloffame.blogspot.com/p/blog-page_7.html</a
-      >(需使用請取得授權)
+      >
+      (需使用請取得授權)
     </p>
   </footer>
 </template>
@@ -135,17 +140,32 @@ onMounted(() => {
       }
     }
   }
+  .info-icon {
+    position: absolute;
+    right: 15px;
+    top: 185px;
+    z-index: 99;
+    i {
+      font-size: 30px;
+      cursor: pointer;
+    }
+  }
   .text {
     position: absolute;
-    right: 100px;
-    top: 50px;
+    padding: 30px 90px 30px 50px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    right: 0;
+    top: 170px;
+    background: #fffffff7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     @media (max-width: 1100px) {
-      position: relative;
-      top: 0;
-      left: 0;
+      // position: relative;
+      // top: 0;
+      // left: 0;
     }
     p {
-      color: #4c4c4c;
+      color: #283149;
       font-family: "LXGW WenKai Mono TC", serif;
       font-size: 20px;
       font-weight: 500;
@@ -170,6 +190,32 @@ footer {
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+.expand {
+  animation: expand 0.8s cubic-bezier(0.42, 0.8, 0.58, 1) forwards;
+}
+
+.close {
+  animation: close 0.8s cubic-bezier(0.42, 0.8, 0.58, 1) forwards;
+}
+
+@keyframes expand {
+  0% {
+    clip-path: circle(0% at calc(100% - 30px) calc(30px));
+  }
+  100% {
+    clip-path: circle(150% at calc(100% - 10px) calc(100px));
+  }
+}
+
+@keyframes close {
+  0% {
+    clip-path: circle(150% at calc(100% - 8px) calc(10px));
+  }
+  100% {
+    clip-path: circle(0% at calc(100% - 30px) calc(30px));
   }
 }
 </style>

@@ -4,5 +4,9 @@ import vue from '@vitejs/plugin-vue'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  base: process.env.NODE_ENV === 'production' ? '/chin-yi-glory/' : '/'
+  // base: process.env.NODE_ENV === 'production' ? '/chin-yi-glory/' : '/'
+  base: '/',
+  build:{
+    outDir:"dist",
+  }
 })

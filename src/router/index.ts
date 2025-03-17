@@ -2,20 +2,28 @@ import { createRouter, createWebHashHistory } from "vue-router";
 
 const routes = [
   { path: "/", component: () => import("../views/HomePage/index.vue") },
-//   {
-//     path: "/admin",
-//     component: () => import("../views/Admin/index.vue"),
-//     children: [
-//       {
-//         path: "format/:type",
-//         component: () => import("../views/Admin/format.vue"),
-//       },
-//       {
-//         path: "antique/:type",
-//         component: () => import("../views/Admin/antique.vue"),
-//       },
-//     ],
-//   },
+  {
+    path: "/curationintro",
+    component: () => import("../views/CurationIntro.vue"),
+  },
+  {
+    path: "/schoolintro",
+    component: () => import("../views/SchoolIntro.vue"),
+  },
+  //   {
+  //     path: "/admin",
+  //     component: () => import("../views/Admin/index.vue"),
+  //     children: [
+  //       {
+  //         path: "format/:type",
+  //         component: () => import("../views/Admin/format.vue"),
+  //       },
+  //       {
+  //         path: "antique/:type",
+  //         component: () => import("../views/Admin/antique.vue"),
+  //       },
+  //     ],
+  //   },
 ];
 
 const router = createRouter({
