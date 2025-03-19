@@ -143,7 +143,7 @@ onMounted(() => {
   .info-icon {
     position: absolute;
     right: 15px;
-    top: 185px;
+    top: 190px;
     z-index: 99;
     i {
       font-size: 30px;
@@ -203,7 +203,7 @@ footer {
 
 @keyframes expand {
   0% {
-    clip-path: circle(0% at calc(100% - 30px) calc(30px));
+    clip-path: circle(0% at calc(100% - 30px) calc(35px));
   }
   100% {
     clip-path: circle(150% at calc(100% - 10px) calc(100px));
@@ -215,7 +215,7 @@ footer {
     clip-path: circle(150% at calc(100% - 8px) calc(10px));
   }
   100% {
-    clip-path: circle(0% at calc(100% - 30px) calc(30px));
+    clip-path: circle(0% at calc(100% - 30px) calc(35px));
   }
 }
 </style>

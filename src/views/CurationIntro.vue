@@ -7,6 +7,7 @@ const photo1 = new URL("../assets/curation/02.jpg", import.meta.url).href;
 const photo2 = new URL("../assets/curation/03.jpg", import.meta.url).href;
 const photo3 = new URL("../assets/curation/04.jpg", import.meta.url).href;
 
+
 const photoTitleMap = {
   [photo1]: "位於青永館前草皮的電機工程館。",
   [photo2]: "921夷平後樣貌。",
