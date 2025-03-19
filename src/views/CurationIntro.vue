@@ -1,31 +1,19 @@
 <script setup lang="ts">
-import { onMounted, nextTick, ref } from "vue";
-import { gsap } from "gsap";
+import { onMounted, nextTick } from "vue";
+// import { gsap } from "gsap";
+import CardGroup1 from "../components/CurationIntro/CardGroup1.vue";
+import CardGroup2 from "../components/CurationIntro/CardGroup2.vue";
 
 const banner = new URL("../assets/curation/01.jpg", import.meta.url).href;
-const photo1 = new URL("../assets/curation/02.jpg", import.meta.url).href;
-const photo2 = new URL("../assets/curation/03.jpg", import.meta.url).href;
-const photo3 = new URL("../assets/curation/04.jpg", import.meta.url).href;
 
-
-const photoTitleMap = {
-  [photo1]: "位於青永館前草皮的電機工程館。",
-  [photo2]: "921夷平後樣貌。",
-  [photo3]: "教學大樓在私校時代，每到夜間廊道欄牆上擺放一個又一個的大茶桶供夜間上課同學取用，是張明將軍與王國秀創辦人給夜間辛苦進修同學的關懷。",
-};
-
-const currentPhoto = ref(photo1);
-const currentTitle = ref(photoTitleMap[currentPhoto.value]);
-
-// 當 currentPhoto 改變時，動態更新 currentText
-const updateCurrentText = (photo: string) => {
-  currentPhoto.value = photo;
-  currentTitle.value = photoTitleMap[photo];
-};
+// const photog3_01 = new URL("../assets/curation/10.jpg", import.meta.url).href;
+// const photog3_02 = new URL("../assets/curation/11.jpg", import.meta.url).href;
+// const photog3_03 = new URL("../assets/curation/12.jpg", import.meta.url).href;
+// const photog3_04 = new URL("../assets/curation/13.jpg", import.meta.url).href;
 
 onMounted(() => {
   nextTick(() => {
-    var tl = gsap.timeline({});
+    // var tl = gsap.timeline({});
     // tl.to(
     //   ".card3 p",
     //   {
@@ -51,39 +39,7 @@ onMounted(() => {
         </p>
       </div>
 
-      <div class="card-group1">
-        <div class="top">
-          <div class="group-list">
-            <div class="item">
-              <img
-                :src="photo1"
-                @click="updateCurrentText(photo1)"
-                :style="{ width: currentPhoto == photo1 ? '100%' : '90%' }"
-              />
-            </div>
-            <div class="item">
-              <img
-                :src="photo2"
-                @click="updateCurrentText(photo2)"
-                :style="{ width: currentPhoto == photo2 ? '100%' : '90%' }"
-              />
-            </div>
-            <div class="item">
-              <img
-                :src="photo3"
-                @click="updateCurrentText(photo3)"
-                :style="{ width: currentPhoto == photo3 ? '100%' : '90%' }"
-              />
-            </div>
-          </div>
-          <div class="photo">
-            <img :src="currentPhoto" />
-          </div>
-        </div>
-        <div class="bottom">
-          <div class="title">圖說：{{ currentTitle }}</div>
-        </div>
-      </div>
+      <CardGroup1 />
 
       <div class="text">
         <p>
@@ -99,6 +55,8 @@ onMounted(() => {
           　　此外，除了典藏畫作由三位藝術家主導外，，不斷地有許多孩子在施世昱老師的帶領下，加入情憶勤益、彩繪勤益、勤益風華等名稱不同，卻做同一件事情的計畫中，更衍伸出不少以校園為元素的設計品。可惜的是，基於作品所有權，也因為經費有限，我們無法典藏同學們的優秀作品，只能透過評圖照片紀念一二。特在此向楊絮安、林紀葳、呂維玲等人，以及文化創意事業系第十屆至第十四屆(2017-2021)參與課程的同學們致謝！
         </p>
       </div>
+
+      <CardGroup2 />
 
       <div class="text">
         <p>
@@ -160,18 +118,19 @@ section {
         .item {
           width: 90%;
           margin-top: 15px;
+          cursor: pointer;
         }
       }
       .photo {
         width: 80%;
       }
     }
-    .bottom{
+    .bottom {
       width: 100%;
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      .title{
+      .title {
         width: 79%;
         font-family: "LXGW WenKai Mono TC", serif;
       }

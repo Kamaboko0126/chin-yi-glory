@@ -194,11 +194,11 @@ footer {
 }
 
 .expand {
-  animation: expand 0.8s cubic-bezier(0.42, 0.8, 0.58, 1) forwards;
+  animation: expand 1s cubic-bezier(0.42, 0.8, 0.58, 1) forwards;
 }
 
 .close {
-  animation: close 0.8s cubic-bezier(0.42, 0.8, 0.58, 1) forwards;
+  animation: close 1s cubic-bezier(0.42, 0.8, 0.58, 1) forwards;
 }
 
 @keyframes expand {

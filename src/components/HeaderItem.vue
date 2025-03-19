@@ -24,7 +24,7 @@ header {
   align-items: center;
   background: #fff;
   .item {
-    padding: 10px 20px;
+    padding: 15px 20px;
     color: #283149;
     text-decoration: none;
     font-weight: 500;
@@ -33,7 +33,7 @@ header {
   }
 }
 .block {
-  height: 41px;
+  height: 51px;
   width: 100%;
 }
 </style>
