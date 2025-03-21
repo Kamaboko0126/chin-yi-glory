@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import HeaderItem from "./components/HeaderItem.vue";
+import FooterItem from "./components/FooterItem.vue";
+import ScrollTop from "primevue/scrolltop";
 </script>
 
 <template>
   <main>
     <HeaderItem />
     <router-view></router-view>
+    <ScrollTop />
+    <FooterItem />
   </main>
 </template>
 

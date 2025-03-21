@@ -1,12 +1,31 @@
 <script setup lang="ts">
-import { onMounted, nextTick, ref } from "vue";
+import { onMounted, watch, nextTick, ref } from "vue";
 import { gsap } from "gsap";
+import { useI18n } from "vue-i18n";
+import i18n from "../../i18n";
+
+const { locale, t } = useI18n();
+
+async function loadLocaleMessages(locale: string) {
+  try {
+    const messages = await import(`../../locales/${locale}/home.json`);
+    i18n.global.setLocaleMessage(locale, {
+      ...i18n.global.getLocaleMessage(locale),
+      ...messages.default,
+    });
+    console.log(`Locale messages for ${locale} loaded successfully.`);
+  } catch (error) {
+    console.error(`Failed to load locale messages for ${locale}:`, error);
+  }
+}
 
 const artwork = new URL("../../assets/artworks/02.jpg", import.meta.url).href;
 const logo = new URL("../../assets/ncut_blue.png", import.meta.url).href;
 const isInfoOpen = ref(true);
 
 onMounted(() => {
+  loadLocaleMessages(locale.value);
+
   nextTick(() => {
     var tl = gsap.timeline();
     tl.from(".first .background", {
@@ -32,6 +51,12 @@ onMounted(() => {
     );
   });
 });
+
+// 監聽 locale 的變化，當語言切換時重新載入資料
+watch(locale, (newLocale) => {
+  console.log(`Locale changed to: ${newLocale}`);
+  loadLocaleMessages(newLocale);
+});
 </script>
 
 <template>
@@ -41,43 +66,34 @@ onMounted(() => {
         <div class="logo">
           <img :src="logo" />
           <div class="title">
-            <h2>勤益風華</h2>
-            <h2>國立勤益科技大學</h2>
+            <h2>{{ t("title1") }}</h2>
+            <h2>{{ t("title2") }}</h2>
           </div>
         </div>
         <div class="info-icon">
           <i class="material-icons" @click="isInfoOpen = !isInfoOpen">info</i>
         </div>
-        <div class="text" :class="{ expand: isInfoOpen, close: !isInfoOpen }">
-          <p>策　　展：游惠遠</p>
-          <p>撰　　研：游惠遠 翁瑄孺</p>
-          <p>畫作命名：游惠遠</p>
-          <p>藝 術 家：呂金龍 吳清川 施世昱(依姓氏筆劃排列)</p>
-          <p>英　　譯：林珞帆 翁瑄孺</p>
-          <p>歷史照片：陳碧貞 蘇啟昌 游惠遠</p>
-          <p>校園攝影：黃昶承</p>
-          <p>插　　圖：宮浣芯</p>
-          <p>網頁設計：吳彥呈</p>
-          <p>展覽日期：2025年4月1日 - 2030年12月31日</p>
-          <p>展覽地點：張明王國秀文教基金會</p>
-          <p>製作單位：文化創意事業系</p>
-          <p>主辦單位：張明王國秀文教基金會</p>
+        <div
+          class="text"
+          :class="{ expand: isInfoOpen, close: !isInfoOpen }"
+        >
+        <p>{{t('info1')}}</p>
+        <p>{{t('info2')}}</p>
+        <p>{{t('info3')}}</p>
+        <p>{{t('info4')}}</p>
+        <p>{{t('info5')}}</p>
+        <p>{{t('info6')}}</p>
+        <p>{{t('info7')}}</p>
+        <p>{{t('info8')}}</p>
+        <p>{{t('info9')}}</p>
+        <p>{{t('info10')}}</p>
+        <p>{{t('info11')}}</p>
+        <p>{{t('info12')}}</p>
+        <p>{{t('info13')}}</p>
         </div>
       </div>
     </div>
   </section>
-  <footer>
-    <p>
-      ※重要公告：本網頁資源屬於全球勤益人的公共文化財，歡迎免費利用。如果需要藝術家校景彩繪高階圖檔製作紀念品，請逕洽張明王國秀基金會。請尊重著作權，註明作品出處，並將完稿設計品寄送一份回傳給張明王國秀基金會存檔。
-    </p>
-    <p>
-      ※其他本校老照片連結：<a
-        href="https://chinyihalloffame.blogspot.com/p/blog-page_7.html"
-        >https://chinyihalloffame.blogspot.com/p/blog-page_7.html</a
-      >
-      (需使用請取得授權)
-    </p>
-  </footer>
 </template>
 
 <style scoped lang="scss">
@@ -170,25 +186,6 @@ onMounted(() => {
       font-size: 20px;
       font-weight: 500;
       line-height: 150%;
-    }
-  }
-}
-footer {
-  background: #161616;
-  padding: 70px 40px;
-  p {
-    color: #fff;
-    line-height: 200%;
-    font-size: 16px;
-    &:nth-child(2) {
-      margin-top: 20px;
-    }
-  }
-  a {
-    color: #fff;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
     }
   }
 }
