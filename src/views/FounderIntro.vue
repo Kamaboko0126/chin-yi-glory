@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from "vue";
-import CardGroup1 from "../components/CurationIntro/CardGroup1.vue";
-import CardGroup2 from "../components/CurationIntro/CardGroup2.vue";
+import CardGroup1 from "../components/FounderIntro/CardGroup1.vue";
 import Skeleton from "primevue/skeleton";
 import { useI18n } from "vue-i18n";
 import i18n from "../i18n";
@@ -10,7 +9,7 @@ const { locale, t } = useI18n();
 
 async function loadLocaleMessages(locale: string) {
   try {
-    const messages = await import(`../locales/${locale}/curationIntro.json`);
+    const messages = await import(`../locales/${locale}/founderIntro.json`);
     i18n.global.setLocaleMessage(locale, {
       ...i18n.global.getLocaleMessage(locale),
       ...messages.default,
@@ -21,7 +20,7 @@ async function loadLocaleMessages(locale: string) {
   }
 }
 
-const banner = new URL("../assets/curation/01.jpg", import.meta.url).href;
+const banner = new URL("../assets/school/01.jpg", import.meta.url).href;
 const bannerLoaded = ref(false);
 
 onMounted(() => {
@@ -38,6 +37,11 @@ watch(locale, (newLocale) => {
 <template>
   <section>
     <div class="container">
+      <div class="text">
+        <h1 class="section-title">
+          {{ t("title1") }}
+        </h1>
+      </div>
       <div class="banner">
         <img :src="banner" @load="bannerLoaded = true" />
         <Skeleton
@@ -48,18 +52,24 @@ watch(locale, (newLocale) => {
           v-if="!bannerLoaded"
         ></Skeleton>
       </div>
+      <div class="title">
+        <p class="title">{{ t("banner") }}</p>
+      </div>
       <div class="text">
+        <p>
+          {{ t("section1") }}
+        </p>
+      </div>
+      <div class="text">
+        <h1 class="section-title">
+          {{ t("title2") }}
+        </h1>
         <p>
           {{ t("section1") }}
         </p>
         <p>
           {{ t("section2") }}
         </p>
-      </div>
-
-      <CardGroup1 />
-
-      <div class="text">
         <p>
           {{ t("section3") }}
         </p>
@@ -72,17 +82,64 @@ watch(locale, (newLocale) => {
         <p>
           {{ t("section6") }}
         </p>
-      </div>
-
-      <CardGroup2 />
-
-      <div class="text">
         <p>
           {{ t("section7") }}
         </p>
         <p>
           {{ t("section8") }}
         </p>
+        <p>
+          {{ t("section9") }}
+        </p>
+        <p>
+          {{ t("section10") }}
+        </p>
+        <p>
+          {{ t("section11") }}
+        </p>
+      </div>
+
+      <div class="text">
+        <h1 class="section-title">
+          {{ t("title3") }}
+        </h1>
+        <p>
+          {{ t("section12") }}
+        </p>
+        <p>
+          {{ t("section13") }}
+        </p>
+        <p>
+          {{ t("section14") }}
+        </p>
+        <p>
+          {{ t("section15") }}
+        </p>
+        <p>
+          {{ t("section16") }}
+        </p>
+        <p>
+          {{ t("section17") }}
+        </p>
+        <p>
+          {{ t("section18") }}
+        </p>
+        <p>
+          {{ t("section19") }}
+        </p>
+        <p>
+          {{ t("section20") }}
+        </p>
+        <p>
+          {{ t("section21") }}
+        </p>
+        <p>
+          {{ t("section22") }}
+        </p>
+        <p>
+          {{ t("section23") }}
+        </p>
+        <CardGroup1 />
       </div>
     </div>
   </section>
@@ -116,7 +173,7 @@ section {
     img {
       width: 100%;
       height: 50vh;
-      object-fit: cover;
+      object-fit: contain;
       object-position: top;
       @media (max-width: 950px) {
         height: 40vh;
@@ -131,6 +188,13 @@ section {
         margin-bottom: 20px;
         color: #283149;
         font-family: "LXGW WenKai Mono TC", serif;
+      }
+      a {
+        color: #283149;
+        text-decoration: none;
+        &:hover {
+          text-decoration: #283149 underline;
+        }
       }
     }
   }

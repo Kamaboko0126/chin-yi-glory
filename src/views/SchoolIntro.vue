@@ -47,8 +47,8 @@ watch(locale, (newLocale) => {
           v-if="!bannerLoaded"
         ></Skeleton>
       </div>
-      <div class="banner-title">
-        <p>{{ t("banner") }}</p>
+      <div class="title">
+        <p class="title">{{ t("banner") }}</p>
       </div>
       <div class="text">
         <p>
@@ -123,11 +123,6 @@ section {
         height: 25vh;
       }
     }
-    .banner-title {
-      padding: 10px 0;
-      text-align: center;
-    }
-
     .text {
       padding: 20px 0;
       p {
@@ -141,45 +136,6 @@ section {
         &:hover {
           text-decoration: #283149 underline;
         }
-      }
-    }
-  }
-  .card-group1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    padding: 15px;
-    .top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
-
-      .group-list {
-        width: 18%;
-        display: flex;
-        flex-direction: column;
-        .item {
-          width: 90%;
-          margin-top: 15px;
-          cursor: pointer;
-        }
-      }
-      .photo {
-        width: 80%;
-      }
-    }
-    .bottom {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      .title {
-        width: 79%;
-        font-family: "LXGW WenKai Mono TC", serif;
       }
     }
   }

@@ -7,7 +7,7 @@ import i18n from "../../i18n";
 const { locale, t } = useI18n();
 async function loadLocaleMessages(locale: string) {
   try {
-    const messages = await import(`../../locales/${locale}/curationIntro.json`);
+    const messages = await import(`../../locales/${locale}/founderIntro.json`);
     i18n.global.setLocaleMessage(locale, {
       ...i18n.global.getLocaleMessage(locale),
       ...messages.default,
@@ -31,12 +31,8 @@ watch(locale, (newLocale) => {
   });
 });
 
-const photog2_01 = new URL("../../assets/curation/02.jpg", import.meta.url)
-  .href;
-const photog2_02 = new URL("../../assets/curation/03.jpg", import.meta.url)
-  .href;
-const photog2_03 = new URL("../../assets/curation/04.jpg", import.meta.url)
-  .href;
+const photo01 = new URL("../../assets/school/02.jpg", import.meta.url).href;
+const photo03 = new URL("../../assets/school/04.jpg", import.meta.url).href;
 
 interface Product {
   image: string;
@@ -48,15 +44,15 @@ const products = ref<Product[]>([]);
 function updateProducts() {
   products.value = [
     {
-      image: photog2_01,
+      image: photo01,
       description: t("pic1"),
     },
+    // {
+    //   image: photo02,
+    //   description: t("pic2"),
+    // },
     {
-      image: photog2_02,
-      description: t("pic2"),
-    },
-    {
-      image: photog2_03,
+      image: photo03,
       description: t("pic3"),
     },
   ];

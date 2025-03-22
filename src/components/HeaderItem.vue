@@ -68,7 +68,7 @@ function updateItems() {
         },
         {
           label: t("item5"),
-          url: "/",
+          url: "/founderintro",
         },
         {
           label: t("item6"),
