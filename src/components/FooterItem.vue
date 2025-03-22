@@ -31,32 +31,50 @@ watch(locale, (newLocale) => {
 
 <template>
   <footer>
-    <p>
-      {{ t("footer1") }}
-    </p>
-    <p>
-      {{ t("footer2")
-      }}<a href="https://chinyihalloffame.blogspot.com/p/blog-page_7.html"
-        >https://chinyihalloffame.blogspot.com/p/blog-page_7.html</a
-      >
-      {{ t("footer3") }}
-    </p>
+    <div class="content">
+      <p>
+        {{ t("footer1") }}
+      </p>
+      <p>
+        {{ t("footer2") }}
+        <a href="https://chinyihalloffame.blogspot.com/p/blog-page_7.html"
+          >https://chinyihalloffame.blogspot.com/p/blog-page_7.html</a
+        >
+        {{ t("footer3") }}
+      </p>
+    </div>
   </footer>
 </template>
 
 <style scoped lang="scss">
 footer {
-  border-top: 1px solid #e2e8f0;
-  max-width: 1728px;
-  margin: 0 auto;
-  padding: 2rem 4rem;
-  display: flex;
-  flex-wrap: wrap;
+  background: #d2d2d213;
+  padding: 0rem 3rem;
+  width: 100%;
+  @media (max-width: 1400px) {
+    padding: 0rem 3rem;
+  }
+  @media (max-width: 1199px) {
+    padding: 0rem 3rem;
+  }
+  @media (max-width: 767px) {
+    padding: 0rem 3rem;
+  }
+  @media (max-width: 575px) {
+    padding: 0rem 3rem;
+  }
+  .content {
+    padding: 1.5rem 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1728px;
+    border-top: 1px solid #e2e8f0;
+    margin: 0 auto;
+  }
   p {
     color: #334155;
-    line-height: 120%;
     font-weight: 500;
-    font-size: 16px;
     &:nth-child(2) {
       margin-top: 5px;
     }
@@ -65,6 +83,8 @@ footer {
     color: #334155;
     font-weight: 500;
     text-decoration: none;
+    word-break: break-word; /* 允許長單字（如 URL）換行 */
+    overflow-wrap: break-word; /* 兼容性處理 */
     &:hover {
       text-decoration: underline;
     }

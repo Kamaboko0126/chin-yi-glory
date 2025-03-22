@@ -103,6 +103,12 @@ section {
     .banner {
       width: 100%;
       height: 50vh;
+      @media (max-width: 950px) {
+        height: 40vh;
+      }
+      @media (max-width: 600px) {
+        height: 25vh;
+      }
       .banner-skeleton {
         transform: translateY(-100%);
       }
@@ -112,14 +118,18 @@ section {
       height: 50vh;
       object-fit: cover;
       object-position: top;
+      @media (max-width: 950px) {
+        height: 40vh;
+      }
+      @media (max-width: 600px) {
+        height: 25vh;
+      }
     }
     .text {
       padding: 20px 0;
       p {
-        line-height: 220%;
         margin-bottom: 20px;
         color: #283149;
-        font-size: 18px;
         font-family: "LXGW WenKai Mono TC", serif;
       }
     }

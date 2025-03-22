@@ -109,9 +109,9 @@ function updateItems() {
         </router-link>
       </template>
       <template #end>
-        <div @click="switchLanguage" style="cursor: pointer">
+        <p @click="switchLanguage" style="cursor: pointer">
           {{ locale === "zh" ? "English" : "中文" }}
-        </div>
+        </p>
       </template>
     </Menubar>
   </header>
@@ -128,6 +128,20 @@ header {
   background: #ffffffca;
   backdrop-filter: blur(8px); /* 模糊背景效果 */
   -webkit-backdrop-filter: blur(8px); /* 兼容 Safari */
+  padding: 0 3rem;
+  margin: 0 auto;
+  @media (max-width: 1400px) {
+    padding: 0rem 2.5rem;
+  }
+  @media (max-width: 1199px) {
+    padding: 0rem 2rem;
+  }
+  @media (max-width: 767px) {
+    padding: 0rem 1.5rem;
+  }
+  @media (max-width: 575px) {
+    padding: 0rem 0.8rem;
+  }
   .nav-bar {
     width: 100%;
     border: none;
@@ -140,15 +154,27 @@ header {
     width: 40px;
     height: 40px;
     margin-right: 15px;
+    @media (max-width: 1400px) {
+      width: 36px;
+      height: 36px;
+      margin-right: 14px;
+    }
+    @media (max-width: 1199px) {
+      width: 32px;
+      height: 32px;
+      margin-right: 11px;
+    }
+    @media (max-width: 767px) {
+      width: 28px;
+      height: 28px;
+      margin-right: 8px;
+    }
+    @media (max-width: 575px) {
+      width: 24px;
+      height: 24px;
+      margin-right: 5px;
+    }
   }
-  // .item {
-  //   padding: 15px 20px;
-  //   color: #283149;
-  //   text-decoration: none;
-  //   font-weight: 500;
-  //   font-size: 18px;
-  //   font-family: "LXGW WenKai Mono TC", serif;
-  // }
 }
 .p-menubar {
   background: none;
@@ -160,5 +186,17 @@ header {
 .block {
   height: 60px;
   width: 100%;
+  @media (max-width: 1400px) {
+    height: 57px;
+  }
+  @media (max-width: 1199px) {
+    height: 53px;
+  }
+  @media (max-width: 767px) {
+    height: 49px;
+  }
+  @media (max-width: 575px) {
+    height: 45px;
+  }
 }
 </style>

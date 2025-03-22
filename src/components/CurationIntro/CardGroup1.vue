@@ -100,7 +100,7 @@ const responsiveOptions = ref([
         <div class="photo">
           <img :src="slotProps.data.image" />
         </div>
-        <div class="title">{{ slotProps.data.description }}</div>
+        <p class="title">{{ slotProps.data.description }}</p>
       </div>
     </template>
   </Carousel>
@@ -112,6 +112,18 @@ const responsiveOptions = ref([
   .photo {
     width: 100%;
     height: 60vh;
+    @media (max-width: 1400px) {
+      height: 50vh;
+    }
+    @media (max-width: 1199px) {
+      height: 40vh;
+    }
+    @media (max-width: 767px) {
+      height: 26vh;
+    }
+    @media (max-width: 575px) {
+      height: 15vh;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -119,9 +131,15 @@ const responsiveOptions = ref([
     }
   }
   .title {
-    font-size: 18px;
-    padding: 10px 0;
+    padding: 10px 0 0 0;
     text-align: center;
+    @media (max-width: 575px) {
+      display: -webkit-box; /* 必須使用這個屬性 */
+      -webkit-box-orient: vertical; /* 垂直方向排列 */
+      -webkit-line-clamp: 1; /* 顯示的行數 */
+      overflow: hidden; /* 隱藏超出部分 */
+      text-overflow: ellipsis; /* 顯示省略號 */
+    }
   }
 }
 </style>

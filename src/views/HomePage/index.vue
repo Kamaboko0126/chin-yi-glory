@@ -73,23 +73,20 @@ watch(locale, (newLocale) => {
         <div class="info-icon">
           <i class="material-icons" @click="isInfoOpen = !isInfoOpen">info</i>
         </div>
-        <div
-          class="text"
-          :class="{ expand: isInfoOpen, close: !isInfoOpen }"
-        >
-        <p>{{t('info1')}}</p>
-        <p>{{t('info2')}}</p>
-        <p>{{t('info3')}}</p>
-        <p>{{t('info4')}}</p>
-        <p>{{t('info5')}}</p>
-        <p>{{t('info6')}}</p>
-        <p>{{t('info7')}}</p>
-        <p>{{t('info8')}}</p>
-        <p>{{t('info9')}}</p>
-        <p>{{t('info10')}}</p>
-        <p>{{t('info11')}}</p>
-        <p>{{t('info12')}}</p>
-        <p>{{t('info13')}}</p>
+        <div class="text" :class="{ expand: isInfoOpen, close: !isInfoOpen }">
+          <p>{{ t("info1") }}</p>
+          <p>{{ t("info2") }}</p>
+          <p>{{ t("info3") }}</p>
+          <p>{{ t("info4") }}</p>
+          <p>{{ t("info5") }}</p>
+          <p>{{ t("info6") }}</p>
+          <p>{{ t("info7") }}</p>
+          <p>{{ t("info8") }}</p>
+          <p>{{ t("info9") }}</p>
+          <p>{{ t("info10") }}</p>
+          <p>{{ t("info11") }}</p>
+          <p>{{ t("info12") }}</p>
+          <p>{{ t("info13") }}</p>
         </div>
       </div>
     </div>
@@ -124,16 +121,42 @@ watch(locale, (newLocale) => {
     display: flex;
     justify-content: center;
     align-items: center;
-    @media (max-width: 1100px) {
-      position: relative;
-      top: 0;
-      left: 0;
-      justify-content: flex-start;
-      margin: 50px;
+    @media (max-width: 1400px) {
+      left: 80px;
+      top: 80px;
+    }
+    @media (max-width: 1199px) {
+      left: 50px;
+      top: 50px;
+    }
+    @media (max-width: 767px) {
+      left: 40px;
+      top: 40px;
+    }
+    @media (max-width: 575px) {
+      left: 30px;
+      top: 30px;
     }
     img {
       width: 85px;
       height: 85px;
+      transform: translateY(7px);
+      @media (max-width: 1400px) {
+        width: 80px;
+        height: 80px;
+      }
+      @media (max-width: 1199px) {
+        width: 72px;
+        height: 72px;
+      }
+      @media (max-width: 767px) {
+        width: 65px;
+        height: 65px;
+      }
+      @media (max-width: 575px) {
+        width: 60px;
+        height: 60px;
+      }
     }
     .title {
       margin-left: 14px;
@@ -148,10 +171,34 @@ watch(locale, (newLocale) => {
         transform: translateY(7px);
         letter-spacing: 5px;
         line-height: 110%;
+        @media (max-width: 1400px) {
+          font-size: 50px;
+        }
+        @media (max-width: 1199px) {
+          font-size: 45px;
+        }
+        @media (max-width: 767px) {
+          font-size: 40px;
+        }
+        @media (max-width: 575px) {
+          font-size: 35px;
+        }
         &:nth-child(2) {
           font-size: 29px;
           font-weight: bolder;
           letter-spacing: 0;
+          @media (max-width: 1400px) {
+            font-size: 26.5px;
+          }
+          @media (max-width: 1199px) {
+            font-size: 24px;
+          }
+          @media (max-width: 767px) {
+            font-size: 21.5px;
+          }
+          @media (max-width: 575px) {
+            font-size: 19.2px;
+          }
         }
       }
     }
@@ -161,9 +208,37 @@ watch(locale, (newLocale) => {
     right: 15px;
     top: 190px;
     z-index: 99;
+    @media (max-width: 1400px) {
+      right: 15px;
+      top: 175px;
+    }
+    @media (max-width: 1199px) {
+      right: 15px;
+      top: 165px;
+    }
+    @media (max-width: 767px) {
+      right: 13px;
+      top: 157px;
+    }
+    @media (max-width: 575px) {
+      right: 13px;
+      top: 147px;
+    }
     i {
       font-size: 30px;
       cursor: pointer;
+      @media (max-width: 1400px) {
+        font-size: 28px;
+      }
+      @media (max-width: 1199px) {
+        font-size: 26px;
+      }
+      @media (max-width: 767px) {
+        font-size: 24px;
+      }
+      @media (max-width: 575px) {
+        font-size: 22px;
+      }
     }
   }
   .text {
@@ -175,15 +250,21 @@ watch(locale, (newLocale) => {
     top: 170px;
     background: #fffffff7;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    @media (max-width: 1100px) {
-      // position: relative;
-      // top: 0;
-      // left: 0;
+    @media (max-width: 1400px) {
+      top: 160px;
+    }
+    @media (max-width: 1199px) {
+      top: 150px;
+    }
+    @media (max-width: 767px) {
+      top: 140px;
+    }
+    @media (max-width: 575px) {
+      top: 130px;
     }
     p {
       color: #283149;
       font-family: "LXGW WenKai Mono TC", serif;
-      font-size: 20px;
       font-weight: 500;
       line-height: 150%;
     }
