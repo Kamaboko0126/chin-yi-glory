@@ -4,14 +4,28 @@ import { ref, onMounted, watch } from "vue";
 import Menubar from "primevue/menubar";
 import { useI18n } from "vue-i18n";
 import i18n from "../i18n";
+import SelectButton from "primevue/selectbutton";
 
 const { locale, t } = useI18n();
 
 const logo = new URL("../assets/ncut_blue.png", import.meta.url).href;
 
-function switchLanguage() {
-  locale.value = locale.value === "zh" ? "en" : "zh"; // 切換語言
-}
+const value = ref("中文");
+const options = ref(["中文", "English"]);
+
+// 監聽 locale 的變化，當語言切換時重新載入資料
+watch(value, (newLocale) => {
+  if (newLocale === "中文") {
+    newLocale = "zh";
+  } else {
+    newLocale = "en";
+  }
+  locale.value = newLocale;
+  console.log(`Locale changed to: ${newLocale}`);
+  loadLocaleMessages(newLocale).then(() => {
+    updateItems();
+  });
+});
 
 async function loadLocaleMessages(locale: string) {
   try {
@@ -28,14 +42,11 @@ async function loadLocaleMessages(locale: string) {
 
 onMounted(() => {
   loadLocaleMessages(locale.value).then(() => {
-    updateItems();
-  });
-});
-
-// 監聽 locale 的變化，當語言切換時重新載入資料
-watch(locale, (newLocale) => {
-  console.log(`Locale changed to: ${newLocale}`);
-  loadLocaleMessages(newLocale).then(() => {
+    if (locale.value === "zh") {
+      value.value = "中文";
+    } else {
+      value.value = "English";
+    }
     updateItems();
   });
 });
@@ -109,9 +120,7 @@ function updateItems() {
         </router-link>
       </template>
       <template #end>
-        <p @click="switchLanguage" style="cursor: pointer">
-          {{ locale === "zh" ? "English" : "中文" }}
-        </p>
+        <SelectButton v-model="value" :options="options" />
       </template>
     </Menubar>
   </header>

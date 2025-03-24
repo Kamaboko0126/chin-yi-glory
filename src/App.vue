@@ -58,11 +58,11 @@ p {
   }
   @media (max-width: 575px) {
     font-size: 15px;
-    display: -webkit-box; /* 必須使用這個屬性 */
-    -webkit-box-orient: vertical; /* 垂直方向排列 */
-    -webkit-line-clamp: 1; /* 顯示的行數 */
-    overflow: hidden; /* 隱藏超出部分 */
-    text-overflow: ellipsis; /* 顯示省略號 */
+    // display: -webkit-box; /* 必須使用這個屬性 */
+    // -webkit-box-orient: vertical; /* 垂直方向排列 */
+    // -webkit-line-clamp: 1; /* 顯示的行數 */
+    // overflow: hidden; /* 隱藏超出部分 */
+    // text-overflow: ellipsis; /* 顯示省略號 */
   }
 }
 

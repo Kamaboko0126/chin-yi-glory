@@ -20,8 +20,20 @@ async function loadLocaleMessages(locale: string) {
 }
 
 const artwork = new URL("../../assets/artworks/02.jpg", import.meta.url).href;
-const logo = new URL("../../assets/ncut_blue.png", import.meta.url).href;
-const isInfoOpen = ref(true);
+const logo = new URL("../../assets/ncut-brown.png", import.meta.url).href;
+const isInfoOpen = ref(false);
+const isInitial = ref(true);
+const showTooltip = ref(true);
+
+const toggleInfo = () => {
+  isInitial.value = false;
+  showTooltip.value = false;
+  if (isInfoOpen.value) {
+    isInfoOpen.value = false;
+  } else {
+    isInfoOpen.value = true;
+  }
+};
 
 onMounted(() => {
   loadLocaleMessages(locale.value);
@@ -41,11 +53,13 @@ onMounted(() => {
       delay: -1,
     });
     tl.from(
-      ".first .text",
+      ".tooltip",
       {
         display: "none",
+        width: 0,
         ease: "power2.out",
-        delay: 2.5,
+        duration: 1.5,
+        delay: 1,
       },
       "<"
     );
@@ -65,15 +79,23 @@ watch(locale, (newLocale) => {
       <div class="background" :style="{ backgroundImage: `url(${artwork})` }">
         <div class="logo">
           <img :src="logo" />
-          <div class="title">
+          <div class="banner-title">
             <h2>{{ t("title1") }}</h2>
             <h2>{{ t("title2") }}</h2>
           </div>
         </div>
         <div class="info-icon">
-          <i class="material-icons" @click="isInfoOpen = !isInfoOpen">info</i>
+          <div class="tooltip" v-if="showTooltip">
+            <div class="arrow"></div>
+            <p class="tooltip-text">點擊查看策展資訊</p>
+          </div>
+          <i class="material-icons" @click="toggleInfo">info</i>
         </div>
-        <div class="text" :class="{ expand: isInfoOpen, close: !isInfoOpen }">
+        <div
+          class="text"
+          :class="{ expand: isInfoOpen, close: !isInfoOpen }"
+          v-if="!isInitial"
+        >
           <p>{{ t("info1") }}</p>
           <p>{{ t("info2") }}</p>
           <p>{{ t("info3") }}</p>
@@ -158,14 +180,14 @@ watch(locale, (newLocale) => {
         height: 60px;
       }
     }
-    .title {
+    .banner-title {
       margin-left: 14px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
       h2 {
-        color: #283149;
+        color: #734822;
         font-size: 55px;
         font-weight: 800;
         transform: translateY(7px);
@@ -224,7 +246,35 @@ watch(locale, (newLocale) => {
       right: 13px;
       top: 147px;
     }
+
+    .tooltip {
+      position: absolute;
+      top: -50px;
+      right: -10px;
+      display: inline-block;
+      .arrow {
+        height: 0;
+        width: 0;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #333 transparent transparent transparent;
+        position: absolute;
+        top: 100%;
+        right: 19px;
+      }
+      .tooltip-text {
+        max-width: 200px;
+        background: #283149;
+        white-space: nowrap;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+
     i {
+      color: #283149;
       font-size: 30px;
       cursor: pointer;
       @media (max-width: 1400px) {

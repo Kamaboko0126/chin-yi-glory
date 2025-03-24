@@ -6,6 +6,7 @@ import Aura from "@primeuix/themes/aura";
 import { definePreset } from "@primeuix/themes";
 import "primeicons/primeicons.css";
 import i18n from "./i18n";
+import Tooltip from 'primevue/tooltip';
 
 const app = createApp(App);
 app.use(router);
@@ -66,4 +67,5 @@ app.use(PrimeVue, {
   },
 });
 app.use(i18n);
+app.directive('tooltip', Tooltip);
 app.mount("#app");
