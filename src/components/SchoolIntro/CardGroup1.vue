@@ -12,10 +12,7 @@ async function loadLocaleMessages(locale: string) {
       ...i18n.global.getLocaleMessage(locale),
       ...messages.default,
     });
-    console.log(`Locale messages for ${locale} loaded successfully.`);
-  } catch (error) {
-    console.error(`Failed to load locale messages for ${locale}:`, error);
-  }
+  } catch (error) {}
 }
 onMounted(() => {
   loadLocaleMessages(locale.value).then(() => {

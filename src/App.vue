@@ -57,7 +57,7 @@ p {
     font-size: 17px;
   }
   @media (max-width: 575px) {
-    font-size: 15px;
+    font-size: 13px;
     // display: -webkit-box; /* 必須使用這個屬性 */
     // -webkit-box-orient: vertical; /* 垂直方向排列 */
     // -webkit-line-clamp: 1; /* 顯示的行數 */

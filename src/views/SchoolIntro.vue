@@ -14,10 +14,7 @@ async function loadLocaleMessages(locale: string) {
       ...i18n.global.getLocaleMessage(locale),
       ...messages.default,
     });
-    console.log(`Locale messages for ${locale} loaded successfully.`);
-  } catch (error) {
-    console.error(`Failed to load locale messages for ${locale}:`, error);
-  }
+  } catch (error) {}
 }
 
 const banner = new URL("../assets/school/01.jpg", import.meta.url).href;
