@@ -18,7 +18,7 @@ import ScrollTop from "primevue/scrolltop";
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "LXGW WenKai Mono TC", serif;
+  font-family: "Playfair Display", "LXGW WenKai Mono TC", serif;
 }
 p {
   color: #283149;
@@ -66,7 +66,7 @@ p {
   }
 }
 
-.section-title{
+.section-title {
   padding: 0 0 15px 0;
   font-size: 24px;
   font-weight: 600;
