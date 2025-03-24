@@ -125,7 +125,6 @@ section {
       p {
         margin-bottom: 20px;
         color: #283149;
-        font-family: "LXGW WenKai Mono TC", serif;
       }
       a {
         color: #283149;

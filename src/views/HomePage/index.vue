@@ -311,7 +311,6 @@ watch(locale, (newLocale) => {
     }
     p {
       color: #283149;
-      font-family: "LXGW WenKai Mono TC", serif;
       font-weight: 500;
       line-height: 150%;
     }

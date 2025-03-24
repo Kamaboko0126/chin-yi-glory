@@ -18,7 +18,7 @@ import ScrollTop from "primevue/scrolltop";
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Playfair Display", "LXGW WenKai Mono TC", serif;
+  font-family: "Times New Roman", "LXGW WenKai Mono TC", serif;
 }
 p {
   color: #283149;

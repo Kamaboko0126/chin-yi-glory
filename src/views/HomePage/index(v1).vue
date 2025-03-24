@@ -205,7 +205,6 @@ onMounted(() => {
       color: #fff;
       font-size: 22px;
       line-height: 175%;
-      font-family: "LXGW WenKai Mono TC", serif;
     }
   }
 }
