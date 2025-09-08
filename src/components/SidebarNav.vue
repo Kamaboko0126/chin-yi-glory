@@ -11,17 +11,6 @@ const logo = "/src/assets/ncut_blue.png";
 const isSidebarOpen = ref(false);
 const isMobile = ref(false);
 
-// 語言切換
-const currentLanguage = computed(() => locale.value);
-const switchLanguage = () => {
-  const newLocale = locale.value === 'zh' ? 'en' : 'zh';
-  locale.value = newLocale;
-  localStorage.setItem('preferred-language', newLocale);
-  loadLocaleMessages(newLocale).then(() => {
-    updateMenuItems();
-  });
-};
-
 // 檢查是否為移動端
 const checkMobile = () => {
   isMobile.value = window.innerWidth <= 768;
@@ -92,6 +81,8 @@ const isActiveRoute = (url: string) => {
   return route.path.startsWith(url);
 };
 
+const currentLanguage = computed(() => locale.value);
+
 onMounted(() => {
   // 從本地存儲載入語言偏好
   const savedLanguage = localStorage.getItem('preferred-language');
@@ -107,6 +98,13 @@ onMounted(() => {
   window.addEventListener('resize', checkMobile);
 });
 
+// 監聽語言變化
+watch(locale, (newLocale) => {
+  loadLocaleMessages(newLocale).then(() => {
+    updateMenuItems();
+  });
+});
+
 // 監聽路由變化，在移動端自動關閉側邊欄
 watch(() => route.path, () => {
   if (isMobile.value) {
@@ -116,6 +114,18 @@ watch(() => route.path, () => {
 </script>
 
 <template>
+  <!-- 移動端選單按鈕 -->
+  <button 
+    class="menu-toggle" 
+    @click="toggleSidebar"
+    :class="{ active: isSidebarOpen }"
+    v-if="isMobile"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
   <!-- 側邊欄導航 -->
   <aside class="sidebar" :class="{ open: isSidebarOpen }">
     <div class="sidebar-header">
@@ -152,29 +162,6 @@ watch(() => route.path, () => {
       </ul>
     </nav>
 
-    <!-- 語言切換區塊 -->
-    <div class="language-section">
-      <h4 class="language-title">
-        {{ currentLanguage === 'zh' ? '語言' : 'Language' }}
-      </h4>
-      <div class="language-switcher">
-        <button 
-          @click="switchLanguage" 
-          class="lang-btn"
-          :class="{ active: currentLanguage === 'zh' }"
-        >
-          中文
-        </button>
-        <button 
-          @click="switchLanguage" 
-          class="lang-btn"
-          :class="{ active: currentLanguage === 'en' }"
-        >
-          English
-        </button>
-      </div>
-    </div>
-
     <!-- 底部資訊 -->
     <div class="sidebar-footer">
       <p class="copyright">
@@ -182,18 +169,6 @@ watch(() => route.path, () => {
       </p>
     </div>
   </aside>
-
-  <!-- 移動端選單按鈕 -->
-  <button 
-    class="mobile-menu-btn" 
-    @click="toggleSidebar"
-    :class="{ active: isSidebarOpen }"
-    v-if="isMobile"
-  >
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
 
   <!-- 遮罩層 (移動端) -->
   <div 
@@ -211,7 +186,6 @@ $white: #ffffff;
 $border-color: #ecf0f1;
 $sidebar-width: 260px;
 $sidebar-width-mobile: 250px;
-$header-height: 60px;
 
 // 動畫
 @keyframes slideInLeft {
@@ -223,154 +197,44 @@ $header-height: 60px;
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-// 頂部工具欄
-.top-header {
+// 移動端選單按鈕
+.menu-toggle {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: $header-height;
-  background: $white;
-  border-bottom: 1px solid $border-color;
-  z-index: 1000;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 
-  .header-content {
+  @media (max-width: 768px) {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    padding: 0 20px;
-    max-width: 100%;
-
-    @media (min-width: 769px) {
-      padding-left: calc(#{$sidebar-width} + 20px);
-    }
   }
 
-  .brand {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: $primary-color;
-    font-weight: 300;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: darken($primary-color, 10%);
-    }
-
-    .logo {
-      width: 35px;
-      height: 35px;
-      margin-right: 12px;
-      
-      @media (max-width: 768px) {
-        width: 30px;
-        height: 30px;
-        margin-right: 8px;
-      }
-    }
-
-    .brand-text {
-      font-size: 1.1rem;
-      
-      @media (max-width: 768px) {
-        font-size: 1rem;
-      }
-      
-      @media (max-width: 480px) {
-        display: none;
-      }
-    }
+  span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: $primary-color;
+    border-radius: 1px;
+    transition: all 0.3s ease;
   }
 
-  .header-controls {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-
-  // 語言切換器
-  .language-switcher {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: $border-color;
-    padding: 5px 10px;
-    border-radius: 15px;
-
-    .lang-btn {
-      background: none;
-      border: none;
-      padding: 3px 8px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 12px;
-      font-weight: 400;
-      color: $secondary-color;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background: $white;
-        color: $primary-color;
-      }
-
-      &.active {
-        background: $primary-color;
-        color: $white;
-      }
+  &.active {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
     }
-
-    .divider {
-      color: $secondary-color;
-      font-weight: 300;
+    span:nth-child(2) {
+      opacity: 0;
     }
-  }
-
-  // 移動端選單按鈕
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 24px;
-    height: 18px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-
-    @media (max-width: 768px) {
-      display: flex;
-    }
-
-    span {
-      display: block;
-      height: 2px;
-      width: 100%;
-      background: $primary-color;
-      border-radius: 1px;
-      transition: all 0.3s ease;
-    }
-
-    &.active {
-      span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
-      span:nth-child(2) {
-        opacity: 0;
-      }
-      span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-      }
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
     }
   }
 }
@@ -384,7 +248,7 @@ $header-height: 60px;
   height: 100vh;
   background: $white;
   border-right: 1px solid $border-color;
-  z-index: 999;
+  z-index: 1000;
   overflow-y: auto;
   transition: transform 0.3s ease;
   display: flex;
@@ -530,56 +394,7 @@ $header-height: 60px;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 998;
-  animation: fadeIn 0.3s ease-out;
-}
-
-// 內容區塊佔位
-.content-spacer {
-  height: $header-height;
-  
-  @media (min-width: 769px) {
-    margin-left: $sidebar-width;
-  }
-}
-
-// 響應式設計
-@media (max-width: 1024px) {
-  .sidebar {
-    width: 250px;
-  }
-}
-
-@media (max-width: 768px) {
-  .top-header .header-content {
-    padding-left: 20px;
-  }
-  
-  .content-spacer {
-    margin-left: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .top-header {
-    .header-content {
-      padding: 0 15px;
-    }
-    
-    .language-switcher {
-      padding: 4px 8px;
-      
-      .lang-btn {
-        padding: 2px 6px;
-        font-size: 12px;
-      }
-    }
-  }
-
-  .sidebar {
-    width: 90%;
-    max-width: $sidebar-width-mobile;
-  }
+  z-index: 999;
 }
 
 // 滾動條樣式
@@ -588,7 +403,7 @@ $header-height: 60px;
 }
 
 .sidebar::-webkit-scrollbar-track {
-  background: $light-gray;
+  background: $border-color;
 }
 
 .sidebar::-webkit-scrollbar-thumb {

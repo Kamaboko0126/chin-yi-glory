@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import HeaderItem from "./components/HeaderItem.vue";
+import SidebarNav from "./components/SidebarNav.vue";
 import FooterItem from "./components/FooterItem.vue";
 import ScrollTop from "primevue/scrolltop";
 </script>
 
 <template>
   <main>
-    <HeaderItem />
-    <router-view></router-view>
+    <SidebarNav />
+    <div class="main-content">
+      <router-view></router-view>
+    </div>
     <ScrollTop />
     <FooterItem />
   </main>
@@ -20,6 +22,22 @@ import ScrollTop from "primevue/scrolltop";
   box-sizing: border-box;
   font-family: "Times New Roman", "LXGW WenKai Mono TC", serif;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 260px; // 側邊欄寬度
+  
+  @media (max-width: 768px) {
+    margin-left: 0; // 移動端不需要左邊距
+  }
+}
+
 p {
   color: #283149;
   font-size: 18px;
