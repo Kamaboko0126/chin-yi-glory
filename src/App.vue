@@ -1,16 +1,21 @@
 <script setup lang="ts">
+import { computed } from "vue";
+import { useRoute } from "vue-router";
 import SidebarNav from "./components/SidebarNav.vue";
 import FooterItem from "./components/FooterItem.vue";
-import ScrollTop from "primevue/scrolltop";
+
+const route = useRoute();
+
+// 檢查是否為首頁
+const isHomePage = computed(() => route.path === '/');
 </script>
 
 <template>
   <main>
-    <SidebarNav />
-    <div class="main-content">
+    <SidebarNav :isHomePage="isHomePage" />
+    <div class="main-content" :class="{ 'homepage-layout': isHomePage }">
       <router-view></router-view>
     </div>
-    <ScrollTop />
     <FooterItem />
   </main>
 </template>
@@ -32,6 +37,10 @@ main {
 .main-content {
   flex: 1;
   margin-left: 260px; // 側邊欄寬度
+  
+  &.homepage-layout {
+    margin-left: 0; // 首頁不需要左邊距
+  }
   
   @media (max-width: 768px) {
     margin-left: 0; // 移動端不需要左邊距

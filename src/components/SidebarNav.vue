@@ -7,6 +7,11 @@ import i18n from "../i18n";
 const { locale, t } = useI18n();
 const route = useRoute();
 
+// 接收 props
+const props = defineProps<{
+  isHomePage: boolean;
+}>();
+
 const logo = "/src/assets/ncut_blue.png";
 const isSidebarOpen = ref(false);
 const isMobile = ref(false);
@@ -25,6 +30,16 @@ const toggleSidebar = () => {
 const closeSidebar = () => {
   isSidebarOpen.value = false;
 };
+
+// 判斷是否顯示 menu button - 在首頁或移動端顯示
+const shouldShowMenuButton = computed(() => {
+  return props.isHomePage || isMobile.value;
+});
+
+// 判斷是否套用首頁隱藏樣式
+const shouldApplyHomepageHidden = computed(() => {
+  return props.isHomePage && !isSidebarOpen.value;
+});
 
 async function loadLocaleMessages(locale: string) {
   try {
@@ -105,29 +120,41 @@ watch(locale, (newLocale) => {
   });
 });
 
-// 監聽路由變化，在移動端自動關閉側邊欄
+// 監聽路由變化
 watch(() => route.path, () => {
-  if (isMobile.value) {
+  // 在移動端切換路由時關閉側邊欄
+  if (isMobile.value && isSidebarOpen.value) {
+    closeSidebar();
+  }
+});
+
+// 監聽 isHomePage 變化
+watch(() => props.isHomePage, (newVal) => {
+  if (newVal && !isMobile.value) {
+    // 切換到首頁時在桌面端關閉側邊欄
     closeSidebar();
   }
 });
 </script>
 
 <template>
-  <!-- 移動端選單按鈕 -->
+  <!-- Menu按鈕 - 在首頁或移動端顯示 -->
   <button 
     class="menu-toggle" 
     @click="toggleSidebar"
     :class="{ active: isSidebarOpen }"
-    v-if="isMobile"
+    v-if="shouldShowMenuButton"
   >
     <span></span>
     <span></span>
     <span></span>
   </button>
 
-  <!-- 側邊欄導航 -->
-  <aside class="sidebar" :class="{ open: isSidebarOpen }">
+  <!-- 側邊欄導航 - 在非首頁預設顯示，首頁需要點擊才顯示 -->
+  <aside class="sidebar" :class="{ 
+    open: isSidebarOpen, 
+    'homepage-hidden': shouldApplyHomepageHidden 
+  }">
     <div class="sidebar-header">
       <div class="brand-info">
         <img :src="logo" alt="logo" class="sidebar-logo" />
@@ -138,9 +165,6 @@ watch(() => route.path, () => {
           {{ currentLanguage === 'zh' ? '藝術典藏' : 'Art Collection' }}
         </p>
       </div>
-      <button class="close-btn" @click="closeSidebar" v-if="isMobile">
-        ×
-      </button>
     </div>
 
     <nav class="sidebar-nav">
@@ -151,10 +175,10 @@ watch(() => route.path, () => {
           class="nav-item"
         >
           <router-link 
-            :to="item.url" 
+            :to="item.url || '/'" 
             class="nav-link"
-            :class="{ active: isActiveRoute(item.url) }"
-            @click="isMobile && closeSidebar()"
+            :class="{ active: isActiveRoute(item.url || '/') }"
+            @click="(shouldShowMenuButton && closeSidebar())"
           >
             {{ item.label }}
           </router-link>
@@ -170,10 +194,10 @@ watch(() => route.path, () => {
     </div>
   </aside>
 
-  <!-- 遮罩層 (移動端) -->
+  <!-- 遮罩層 -->
   <div 
     class="sidebar-overlay" 
-    v-if="isSidebarOpen && isMobile"
+    v-if="isSidebarOpen && shouldShowMenuButton"
     @click="closeSidebar"
   ></div>
 </template>
@@ -187,23 +211,13 @@ $border-color: #ecf0f1;
 $sidebar-width: 260px;
 $sidebar-width-mobile: 250px;
 
-// 動畫
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
 // 移動端選單按鈕
 .menu-toggle {
   position: fixed;
   top: 20px;
   left: 20px;
   z-index: 1001;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 24px;
@@ -212,10 +226,6 @@ $sidebar-width-mobile: 250px;
   border: none;
   cursor: pointer;
   padding: 0;
-
-  @media (max-width: 768px) {
-    display: flex;
-  }
 
   span {
     display: block;
@@ -253,14 +263,27 @@ $sidebar-width-mobile: 250px;
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
+  
+  // 預設顯示狀態
+  transform: translateX(0);
+
+  // 首頁隱藏狀態
+  &.homepage-hidden {
+    transform: translateX(-100%);
+  }
+
+  // 顯示狀態 (點擊後顯示) - 移除 !important 讓過渡效果正常工作
+  &.open {
+    transform: translateX(0);
+  }
 
   @media (max-width: 768px) {
     width: $sidebar-width-mobile;
+    // 移動端預設隱藏
     transform: translateX(-100%);
     
     &.open {
       transform: translateX(0);
-      animation: slideInLeft 0.3s ease-out;
     }
   }
 

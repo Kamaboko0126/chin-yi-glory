@@ -10,7 +10,9 @@ const { locale, t } = useI18n();
 // 優化的語言載入函數
 async function loadLocaleMessages(targetLocale: string) {
   try {
-    const messages = await import(`../locales/${targetLocale}/curationIntro.json`);
+    const messages = await import(
+      `../locales/${targetLocale}/curationIntro.json`
+    );
     i18n.global.setLocaleMessage(targetLocale, {
       ...i18n.global.getLocaleMessage(targetLocale),
       ...messages.default,
@@ -37,7 +39,7 @@ const isLoading = ref(true);
 // 語言切換功能
 const switchLanguage = (lang: string) => {
   locale.value = lang;
-  localStorage.setItem('preferred-language', lang);
+  localStorage.setItem("preferred-language", lang);
 };
 
 // 圖片載入處理
@@ -47,13 +49,13 @@ const handleImageLoad = (index: number) => {
 
 onMounted(async () => {
   // 從本地存儲載入語言偏好
-  const savedLanguage = localStorage.getItem('preferred-language');
-  if (savedLanguage && ['zh', 'en'].includes(savedLanguage)) {
+  const savedLanguage = localStorage.getItem("preferred-language");
+  if (savedLanguage && ["zh", "en"].includes(savedLanguage)) {
     locale.value = savedLanguage;
   }
-  
+
   await loadLocaleMessages(locale.value);
-  
+
   // 載入完成動畫
   setTimeout(() => {
     isLoading.value = false;
@@ -75,14 +77,14 @@ watch(locale, async (newLocale) => {
   <div class="curation-intro" :class="{ loading: isLoading }">
     <!-- 語言切換按鈕 (右上角) -->
     <div class="language-switcher">
-      <button 
+      <button
         @click="switchLanguage('zh')"
         :class="{ active: currentLanguage === 'zh' }"
         class="lang-btn"
       >
         中文
       </button>
-      <button 
+      <button
         @click="switchLanguage('en')"
         :class="{ active: currentLanguage === 'en' }"
         class="lang-btn"
@@ -95,7 +97,7 @@ watch(locale, async (newLocale) => {
     <div class="loading-overlay" v-if="isLoading">
       <div class="loading-spinner">
         <div class="spinner"></div>
-        <p>{{ currentLanguage === 'zh' ? '載入中...' : 'Loading...' }}</p>
+        <p>{{ currentLanguage === "zh" ? "載入中..." : "Loading..." }}</p>
       </div>
     </div>
 
@@ -103,57 +105,23 @@ watch(locale, async (newLocale) => {
     <section class="hero-section">
       <div class="hero-content">
         <h1 class="hero-title">
-          {{ currentLanguage === 'zh' ? '勤益校園藝術典藏' : 'Chin-Yi Campus Art Collection' }}
+          {{ currentLanguage === "zh" ? "關於此展覽" : "About this Curation" }}
         </h1>
         <p class="hero-subtitle">
-          {{ currentLanguage === 'zh' ? '十年彩繪計畫精選作品' : 'Selected Works from Ten-Year Painting Project' }}
+          {{ currentLanguage === "zh" ? "副標題" : "Subtitle" }}
         </p>
       </div>
     </section>
 
     <!-- Main Content -->
     <div class="container">
-      <!-- 簡約作品網格 -->
-      <section class="artwork-grid-section">
-        <div class="grid-container">
-          <div 
-            v-for="(artwork, index) in artworkImages" 
-            :key="index"
-            class="artwork-item"
-            :style="{ animationDelay: `${index * 0.1}s` }"
-          >
-            <div class="artwork-card">
-              <div class="image-container">
-                <img 
-                  :src="artwork.src" 
-                  :alt="`作品 ${index + 1}`"
-                  @load="handleImageLoad(index)"
-                  :class="{ loaded: artwork.loaded }"
-                />
-              </div>
-              <div class="artwork-info">
-                <h3 class="artwork-title">
-                  {{ currentLanguage === 'zh' ? `校園建築彩繪 ${index + 1}` : `Campus Painting ${index + 1}` }}
-                </h3>
-                <p class="artwork-subtitle">
-                  {{ currentLanguage === 'zh' ? '水彩畫作' : 'Watercolor' }}
-                </p>
-                <div class="collection-tag">
-                  {{ currentLanguage === 'zh' ? '典藏' : 'Collection' }}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- 簡約文字內容 -->
       <section class="content-section">
         <div class="content-wrapper">
-          <h2 class="section-title">
+          <!-- <h2 class="section-title">
             {{ currentLanguage === 'zh' ? '關於此展覽' : 'About This Exhibition' }}
-          </h2>
-          
+          </h2> -->
+
           <div class="text-content">
             <div class="text-block">
               <p>{{ t("section1") }}</p>
@@ -216,8 +184,12 @@ $bg-light: #fafafa;
 }
 
 @keyframes spinner {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 // 主容器 - 極簡風格
@@ -225,7 +197,7 @@ $bg-light: #fafafa;
   background: $white;
   min-height: 100vh;
   position: relative;
-  
+
   &.loading {
     overflow: hidden;
   }
@@ -239,11 +211,12 @@ $bg-light: #fafafa;
   z-index: 1000;
   display: flex;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98); // 稍微調整透明度
   padding: 8px;
   border-radius: 25px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08); // 調整陰影更淡
   backdrop-filter: blur(10px);
+  border: 1px solid $border-light; // 添加邊線增加對比
 
   .lang-btn {
     padding: 8px 16px;
@@ -272,7 +245,7 @@ $bg-light: #fafafa;
   @media (max-width: 768px) {
     top: 15px;
     right: 15px;
-    
+
     .lang-btn {
       padding: 6px 12px;
       font-size: 0.85rem;
@@ -316,39 +289,42 @@ $bg-light: #fafafa;
 
 // Hero 區塊 - 簡約設計
 .hero-section {
-  padding: 60px 20px 40px;
+  padding: 80px 20px 60px; // 增加上下padding
   text-align: center;
   background: $white;
   border-bottom: 1px solid $border-light;
 
   .hero-content {
-    max-width: 600px;
+    max-width: 700px; // 稍微增加寬度
     margin: 0 auto;
 
     .hero-title {
-      font-size: 2.5rem;
-      font-weight: 300;
+      font-size: 3rem; // 增大標題字體
+      font-weight: 400; // 調整字重
       color: $text-dark;
-      margin-bottom: 15px;
-      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+      letter-spacing: -1px; // 調整字間距
+      line-height: 1.2;
 
       @media (max-width: 768px) {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        margin-bottom: 15px;
       }
 
       @media (max-width: 480px) {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
       }
     }
 
     .hero-subtitle {
-      font-size: 1.1rem;
-      color: $text-light;
+      font-size: 1.2rem; // 稍微增大副標題
+      color: $text-lighter; // 使用更淺的顏色
       font-weight: 300;
       line-height: 1.6;
+      margin-bottom: 0;
 
       @media (max-width: 768px) {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
     }
   }
@@ -356,7 +332,7 @@ $bg-light: #fafafa;
 
 // 主容器
 .container {
-  max-width: 1200px;
+  max-width: 900px; // 稍微減少最大寬度，讓內容更集中
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -369,7 +345,7 @@ $bg-light: #fafafa;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
-    
+
     @media (max-width: 768px) {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
@@ -392,7 +368,7 @@ $bg-light: #fafafa;
 
     &:hover {
       transform: translateY(-2px);
-      
+
       .image-container img {
         transform: scale(1.02);
       }
@@ -455,7 +431,7 @@ $bg-light: #fafafa;
 // 內容區塊 - 簡約文字設計
 .content-section {
   padding: 60px 0 80px;
-  background: $bg-light;
+  background: $white; // 改為純白色背景
 
   .content-wrapper {
     max-width: 800px;
@@ -481,39 +457,42 @@ $bg-light: #fafafa;
 
     .text-block {
       background: $white;
-      padding: 30px;
-      margin-bottom: 20px;
-      line-height: 1.7;
+      padding: 40px 0; // 調整為上下padding，左右不用
+      margin-bottom: 30px;
+      line-height: 1.8; // 增加行高
+      border-bottom: 1px solid $border-light; // 添加底部邊線
 
       @media (max-width: 768px) {
-        padding: 25px;
+        padding: 30px 0;
       }
 
       p {
         color: $text-dark;
-        font-size: 1rem;
-        margin-bottom: 15px;
-        text-align: justify;
+        font-size: 1.1rem; // 稍微增大字體
+        margin-bottom: 20px; // 增加段落間距
+        text-align: left; // 改為左對齊
+        font-weight: 300; // 調整字重
+        line-height: 1.8;
 
         &:last-child {
           margin-bottom: 0;
         }
 
         @media (max-width: 768px) {
-          font-size: 0.95rem;
+          font-size: 1rem;
+          margin-bottom: 18px;
         }
       }
     }
   }
 
   .card-section {
-    margin: 50px 0;
+    margin: 60px 0; // 增加上下間距
     background: $white;
-    padding: 30px;
+    padding: 0; // 移除padding讓卡片組件自己控制
 
     @media (max-width: 768px) {
       margin: 40px 0;
-      padding: 20px;
     }
   }
 }
