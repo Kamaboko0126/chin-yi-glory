@@ -3,28 +3,28 @@
 // 圖片資源配置 - 使用直接路徑（Vite 會自動處理）
 export const imageAssets = {
   curation: {
-    pic1: '/src/assets/curation/02.jpg',
-    pic2: '/src/assets/curation/03.jpg',
-    pic3: '/src/assets/curation/04.jpg',
-    pic4: '/src/assets/curation/05.jpg',
-    pic5: '/src/assets/curation/06.jpg',
-    pic6: '/src/assets/curation/07.jpg',
-    pic7: '/src/assets/curation/08.jpg',
-    pic8: '/src/assets/curation/09.jpg',
-    pic9: '/src/assets/curation/10.jpg',
-    pic10: '/src/assets/curation/11.jpg',
-    pic11: '/src/assets/curation/12.jpg',
-    pic12: '/src/assets/curation/13.jpg',
+    pic1: "/src/assets/curation/02.jpg",
+    pic2: "/src/assets/curation/03.jpg",
+    pic3: "/src/assets/curation/04.jpg",
+    pic4: "/src/assets/curation/05.jpg",
+    pic5: "/src/assets/curation/06.jpg",
+    pic6: "/src/assets/curation/07.jpg",
+    pic7: "/src/assets/curation/08.jpg",
+    pic8: "/src/assets/curation/09.jpg",
+    pic9: "/src/assets/curation/10.jpg",
+    pic10: "/src/assets/curation/11.jpg",
+    pic11: "/src/assets/curation/12.jpg",
+    pic12: "/src/assets/curation/13.jpg",
   },
   school: {
-    pic1: '/src/assets/school/02.jpg',
-    pic2: '/src/assets/school/04.jpg',
+    pic1: "/src/assets/school/02.jpg",
+    pic2: "/src/assets/school/04.jpg",
   },
   founder: {
     // 創辦人目前使用學校圖片
-    pic1: '/src/assets/school/02.jpg',
-    pic2: '/src/assets/school/04.jpg',
-  }
+    pic1: "/src/assets/school/02.jpg",
+    pic2: "/src/assets/school/04.jpg",
+  },
 };
 
 // 頁面配置接口
@@ -32,6 +32,8 @@ export interface PageConfig {
   id: string;
   titleKey: string;
   subtitleKey?: string;
+  enTitleKey?: string;
+  enSubtitleKey?: string;
   localeFile: string;
   components?: ComponentConfig[];
   layout: LayoutSection[];
@@ -68,8 +70,10 @@ export interface LayoutSection {
 export const pageConfigs: Record<string, PageConfig> = {
   curation: {
     id: "curation",
-    titleKey: "關於此展覽",
+    titleKey: "勤益風華展覽",
+    enTitleKey: "Chin-Yi Glory Curation",
     subtitleKey: "副標題",
+    enSubtitleKey: "Subtitle",
     localeFile: "curationIntro",
     components: [
       {
@@ -92,7 +96,7 @@ export const pageConfigs: Record<string, PageConfig> = {
             { image: imageAssets.curation.pic3, descriptionKey: "pic3" },
           ],
           localeFile: "curationIntro",
-          autoplayInterval: 4000,
+          autoplayInterval: 6000, // 增加到8秒
         },
       },
       {
@@ -115,7 +119,7 @@ export const pageConfigs: Record<string, PageConfig> = {
             { image: imageAssets.curation.pic12, descriptionKey: "pic12" },
           ],
           localeFile: "curationIntro",
-          autoplayInterval: 5000,
+          autoplayInterval: 8000, // 增加到8秒
         },
       },
       {
@@ -124,14 +128,59 @@ export const pageConfigs: Record<string, PageConfig> = {
       },
     ],
   },
-
+  school: {
+    id: "school",
+    titleKey: "國立勤益科技大學",
+    enTitleKey: "National Chin-Yi University of Technology",
+    subtitleKey: "副標題",
+    enSubtitleKey: "Subtitle",
+    localeFile: "schoolIntro",
+    components: [
+      {
+        name: "DynamicCardGroup",
+        path: "../components/common/DynamicCardGroup.vue",
+      },
+    ],
+    layout: [
+      {
+        type: "image",
+        image: new URL("../assets/school/01.jpg", import.meta.url).href,
+        title: "banner",
+      },
+      {
+        type: "text",
+        content: ["section1", "section2", "section3"],
+      },
+      {
+        type: "cards",
+        component: "DynamicCardGroup",
+        props: {
+          items: [
+            { image: imageAssets.school.pic1, descriptionKey: "pic1" },
+            { image: imageAssets.school.pic2, descriptionKey: "pic3" },
+          ],
+          localeFile: "schoolIntro",
+          autoplayInterval: 8000, // 增加到8秒
+        },
+      },
+      {
+        type: "text",
+        content: ["section4", "section5", "section6", "section7"],
+      },
+    ],
+  },
   founder: {
     id: "founder",
     titleKey: "張明將軍與王國秀女士",
+    enTitleKey: "General Ming Chang and Mrs. Kuo-Hsiu Wang",
     subtitleKey: "副標題",
+    enSubtitleKey: "Subtitle",
     localeFile: "founderIntro",
     components: [
-      { name: "DynamicCardGroup", path: "../components/common/DynamicCardGroup.vue" },
+      {
+        name: "DynamicCardGroup",
+        path: "../components/common/DynamicCardGroup.vue",
+      },
     ],
     layout: [
       {
@@ -188,45 +237,50 @@ export const pageConfigs: Record<string, PageConfig> = {
             { image: imageAssets.founder.pic2, descriptionKey: "pic2" },
           ],
           localeFile: "founderIntro",
-          autoplayInterval: 4000,
+          autoplayInterval: 8000, // 增加到8秒
         },
       },
     ],
   },
-
-  school: {
-    id: "school",
-    titleKey: "學校介紹",
-    localeFile: "schoolIntro",
+  foundation: {
+    id: "foundation",
+    titleKey: "張明王國秀基金會",
+    enTitleKey:
+      "Introduction to the Cultural and Educational Foundation of Ming Chang and Kuo-hsiu Wang",
+    subtitleKey: "副標題",
+    enSubtitleKey: "Subtitle",
+    localeFile: "foundationIntro",
     components: [
-      { name: "DynamicCardGroup", path: "../components/common/DynamicCardGroup.vue" },
+      {
+        name: "DynamicCardGroup",
+        path: "../components/common/DynamicCardGroup.vue",
+      },
     ],
     layout: [
       {
-        type: "image",
-        image: new URL("../assets/school/01.jpg", import.meta.url).href,
-        title: "banner",
-      },
-      {
         type: "text",
-        content: ["section1", "section2", "section3"],
-      },
-      {
-        type: "cards",
-        component: "DynamicCardGroup",
-        props: {
-          items: [
-            { image: imageAssets.school.pic1, descriptionKey: "pic1" },
-            { image: imageAssets.school.pic2, descriptionKey: "pic3" },
-          ],
-          localeFile: "schoolIntro",
-          autoplayInterval: 4000,
-        },
-      },
-      {
-        type: "text",
-        content: ["section4", "section5", "section6", "section7"],
+        content: ["section1", "section2","section3", "section4", "section5", "section6"],
       },
     ],
   },
+  artworks:{
+    id: "artworks",
+    titleKey: "藝術家眼中的校園",
+    enTitleKey: "The Campus through Artists’ Eyes",
+    subtitleKey: "副標題",
+    enSubtitleKey: "Subtitle",
+    localeFile: "artworksIntro",
+    components: [
+      {
+        name: "DynamicCardGroup",
+        path: "../components/common/DynamicCardGroup.vue",
+      },
+    ],
+    layout: [
+      {
+        type: "title",
+        title: "title1",
+      },
+    ],
+  }
 };

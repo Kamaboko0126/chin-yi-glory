@@ -81,11 +81,11 @@ function updateMenuItems() {
     },
     {
       label: t("item6"),
-      url: "/",
+      url: "/page/foundation",
     },
     {
       label: t("item7"),
-      url: "/",
+      url: "/page/artworks",
     }
   ];
 }

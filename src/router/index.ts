@@ -19,6 +19,14 @@ const routes = [
   {
     path: "/founderintro",
     redirect: "/page/founder"
+  },
+  {
+    path: "/foundationintro",
+    redirect: "/page/foundation"
+  },
+  {
+    path: "/artworksintro",
+    redirect: "/page/artworks"
   }
 ];
 

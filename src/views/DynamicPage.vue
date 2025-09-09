@@ -43,10 +43,6 @@ async function loadComponents(components: ComponentConfig[]) {
   
   // 靜態組件映射，避免 Vite 分析問題
   const componentMap: Record<string, () => Promise<any>> = {
-    'CardGroup1': () => import('../components/CurationIntro/CardGroup1.vue'),
-    'CardGroup2': () => import('../components/CurationIntro/CardGroup2.vue'),
-    'FounderCardGroup1': () => import('../components/FounderIntro/CardGroup1.vue'),
-    'SchoolCardGroup1': () => import('../components/SchoolIntro/CardGroup1.vue'),
     'DynamicCardGroup': () => import('../components/common/DynamicCardGroup.vue'),
   };
   
@@ -168,10 +164,10 @@ watch(locale, async (newLocale) => {
     <section class="hero-section">
       <div class="hero-content">
         <h1 class="hero-title">
-          {{ currentLanguage === 'zh' ? currentPageConfig.titleKey : currentPageConfig.titleKey }}
+          {{ currentLanguage === 'zh' ? currentPageConfig.titleKey : currentPageConfig.enTitleKey }}
         </h1>
         <p class="hero-subtitle" v-if="currentPageConfig.subtitleKey">
-          {{ currentLanguage === "zh" ? currentPageConfig.subtitleKey : currentPageConfig.subtitleKey }}
+          {{ currentLanguage === "zh" ? currentPageConfig.subtitleKey : currentPageConfig.enSubtitleKey }}
         </p>
       </div>
     </section>
