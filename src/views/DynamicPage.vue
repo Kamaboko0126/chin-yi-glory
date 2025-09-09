@@ -47,6 +47,7 @@ async function loadComponents(components: ComponentConfig[]) {
     'CardGroup2': () => import('../components/CurationIntro/CardGroup2.vue'),
     'FounderCardGroup1': () => import('../components/FounderIntro/CardGroup1.vue'),
     'SchoolCardGroup1': () => import('../components/SchoolIntro/CardGroup1.vue'),
+    'DynamicCardGroup': () => import('../components/common/DynamicCardGroup.vue'),
   };
   
   for (const comp of components) {
@@ -211,6 +212,7 @@ watch(locale, async (newLocale) => {
                 :is="loadedComponents[section.component || '']" 
                 v-if="section.component && loadedComponents[section.component]"
                 :class="section.className"
+                v-bind="section.props || {}"
               />
             </div>
 
