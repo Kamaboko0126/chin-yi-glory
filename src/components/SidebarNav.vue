@@ -69,15 +69,15 @@ function updateMenuItems() {
     },
     {
       label: t("item2"),
-      url: "/curationintro",
+      url: "/page/curation",
     },
     {
       label: t("item4"),
-      url: "/schoolintro",
+      url: "/page/school",
     },
     {
       label: t("item5"),
-      url: "/founderintro",
+      url: "/page/founder",
     },
     {
       label: t("item6"),

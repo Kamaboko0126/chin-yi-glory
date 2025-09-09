@@ -1,32 +1,83 @@
 <script setup lang="ts">
-import { onMounted, ref, watch, computed } from "vue";
-import CardGroup1 from "../components/FounderIntro/CardGroup1.vue";
+import { onMounted, ref, watch, computed, defineAsyncComponent } from "vue";
+import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
 import i18n from "../i18n";
+import { pageConfigs, type PageConfig, type ComponentConfig } from "../config/pageConfig";
 
+const route = useRoute();
 const { locale, t } = useI18n();
 
-// 優化的語言載入函數
-async function loadLocaleMessages(targetLocale: string) {
-  try {
-    const messages = await import(`../locales/${targetLocale}/founderIntro.json`);
-    i18n.global.setLocaleMessage(targetLocale, {
-      ...i18n.global.getLocaleMessage(targetLocale),
-      ...messages.default,
-    });
-    console.log(`Successfully loaded ${targetLocale} messages`);
-  } catch (error) {
-    console.error(`Failed to load ${targetLocale} messages:`, error);
-  }
-}
-
-const currentLanguage = computed(() => locale.value);
+// 響應式狀態
+const currentPageConfig = ref<PageConfig | null>(null);
 const isLoading = ref(true);
+const loadedComponents = ref<Record<string, any>>({});
+
+// 計算屬性
+const currentLanguage = computed(() => locale.value);
+const pageId = computed(() => route.params.pageId as string);
 
 // 語言切換功能
 const switchLanguage = (lang: string) => {
   locale.value = lang;
   localStorage.setItem("preferred-language", lang);
+};
+
+// 優化的語言載入函數
+async function loadLocaleMessages(targetLocale: string, localeFile: string) {
+  try {
+    const messages = await import(`../locales/${targetLocale}/${localeFile}.json`);
+    i18n.global.setLocaleMessage(targetLocale, {
+      ...i18n.global.getLocaleMessage(targetLocale),
+      ...messages.default,
+    });
+    console.log(`Successfully loaded ${targetLocale} messages for ${localeFile}`);
+  } catch (error) {
+    console.error(`Failed to load ${targetLocale} messages for ${localeFile}:`, error);
+  }
+}
+
+// 動態載入組件
+async function loadComponents(components: ComponentConfig[]) {
+  const loadedComps: Record<string, any> = {};
+  
+  for (const comp of components) {
+    try {
+      loadedComps[comp.name] = defineAsyncComponent(() => import(comp.path));
+    } catch (error) {
+      console.error(`Failed to load component ${comp.name}:`, error);
+    }
+  }
+  
+  loadedComponents.value = loadedComps;
+}
+
+// 初始化頁面
+async function initializePage(pageId: string) {
+  const config = pageConfigs[pageId];
+  
+  if (!config) {
+    console.error(`Page config not found for: ${pageId}`);
+    return;
+  }
+
+  currentPageConfig.value = config;
+  
+  // 載入語言文件
+  await loadLocaleMessages(locale.value, config.localeFile);
+  
+  // 載入組件
+  if (config.components) {
+    await loadComponents(config.components);
+  }
+}
+
+// 渲染文字區塊
+const renderTextBlock = (content: string | string[]) => {
+  if (Array.isArray(content)) {
+    return content.map(key => t(key));
+  }
+  return [t(content)];
 };
 
 onMounted(async () => {
@@ -36,7 +87,7 @@ onMounted(async () => {
     locale.value = savedLanguage;
   }
 
-  await loadLocaleMessages(locale.value);
+  await initializePage(pageId.value);
 
   // 載入完成動畫
   setTimeout(() => {
@@ -44,19 +95,32 @@ onMounted(async () => {
   }, 800);
 });
 
+// 監聽頁面變化
+watch(() => pageId.value, async (newPageId) => {
+  if (newPageId) {
+    isLoading.value = true;
+    await initializePage(newPageId);
+    setTimeout(() => {
+      isLoading.value = false;
+    }, 300);
+  }
+});
+
 // 監聽語言變化
 watch(locale, async (newLocale) => {
-  console.log(`Language switched to: ${newLocale}`);
-  isLoading.value = true;
-  await loadLocaleMessages(newLocale);
-  setTimeout(() => {
-    isLoading.value = false;
-  }, 300);
+  if (currentPageConfig.value) {
+    console.log(`Language switched to: ${newLocale}`);
+    isLoading.value = true;
+    await loadLocaleMessages(newLocale, currentPageConfig.value.localeFile);
+    setTimeout(() => {
+      isLoading.value = false;
+    }, 300);
+  }
 });
 </script>
 
 <template>
-  <div class="founder-intro" :class="{ loading: isLoading }">
+  <div class="dynamic-page" :class="{ loading: isLoading }" v-if="currentPageConfig">
     <!-- 語言切換按鈕 (右上角) -->
     <div class="language-switcher">
       <button
@@ -87,10 +151,10 @@ watch(locale, async (newLocale) => {
     <section class="hero-section">
       <div class="hero-content">
         <h1 class="hero-title">
-          {{ t("title1") }}
+          {{ currentLanguage === 'zh' ? currentPageConfig.titleKey : currentPageConfig.titleKey }}
         </h1>
-        <p class="hero-subtitle">
-          {{ currentLanguage === "zh" ? "副標題" : "Subtitle" }}
+        <p class="hero-subtitle" v-if="currentPageConfig.subtitleKey">
+          {{ currentLanguage === "zh" ? currentPageConfig.subtitleKey : currentPageConfig.subtitleKey }}
         </p>
       </div>
     </section>
@@ -100,55 +164,50 @@ watch(locale, async (newLocale) => {
       <section class="content-section">
         <div class="content-wrapper">
           
-          <div class="text-content">
-            <div class="text-block">
-              <p>{{ t("section1") }}</p>
+          <!-- 動態渲染內容區塊 -->
+          <template v-for="(section, index) in currentPageConfig.layout" :key="index">
+            
+            <!-- 文字區塊 -->
+            <div v-if="section.type === 'text'" class="text-content">
+              <div class="text-block" :class="section.className">
+                <p v-for="(text, textIndex) in renderTextBlock(section.content || '')" :key="`text-${index}-${textIndex}`">
+                  {{ text }}
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div class="text-content">
-            <div class="text-block">
-              <h2 class="section-title">{{ t("title2") }}</h2>
-              <p>{{ t("section1") }}</p>
-              <p>{{ t("section2") }}</p>
-              <p>{{ t("section3") }}</p>
-              <p>{{ t("section4") }}</p>
-              <p>{{ t("section5") }}</p>
-              <p>{{ t("section6") }}</p>
-              <p>{{ t("section7") }}</p>
-              <p>{{ t("section8") }}</p>
-              <p>{{ t("section9") }}</p>
-              <p>{{ t("section10") }}</p>
-              <p>{{ t("section11") }}</p>
+            <!-- 標題區塊 -->
+            <div v-else-if="section.type === 'title'" class="text-content">
+              <div class="text-block" :class="section.className">
+                <h2 class="section-title">{{ t(section.title || '') }}</h2>
+              </div>
             </div>
-          </div>
 
-          <div class="text-content">
-            <div class="text-block">
-              <h2 class="section-title">{{ t("title3") }}</h2>
-              <p>{{ t("section12") }}</p>
-              <p>{{ t("section13") }}</p>
-              <p>{{ t("section14") }}</p>
-              <p>{{ t("section15") }}</p>
-              <p>{{ t("section16") }}</p>
-              <p>{{ t("section17") }}</p>
-              <p>{{ t("section18") }}</p>
-              <p>{{ t("section19") }}</p>
-              <p>{{ t("section20") }}</p>
-              <p>{{ t("section21") }}</p>
-              <p>{{ t("section22") }}</p>
-              <p>{{ t("section23") }}</p>
+            <!-- 圖片區塊 -->
+            <div v-else-if="section.type === 'image'" class="image-content">
+              <img :src="section.image" :alt="section.title || ''" :class="section.className" />
             </div>
-          </div>
 
-          <!-- 卡片組件 -->
-          <div class="card-section">
-            <CardGroup1 />
-          </div>
+            <!-- 卡片組件區塊 -->
+            <div v-else-if="section.type === 'cards'" class="card-section">
+              <component 
+                :is="loadedComponents[section.component || '']" 
+                v-if="section.component && loadedComponents[section.component]"
+                :class="section.className"
+              />
+            </div>
+
+          </template>
 
         </div>
       </section>
     </div>
+  </div>
+
+  <!-- 頁面未找到 -->
+  <div v-else class="page-not-found">
+    <h1>Page Not Found</h1>
+    <p>The requested page configuration could not be found.</p>
   </div>
 </template>
 
@@ -185,7 +244,7 @@ $bg-light: #fafafa;
 }
 
 // 主容器 - 極簡風格
-.founder-intro {
+.dynamic-page {
   background: $white;
   min-height: 100vh;
   position: relative;
@@ -383,6 +442,16 @@ $bg-light: #fafafa;
           font-size: 1rem;
           margin-bottom: 18px;
         }
+
+        a {
+          color: $accent-red;
+          text-decoration: none;
+          font-weight: 400;
+          
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
     }
   }
@@ -395,6 +464,39 @@ $bg-light: #fafafa;
     @media (max-width: 768px) {
       margin: 40px 0;
     }
+  }
+
+  .image-content {
+    margin: 40px 0;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+// 頁面未找到
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  
+  h1 {
+    font-size: 2rem;
+    color: $text-dark;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    color: $text-light;
+    font-size: 1.1rem;
   }
 }
 

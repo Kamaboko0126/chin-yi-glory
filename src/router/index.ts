@@ -3,31 +3,23 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const routes = [
   { path: "/", component: () => import("../views/HomePage/index.vue") },
   {
+    path: "/page/:pageId",
+    component: () => import("../views/DynamicPage.vue"),
+    props: true
+  },
+  // 保持向後兼容的舊路由（重定向到新的動態路由）
+  {
     path: "/curationintro",
-    component: () => import("../views/CurationIntro.vue"),
+    redirect: "/page/curation"
   },
   {
     path: "/schoolintro",
-    component: () => import("../views/SchoolIntro.vue"),
+    redirect: "/page/school"
   },
   {
     path: "/founderintro",
-    component: () => import("../views/FounderIntro.vue"),
-  },
-  //   {
-  //     path: "/admin",
-  //     component: () => import("../views/Admin/index.vue"),
-  //     children: [
-  //       {
-  //         path: "format/:type",
-  //         component: () => import("../views/Admin/format.vue"),
-  //       },
-  //       {
-  //         path: "antique/:type",
-  //         component: () => import("../views/Admin/antique.vue"),
-  //       },
-  //     ],
-  //   },
+    redirect: "/page/founder"
+  }
 ];
 
 const router = createRouter({
