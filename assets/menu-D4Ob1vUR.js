@@ -1,1 +1,0 @@
-const t="首頁",e="策展總論",n="簡介",o="勤益簡介",s="創辦人簡介",c="張明王國秀基金會簡介",m="勤益風華-藝術家眼中的勤益校景",i={item1:t,item2:e,item3:n,item4:o,item5:s,item6:c,item7:m};export{i as default,t as item1,e as item2,n as item3,o as item4,s as item5,c as item6,m as item7};
