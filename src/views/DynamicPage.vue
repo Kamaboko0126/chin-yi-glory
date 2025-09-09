@@ -26,7 +26,7 @@ const switchLanguage = (lang: string) => {
 // 優化的語言載入函數
 async function loadLocaleMessages(targetLocale: string, localeFile: string) {
   try {
-    const messages = await import(`../locales/${targetLocale}/${localeFile}.json`);
+    const messages = await import(/* @vite-ignore */ `../locales/${targetLocale}/${localeFile}.json`);
     i18n.global.setLocaleMessage(targetLocale, {
       ...i18n.global.getLocaleMessage(targetLocale),
       ...messages.default,
@@ -41,9 +41,25 @@ async function loadLocaleMessages(targetLocale: string, localeFile: string) {
 async function loadComponents(components: ComponentConfig[]) {
   const loadedComps: Record<string, any> = {};
   
+  // 靜態組件映射，避免 Vite 分析問題
+  const componentMap: Record<string, () => Promise<any>> = {
+    'CardGroup1': () => import('../components/CurationIntro/CardGroup1.vue'),
+    'CardGroup2': () => import('../components/CurationIntro/CardGroup2.vue'),
+    'FounderCardGroup1': () => import('../components/FounderIntro/CardGroup1.vue'),
+    'SchoolCardGroup1': () => import('../components/SchoolIntro/CardGroup1.vue'),
+  };
+  
   for (const comp of components) {
     try {
-      loadedComps[comp.name] = defineAsyncComponent(() => import(comp.path));
+      const componentKey = comp.name;
+      const importFn = componentMap[componentKey];
+      
+      if (importFn) {
+        loadedComps[comp.name] = defineAsyncComponent(importFn);
+      } else {
+        // 回退到動態 import（帶有忽略註解）
+        loadedComps[comp.name] = defineAsyncComponent(() => import(/* @vite-ignore */ comp.path));
+      }
     } catch (error) {
       console.error(`Failed to load component ${comp.name}:`, error);
     }
@@ -185,7 +201,8 @@ watch(locale, async (newLocale) => {
 
             <!-- 圖片區塊 -->
             <div v-else-if="section.type === 'image'" class="image-content">
-              <img :src="section.image" :alt="section.title || ''" :class="section.className" />
+              <img :src="section.image" :alt="section.title ? t(section.title) : ''" :class="section.className" />
+              <p v-if="section.title" class="image-title">{{ t(section.title) }}</p>
             </div>
 
             <!-- 卡片組件區塊 -->
@@ -475,6 +492,14 @@ $bg-light: #fafafa;
       height: auto;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-title {
+      margin-top: 16px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #333;
+      letter-spacing: 1px;
     }
   }
 }
