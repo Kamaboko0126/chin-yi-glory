@@ -33,10 +33,15 @@ const expandedDescriptions = ref<Set<number>>(new Set()); // 追蹤哪些描述�
 // 載入語言文件
 async function loadLocaleMessages(targetLocale: string) {
   try {
-    const messages = await import(/* @vite-ignore */ `../../locales/${targetLocale}/${props.localeFile}.json`);
+    const response = await fetch(`/locales/${targetLocale}/${props.localeFile}.json`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const messages = await response.json();
+    
     i18n.global.setLocaleMessage(targetLocale, {
       ...i18n.global.getLocaleMessage(targetLocale),
-      ...messages.default,
+      ...messages,
     });
     console.log(`Successfully loaded ${targetLocale} messages for ${props.localeFile}`);
   } catch (error) {

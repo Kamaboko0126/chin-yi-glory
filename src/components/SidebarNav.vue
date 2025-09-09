@@ -12,7 +12,7 @@ const props = defineProps<{
   isHomePage: boolean;
 }>();
 
-const logo = "/src/assets/ncut_blue.png";
+const logo = "/ncut_blue.png";
 const isSidebarOpen = ref(false);
 const isMobile = ref(false);
 
@@ -43,10 +43,15 @@ const shouldApplyHomepageHidden = computed(() => {
 
 async function loadLocaleMessages(locale: string) {
   try {
-    const messages = await import(`../locales/${locale}/menu.json`);
+    const response = await fetch(`/locales/${locale}/menu.json`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const messages = await response.json();
+    
     i18n.global.setLocaleMessage(locale, {
       ...i18n.global.getLocaleMessage(locale),
-      ...messages.default,
+      ...messages,
     });
     console.log(`Locale messages for ${locale} loaded successfully.`);
   } catch (error) {
@@ -142,12 +147,17 @@ watch(() => props.isHomePage, (newVal) => {
   <button 
     class="menu-toggle" 
     @click="toggleSidebar"
-    :class="{ active: isSidebarOpen }"
+    :class="{ 
+      active: isSidebarOpen,
+      'homepage-hint': props.isHomePage && !isSidebarOpen
+    }"
     v-if="shouldShowMenuButton"
+    :title="currentLanguage === 'zh' ? '選單' : 'Menu'"
+    :aria-label="currentLanguage === 'zh' ? '開啟選單' : 'Open Menu'"
   >
-    <span></span>
-    <span></span>
-    <span></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
   </button>
 
   <!-- 側邊欄導航 - 在非首頁預設顯示，首頁需要點擊才顯示 -->
@@ -211,40 +221,164 @@ $border-color: #ecf0f1;
 $sidebar-width: 260px;
 $sidebar-width-mobile: 250px;
 
-// 移動端選單按鈕
+// 選單按鈕
 .menu-toggle {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 30px;
+  left: 30px;
   z-index: 1001;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 18px;
-  background: none;
-  border: none;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(115, 72, 34, 0.9);
+  border: 2px solid rgba(115, 72, 34, 0.1);
+  border-radius: 12px;
   cursor: pointer;
   padding: 0;
+  box-shadow: 
+    0 8px 25px rgba(115, 72, 34, 0.3),
+    0 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 
-  span {
+  // 添加質感背景
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  &:hover {
+    background: rgba(115, 72, 34, 1);
+    border-color: rgba(115, 72, 34, 0.3);
+    box-shadow: 
+      0 12px 35px rgba(115, 72, 34, 0.4),
+      0 6px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0px);
+    box-shadow: 
+      0 6px 20px rgba(115, 72, 34, 0.3),
+      0 3px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .hamburger-line {
     display: block;
-    height: 2px;
-    width: 100%;
-    background: $primary-color;
-    border-radius: 1px;
-    transition: all 0.3s ease;
+    height: 3px;
+    width: 22px;
+    background: #ffffff;
+    border-radius: 3px;
+    margin: 3px 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    
+    // 添加光澤效果
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: inherit;
+    }
   }
 
   &.active {
-    span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
+    background: rgba(40, 49, 73, 0.95);
+    border-color: rgba(40, 49, 73, 0.3);
+    
+    .hamburger-line {
+      background: #ffffff;
+      
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+        transform: scale(0);
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
     }
-    span:nth-child(2) {
-      opacity: 0;
+  }
+
+  // 首頁提示動畫
+  @keyframes elegantPulse {
+    0% {
+      box-shadow: 
+        0 8px 25px rgba(115, 72, 34, 0.3),
+        0 4px 10px rgba(0, 0, 0, 0.1),
+        0 0 0 0 rgba(115, 72, 34, 0.5);
     }
-    span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px);
+    50% {
+      box-shadow: 
+        0 8px 25px rgba(115, 72, 34, 0.3),
+        0 4px 10px rgba(0, 0, 0, 0.1),
+        0 0 0 10px rgba(115, 72, 34, 0.1);
+    }
+    100% {
+      box-shadow: 
+        0 8px 25px rgba(115, 72, 34, 0.3),
+        0 4px 10px rgba(0, 0, 0, 0.1),
+        0 0 0 0 rgba(115, 72, 34, 0);
+    }
+  }
+
+  @keyframes gentleFloat {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+
+  // 在首頁且未打開時顯示提示動畫
+  &.homepage-hint {
+    animation: 
+      elegantPulse 3s ease-in-out infinite,
+      gentleFloat 4s ease-in-out infinite;
+  }
+
+  // 響應式調整
+  @media (max-width: 768px) {
+    top: 25px;
+    left: 25px;
+    width: 46px;
+    height: 46px;
+    
+    .hamburger-line {
+      width: 20px;
+      height: 2.5px;
+      margin: 2.5px 0;
+    }
+  }
+
+  @media (max-width: 575px) {
+    top: 20px;
+    left: 20px;
+    width: 42px;
+    height: 42px;
+    
+    .hamburger-line {
+      width: 18px;
+      height: 2px;
+      margin: 2px 0;
     }
   }
 }

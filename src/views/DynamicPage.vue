@@ -26,10 +26,15 @@ const switchLanguage = (lang: string) => {
 // 優化的語言載入函數
 async function loadLocaleMessages(targetLocale: string, localeFile: string) {
   try {
-    const messages = await import(/* @vite-ignore */ `../locales/${targetLocale}/${localeFile}.json`);
+    const response = await fetch(`/locales/${targetLocale}/${localeFile}.json`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const messages = await response.json();
+    
     i18n.global.setLocaleMessage(targetLocale, {
       ...i18n.global.getLocaleMessage(targetLocale),
-      ...messages.default,
+      ...messages,
     });
     console.log(`Successfully loaded ${targetLocale} messages for ${localeFile}`);
   } catch (error) {

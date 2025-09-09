@@ -1,29 +1,29 @@
 // 頁面配置文件
 
-// 圖片資源配置 - 使用直接路徑（Vite 會自動處理）
+// 圖片資源配置 - 使用 public 目錄路徑
 export const imageAssets = {
   curation: {
-    pic1: "/src/assets/curation/02.jpg",
-    pic2: "/src/assets/curation/03.jpg",
-    pic3: "/src/assets/curation/04.jpg",
-    pic4: "/src/assets/curation/05.jpg",
-    pic5: "/src/assets/curation/06.jpg",
-    pic6: "/src/assets/curation/07.jpg",
-    pic7: "/src/assets/curation/08.jpg",
-    pic8: "/src/assets/curation/09.jpg",
-    pic9: "/src/assets/curation/10.jpg",
-    pic10: "/src/assets/curation/11.jpg",
-    pic11: "/src/assets/curation/12.jpg",
-    pic12: "/src/assets/curation/13.jpg",
+    pic1: "/curation/02.jpg",
+    pic2: "/curation/03.jpg",
+    pic3: "/curation/04.jpg",
+    pic4: "/curation/05.jpg",
+    pic5: "/curation/06.jpg",
+    pic6: "/curation/07.jpg",
+    pic7: "/curation/08.jpg",
+    pic8: "/curation/09.jpg",
+    pic9: "/curation/10.jpg",
+    pic10: "/curation/11.jpg",
+    pic11: "/curation/12.jpg",
+    pic12: "/curation/13.jpg",
   },
   school: {
-    pic1: "/src/assets/school/02.jpg",
-    pic2: "/src/assets/school/04.jpg",
+    pic1: "/school/02.jpg",
+    pic2: "/school/04.jpg",
   },
   founder: {
     // 創辦人目前使用學校圖片
-    pic1: "/src/assets/school/02.jpg",
-    pic2: "/src/assets/school/04.jpg",
+    pic1: "/school/02.jpg",
+    pic2: "/school/04.jpg",
   },
 };
 
@@ -144,7 +144,7 @@ export const pageConfigs: Record<string, PageConfig> = {
     layout: [
       {
         type: "image",
-        image: new URL("../assets/school/01.jpg", import.meta.url).href,
+        image: "/school/01.jpg",
         title: "banner",
       },
       {

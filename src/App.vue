@@ -16,7 +16,7 @@ const isHomePage = computed(() => route.path === '/');
     <div class="main-content" :class="{ 'homepage-layout': isHomePage }">
       <router-view></router-view>
     </div>
-    <FooterItem />
+    <FooterItem :isHomePage="isHomePage" />
   </main>
 </template>
 

@@ -1,23 +1,39 @@
 <script setup lang="ts">
-import { onMounted, watch, nextTick, ref } from "vue";
+import { onMounted, watch, nextTick, ref, computed } from "vue";
 import { gsap } from "gsap";
 import { useI18n } from "vue-i18n";
 import i18n from "../../i18n";
 
 const { locale, t } = useI18n();
 
+// 語言切換
+const currentLanguage = computed(() => locale.value);
+const switchLanguage = () => {
+  const newLocale = locale.value === 'zh' ? 'en' : 'zh';
+  locale.value = newLocale;
+  localStorage.setItem('preferred-language', newLocale);
+  loadLocaleMessages(newLocale);
+};
+
 async function loadLocaleMessages(locale: string) {
   try {
-    const messages = await import(`../../locales/${locale}/home.json`);
+    const response = await fetch(`/locales/${locale}/home.json`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const messages = await response.json();
+    
     i18n.global.setLocaleMessage(locale, {
       ...i18n.global.getLocaleMessage(locale),
-      ...messages.default,
+      ...messages,
     });
-  } catch (error) {}
+  } catch (error) {
+    console.error(`Failed to load locale messages for ${locale}:`, error);
+  }
 }
 
-const artwork = new URL("../../assets/artworks/02.jpg", import.meta.url).href;
-const logo = new URL("../../assets/ncut-brown.png", import.meta.url).href;
+const artwork = "/artworks/02.jpg";
+const logo = "/ncut-brown.png";
 const isInfoOpen = ref(false);
 const isInitial = ref(true);
 const showTooltip = ref(true);
@@ -33,6 +49,12 @@ const toggleInfo = () => {
 };
 
 onMounted(() => {
+  // 從本地存儲載入語言偏好
+  const savedLanguage = localStorage.getItem('preferred-language');
+  if (savedLanguage && ['zh', 'en'].includes(savedLanguage)) {
+    locale.value = savedLanguage;
+  }
+  
   loadLocaleMessages(locale.value);
 
   nextTick(() => {
@@ -74,6 +96,24 @@ watch(locale, (newLocale) => {
   <section class="first">
     <div class="content">
       <div class="background" :style="{ backgroundImage: `url(${artwork})` }">
+        <!-- 語言切換按鈕 -->
+        <div class="language-switcher">
+          <button 
+            @click="switchLanguage" 
+            class="lang-btn"
+            :class="{ active: currentLanguage === 'zh' }"
+          >
+            中文
+          </button>
+          <button 
+            @click="switchLanguage" 
+            class="lang-btn"
+            :class="{ active: currentLanguage === 'en' }"
+          >
+            EN
+          </button>
+        </div>
+        
         <div class="logo">
           <img :src="logo" />
           <div class="banner-title">
@@ -84,7 +124,7 @@ watch(locale, (newLocale) => {
         <div class="info-icon">
           <div class="tooltip" v-if="showTooltip">
             <div class="arrow"></div>
-            <p class="tooltip-text">點擊查看策展資訊</p>
+            <p class="tooltip-text">{{ currentLanguage === 'zh' ? '點擊查看策展資訊' : 'Click to view more' }}</p>
           </div>
           <i class="material-icons" @click="toggleInfo">info</i>
         </div>
@@ -222,6 +262,69 @@ watch(locale, (newLocale) => {
       }
     }
   }
+  
+  // 語言切換按鈕
+  .language-switcher {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 100;
+    display: flex;
+    gap: 8px;
+    
+    @media (max-width: 768px) {
+      top: 25px;
+      right: 25px;
+    }
+    
+    @media (max-width: 575px) {
+      top: 20px;
+      right: 20px;
+    }
+
+    .lang-btn {
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid rgba(115, 72, 34, 0.3);
+      border-radius: 8px;
+      color: #734822;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      
+      @media (max-width: 768px) {
+        padding: 6px 12px;
+        font-size: 13px;
+      }
+      
+      @media (max-width: 575px) {
+        padding: 5px 10px;
+        font-size: 12px;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 1);
+        border-color: rgba(115, 72, 34, 0.5);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(115, 72, 34, 0.2);
+      }
+
+      &.active {
+        background: rgba(115, 72, 34, 0.9);
+        color: white;
+        border-color: rgba(115, 72, 34, 0.7);
+        
+        &:hover {
+          background: rgba(115, 72, 34, 1);
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(115, 72, 34, 0.3);
+        }
+      }
+    }
+  }
+  
   .info-icon {
     position: absolute;
     right: 15px;
@@ -246,45 +349,95 @@ watch(locale, (newLocale) => {
 
     .tooltip {
       position: absolute;
-      top: -50px;
-      right: -10px;
+      top: -60px;
+      right: -15px;
       display: inline-block;
+      animation: tooltipPulse 2s ease-in-out infinite;
+      
       .arrow {
         height: 0;
         width: 0;
-        border-width: 5px;
+        border-width: 6px;
         border-style: solid;
-        border-color: #333 transparent transparent transparent;
+        border-color: rgba(40, 49, 73, 0.95) transparent transparent transparent;
         position: absolute;
         top: 100%;
-        right: 19px;
+        right: 22px;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
       }
+      
       .tooltip-text {
         max-width: 200px;
-        background: #283149;
+        background: rgba(40, 49, 73, 0.95);
         white-space: nowrap;
-        padding: 5px 10px;
-        border-radius: 5px;
+        padding: 8px 12px;
+        border-radius: 8px;
         color: #fff;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 6px 20px rgba(40, 49, 73, 0.3);
+        font-size: 14px;
+        font-weight: 500;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        
+        @media (max-width: 767px) {
+          font-size: 12px;
+          padding: 6px 10px;
+          max-width: 160px;
+        }
       }
     }
 
     i {
-      color: #283149;
+      color: #ffffff;
       font-size: 30px;
       cursor: pointer;
+      background: rgba(40, 49, 73, 0.9);
+      border-radius: 50%;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      box-shadow: 0 4px 20px rgba(40, 49, 73, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      
+      &:hover {
+        background: rgba(40, 49, 73, 1);
+        transform: scale(1.1);
+        box-shadow: 0 6px 25px rgba(40, 49, 73, 0.4);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+      
+      &:active {
+        transform: scale(0.95);
+      }
+      
       @media (max-width: 1400px) {
         font-size: 28px;
+        width: 52px;
+        height: 52px;
+        padding: 12px;
       }
       @media (max-width: 1199px) {
         font-size: 26px;
+        width: 50px;
+        height: 50px;
+        padding: 12px;
       }
       @media (max-width: 767px) {
         font-size: 24px;
+        width: 48px;
+        height: 48px;
+        padding: 12px;
       }
       @media (max-width: 575px) {
         font-size: 22px;
+        width: 46px;
+        height: 46px;
+        padding: 12px;
       }
     }
   }
@@ -340,6 +493,17 @@ watch(locale, (newLocale) => {
   }
   100% {
     clip-path: circle(0% at calc(100% - 30px) calc(35px));
+  }
+}
+
+@keyframes tooltipPulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
   }
 }
 </style>

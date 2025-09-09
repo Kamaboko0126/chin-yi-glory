@@ -7,7 +7,7 @@ import i18n from "../i18n";
 const { locale, t } = useI18n();
 const route = useRoute();
 
-const logo = "/src/assets/ncut_blue.png";
+const logo = "/ncut_blue.png";
 const isSidebarOpen = ref(false);
 const isMobile = ref(false);
 
@@ -39,10 +39,15 @@ const closeSidebar = () => {
 
 async function loadLocaleMessages(locale: string) {
   try {
-    const messages = await import(`../locales/${locale}/menu.json`);
+    const response = await fetch(`/locales/${locale}/menu.json`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const messages = await response.json();
+    
     i18n.global.setLocaleMessage(locale, {
       ...i18n.global.getLocaleMessage(locale),
-      ...messages.default,
+      ...messages,
     });
     console.log(`Locale messages for ${locale} loaded successfully.`);
   } catch (error) {
@@ -87,8 +92,8 @@ function updateMenuItems() {
 }
 
 // 檢查當前路由是否活躍
-const isActiveRoute = (url: string) => {
-  if (url === '/') return route.path === '/';
+const isActiveRoute = (url: string | undefined) => {
+  if (!url || url === '/') return route.path === '/';
   return route.path.startsWith(url);
 };
 
@@ -136,14 +141,14 @@ watch(() => route.path, () => {
     <nav class="sidebar-nav">
       <ul class="nav-list">
         <li 
-          v-for="item in menuItems" 
-          :key="item.url"
+          v-for="(item, index) in menuItems" 
+          :key="item.url || `item-${index}`"
           class="nav-item"
         >
           <router-link 
-            :to="item.url" 
+            :to="item.url || '/'" 
             class="nav-link"
-            :class="{ active: isActiveRoute(item.url) }"
+            :class="{ active: isActiveRoute(item.url || '/') }"
             @click="isMobile && closeSidebar()"
           >
             {{ item.label }}

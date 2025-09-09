@@ -2,8 +2,8 @@
 import { onMounted, nextTick } from "vue";
 import { gsap } from "gsap";
 
-const artwork = new URL("../../assets/artworks/01.jpg", import.meta.url).href;
-const logo = new URL("../../assets/ncut_white.png", import.meta.url).href;
+const artwork = "/artworks/01.jpg";
+const logo = "/ncut_white.png";
 
 onMounted(() => {
   nextTick(() => {

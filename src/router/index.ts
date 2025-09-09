@@ -33,6 +33,39 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+  scrollBehavior(to, _from, savedPosition) {
+    // 如果有保存的位置（例如瀏覽器後退/前進），使用保存的位置
+    if (savedPosition) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(savedPosition);
+        }, 300);
+      });
+    }
+    
+    // 如果路由有 hash，滾動到對應的元素
+    if (to.hash) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({
+            el: to.hash,
+            behavior: 'smooth'
+          });
+        }, 300);
+      });
+    }
+    
+    // 默認情況下，滾動到頁面頂部
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ 
+          top: 0, 
+          left: 0,
+          behavior: 'smooth'
+        });
+      }, 300);
+    });
+  }
 });
 
 export default router;
