@@ -46,10 +46,6 @@ watch(locale, (newLocale) => {
       </p>
       <p>
         {{ t("footer2") }}
-        <a href="https://chinyihalloffame.blogspot.com/p/blog-page_7.html"
-          >https://chinyihalloffame.blogspot.com/p/blog-page_7.html</a
-        >
-        {{ t("footer3") }}
       </p>
     </div>
   </footer>

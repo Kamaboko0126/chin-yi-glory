@@ -21,9 +21,9 @@ export const imageAssets = {
     pic2: "/school/04.jpg",
   },
   founder: {
-    // 創辦人目前使用學校圖片
-    pic1: "/school/02.jpg",
-    pic2: "/school/04.jpg",
+    pic1: "/founder/01.jpg",
+    pic2: "/founder/02.jpg",
+    pic3: "/founder/03.jpg",
   },
 };
 
@@ -71,9 +71,9 @@ export const pageConfigs: Record<string, PageConfig> = {
   curation: {
     id: "curation",
     titleKey: "勤益風華展覽",
-    enTitleKey: "Chin-Yi Glory Curation",
-    subtitleKey: "副標題",
-    enSubtitleKey: "Subtitle",
+    enTitleKey: "General Introduction of the Curation",
+    // subtitleKey: "副標題",
+    // enSubtitleKey: "Subtitle",
     localeFile: "curationIntro",
     components: [
       {
@@ -131,9 +131,9 @@ export const pageConfigs: Record<string, PageConfig> = {
   school: {
     id: "school",
     titleKey: "國立勤益科技大學",
-    enTitleKey: "National Chin-Yi University of Technology",
-    subtitleKey: "副標題",
-    enSubtitleKey: "Subtitle",
+    enTitleKey: "An Introduction to National Chin-Yi",
+    subtitleKey: "勤益簡介：換個視野看｢勤益」",
+    enSubtitleKey: 'University of Technology: A Different Perspective on “Chin-Yi”',
     localeFile: "schoolIntro",
     components: [
       {
@@ -172,9 +172,9 @@ export const pageConfigs: Record<string, PageConfig> = {
   founder: {
     id: "founder",
     titleKey: "張明將軍與王國秀女士",
-    enTitleKey: "General Ming Chang and Mrs. Kuo-Hsiu Wang",
-    subtitleKey: "副標題",
-    enSubtitleKey: "Subtitle",
+    enTitleKey: "General Zhang Ming and Wang Guo-Hsiu",
+    // subtitleKey: "副標題",
+    // enSubtitleKey: "Subtitle",
     localeFile: "founderIntro",
     components: [
       {
@@ -194,7 +194,6 @@ export const pageConfigs: Record<string, PageConfig> = {
       {
         type: "text",
         content: [
-          "section1",
           "section2",
           "section3",
           "section4",
@@ -235,6 +234,7 @@ export const pageConfigs: Record<string, PageConfig> = {
           items: [
             { image: imageAssets.founder.pic1, descriptionKey: "pic1" },
             { image: imageAssets.founder.pic2, descriptionKey: "pic2" },
+            { image: imageAssets.founder.pic3, descriptionKey: "pic3" },
           ],
           localeFile: "founderIntro",
           autoplayInterval: 8000, // 增加到8秒
@@ -246,9 +246,9 @@ export const pageConfigs: Record<string, PageConfig> = {
     id: "foundation",
     titleKey: "張明王國秀基金會",
     enTitleKey:
-      "Introduction to the Cultural and Educational Foundation of Ming Chang and Kuo-hsiu Wang",
-    subtitleKey: "副標題",
-    enSubtitleKey: "Subtitle",
+      "Introduction of Cultural and Educational Foundation of Ming Chang and Kuo-Hsiu Wang",
+    // subtitleKey: "副標題",
+    // enSubtitleKey: "Subtitle",
     localeFile: "foundationIntro",
     components: [
       {
@@ -259,14 +259,26 @@ export const pageConfigs: Record<string, PageConfig> = {
     layout: [
       {
         type: "text",
-        content: ["section1", "section2","section3", "section4", "section5", "section6"],
+        content: ["section1","section2"],
+      },
+      {
+        type: "text",
+        content: ["section3", "section4", "section5"],
+      },
+      {
+        type: "text",
+        content: ["section6"],
+      },
+      {
+        type: "image",
+        image: "/foundation/01.jpg",
       },
     ],
   },
   artworks:{
     id: "artworks",
     titleKey: "藝術家眼中的校園",
-    enTitleKey: "The Campus through Artists’ Eyes",
+    enTitleKey: "The Chin-yi Campus Through The Eyes of Artists",
     subtitleKey: "副標題",
     enSubtitleKey: "Subtitle",
     localeFile: "artworksIntro",

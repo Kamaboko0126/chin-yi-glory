@@ -144,8 +144,6 @@ watch(locale, (newLocale) => {
           <p>{{ t("info9") }}</p>
           <p>{{ t("info10") }}</p>
           <p>{{ t("info11") }}</p>
-          <p>{{ t("info12") }}</p>
-          <p>{{ t("info13") }}</p>
         </div>
       </div>
     </div>
