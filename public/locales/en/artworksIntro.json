@@ -1,3 +1,214 @@
-{
-    "title1": "Artworks"
-}
+[
+  {
+    "id": 1,
+    "title": "Tranquil",
+    "artist": "Jin-Long Lu",
+    "year": "2014",
+    "description": [
+      "Chin-Yi places education above all else, giving priority to the halls of learning; administration and residence quietly await their turn.",
+      "Completed in 1983, this humble white building— four stories high, with a single basement— sits gracefully at the heart of the campus. With elegant simplicity, its symmetrical form unfolds gently from a central canopy, once the seat of Chin-Yi’s highest councils until 2009.Though modest in height, its vision is grand, reaching beyond horizons.",
+      "A commemorative monument before the building, raised by alumni on July 1, 1992, honors the founders’ virtue and grace. Engraved words ' Zhu Si High Winds ' proclaim an ideal in education, lofty and profound.",
+      "In this first drawing by Lü Jin-long dedicated to our beloved school, the chosen vantage carries symbolic weight. Though Chin-Yi Boulevard buzzes with voices and steps at the ringing of every bell, the little white building stands serene beneath the expanse."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "",
+    "year": "",
+    "description": [],
+    "url": "",
+    "location": []
+  }
+]
