@@ -1,3 +1,905 @@
-{
-    "title1":"藝術作品"
-}
+[
+  {
+    "id": 1,
+    "title": "",
+    "artist": "呂金龍",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "",
+    "artist": "呂金龍",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 3,
+    "title": "",
+    "artist": "呂金龍",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 4,
+    "title": "",
+    "artist": "呂金龍",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 5,
+    "title": "",
+    "artist": "呂金龍",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 6,
+    "title": "",
+    "artist": "呂金龍",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 7,
+    "title": "",
+    "artist": "呂金龍",
+    "year": "2014",
+    "description": [
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 8,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 9,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 10,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 11,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 12,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 13,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 14,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 15,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 16,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 17,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 18,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 19,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 20,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 21,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 22,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 23,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 24,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 25,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 26,
+    "title": "",
+    "artist": "吳清川",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 27,
+    "title": "",
+    "artist": "吳清川",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 28,
+    "title": "",
+    "artist": "吳清川",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 29,
+    "title": "",
+    "artist": "吳清川",
+    "year": "2014",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 30,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2019",
+    "description": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 31,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2019",
+    "description": [
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 32,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2019",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 33,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2019",
+    "description": [
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 34,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2019",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 35,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2019",
+    "description": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 36,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2019",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 37,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2019",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 38,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2019",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 39,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2019",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 40,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2019",
+    "description": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 41,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2019",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 42,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2019",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 43,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2019",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 44,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2019",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 45,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2019",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 46,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2019",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 47,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2020",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 48,
+    "title": "",
+    "artist": "呂金龍",
+    "year": "2021",
+    "description": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 49,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2020",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 50,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2020",
+    "description": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 51,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2020",
+    "description": [
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 52,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2020",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 53,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2020",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 54,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2020",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 55,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2020",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 56,
+    "title": "",
+    "artist": "吳清川",
+    "year": "2021",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 57,
+    "title": "",
+    "artist": "吳清川",
+    "year": "2021",
+    "description": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 58,
+    "title": "",
+    "artist": "吳清川",
+    "year": "2021",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 59,
+    "title": "",
+    "artist": "呂金龍",
+    "year": "2021",
+    "description": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 60,
+    "title": "",
+    "artist": "呂金龍",
+    "year": "2021",
+    "description": [
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 61,
+    "title": "",
+    "artist": "呂金龍",
+    "year": "2021",
+    "description": [
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 62,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2021",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 63,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2021",
+    "description": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 64,
+    "title": "",
+    "artist": "施世昱",
+    "year": "2021",
+    "description": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "url": "",
+    "location": []
+  }
+]
