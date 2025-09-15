@@ -51,7 +51,7 @@ export interface CardItem {
 }
 
 export interface LayoutSection {
-  type: "text" | "cards" | "title" | "image";
+  type: "text" | "cards" | "title" | "image" | "map"; // 版面區塊類型
   content?: string | string[]; // 文字內容的 key 或 key 陣列
   component?: string; // 組件名稱
   title?: string; // 標題 key
@@ -133,7 +133,8 @@ export const pageConfigs: Record<string, PageConfig> = {
     titleKey: "國立勤益科技大學",
     enTitleKey: "An Introduction to National Chin-Yi",
     subtitleKey: "勤益簡介：換個視野看｢勤益」",
-    enSubtitleKey: 'University of Technology: A Different Perspective on “Chin-Yi”',
+    enSubtitleKey:
+      "University of Technology: A Different Perspective on “Chin-Yi”",
     localeFile: "schoolIntro",
     components: [
       {
@@ -259,7 +260,7 @@ export const pageConfigs: Record<string, PageConfig> = {
     layout: [
       {
         type: "text",
-        content: ["section1","section2"],
+        content: ["section1", "section2"],
       },
       {
         type: "text",
@@ -275,7 +276,7 @@ export const pageConfigs: Record<string, PageConfig> = {
       },
     ],
   },
-  artworks:{
+  artworks: {
     id: "artworks",
     titleKey: "藝術家眼中的校園",
     enTitleKey: "The Chin-yi Campus Through The Eyes of Artists",
@@ -284,8 +285,8 @@ export const pageConfigs: Record<string, PageConfig> = {
     localeFile: "artworksIntro",
     components: [
       {
-        name: "DynamicCardGroup",
-        path: "../components/common/DynamicCardGroup.vue",
+        name: "MapItem",
+        path: "../components/MapItem.vue",
       },
     ],
     layout: [
@@ -293,6 +294,10 @@ export const pageConfigs: Record<string, PageConfig> = {
         type: "title",
         title: "title1",
       },
+      {
+        type: "map",
+        component: "MapItem",
+      },
     ],
-  }
+  },
 };
