@@ -9,9 +9,9 @@ const { locale, t } = useI18n();
 // 語言切換
 const currentLanguage = computed(() => locale.value);
 const switchLanguage = () => {
-  const newLocale = locale.value === 'zh' ? 'en' : 'zh';
+  const newLocale = locale.value === "zh" ? "en" : "zh";
   locale.value = newLocale;
-  localStorage.setItem('preferred-language', newLocale);
+  localStorage.setItem("preferred-language", newLocale);
   loadLocaleMessages(newLocale);
 };
 
@@ -22,7 +22,7 @@ async function loadLocaleMessages(locale: string) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const messages = await response.json();
-    
+
     i18n.global.setLocaleMessage(locale, {
       ...i18n.global.getLocaleMessage(locale),
       ...messages,
@@ -50,11 +50,11 @@ const toggleInfo = () => {
 
 onMounted(() => {
   // 從本地存儲載入語言偏好
-  const savedLanguage = localStorage.getItem('preferred-language');
-  if (savedLanguage && ['zh', 'en'].includes(savedLanguage)) {
+  const savedLanguage = localStorage.getItem("preferred-language");
+  if (savedLanguage && ["zh", "en"].includes(savedLanguage)) {
     locale.value = savedLanguage;
   }
-  
+
   loadLocaleMessages(locale.value);
 
   nextTick(() => {
@@ -98,22 +98,22 @@ watch(locale, (newLocale) => {
       <div class="background" :style="{ backgroundImage: `url(${artwork})` }">
         <!-- 語言切換按鈕 -->
         <div class="language-switcher">
-          <button 
-            @click="switchLanguage" 
+          <button
+            @click="switchLanguage"
             class="lang-btn"
             :class="{ active: currentLanguage === 'zh' }"
           >
             中文
           </button>
-          <button 
-            @click="switchLanguage" 
+          <button
+            @click="switchLanguage"
             class="lang-btn"
             :class="{ active: currentLanguage === 'en' }"
           >
             EN
           </button>
         </div>
-        
+
         <div class="logo">
           <img :src="logo" />
           <div class="banner-title">
@@ -124,7 +124,13 @@ watch(locale, (newLocale) => {
         <div class="info-icon">
           <div class="tooltip" v-if="showTooltip">
             <div class="arrow"></div>
-            <p class="tooltip-text">{{ currentLanguage === 'zh' ? '點擊查看策展資訊' : 'Click to view more' }}</p>
+            <p class="tooltip-text">
+              {{
+                currentLanguage === "zh"
+                  ? "點擊查看策展資訊"
+                  : "Click to view more"
+              }}
+            </p>
           </div>
           <i class="material-icons" @click="toggleInfo">info</i>
         </div>
@@ -260,7 +266,7 @@ watch(locale, (newLocale) => {
       }
     }
   }
-  
+
   // 語言切換按鈕
   .language-switcher {
     position: absolute;
@@ -269,12 +275,12 @@ watch(locale, (newLocale) => {
     z-index: 100;
     display: flex;
     gap: 8px;
-    
+
     @media (max-width: 768px) {
       top: 25px;
       right: 25px;
     }
-    
+
     @media (max-width: 575px) {
       top: 20px;
       right: 20px;
@@ -291,12 +297,12 @@ watch(locale, (newLocale) => {
       cursor: pointer;
       transition: all 0.3s ease;
       backdrop-filter: blur(10px);
-      
+
       @media (max-width: 768px) {
         padding: 6px 12px;
         font-size: 13px;
       }
-      
+
       @media (max-width: 575px) {
         padding: 5px 10px;
         font-size: 12px;
@@ -313,7 +319,7 @@ watch(locale, (newLocale) => {
         background: rgba(115, 72, 34, 0.9);
         color: white;
         border-color: rgba(115, 72, 34, 0.7);
-        
+
         &:hover {
           background: rgba(115, 72, 34, 1);
           transform: translateY(-1px);
@@ -322,7 +328,7 @@ watch(locale, (newLocale) => {
       }
     }
   }
-  
+
   .info-icon {
     position: absolute;
     right: 15px;
@@ -351,7 +357,7 @@ watch(locale, (newLocale) => {
       right: -15px;
       display: inline-block;
       animation: tooltipPulse 2s ease-in-out infinite;
-      
+
       .arrow {
         height: 0;
         width: 0;
@@ -363,7 +369,7 @@ watch(locale, (newLocale) => {
         right: 22px;
         filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
       }
-      
+
       .tooltip-text {
         max-width: 200px;
         background: rgba(40, 49, 73, 0.95);
@@ -376,7 +382,7 @@ watch(locale, (newLocale) => {
         font-weight: 500;
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        
+
         @media (max-width: 767px) {
           font-size: 12px;
           padding: 6px 10px;
@@ -401,18 +407,18 @@ watch(locale, (newLocale) => {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       backdrop-filter: blur(10px);
       border: 2px solid rgba(255, 255, 255, 0.2);
-      
+
       &:hover {
         background: rgba(40, 49, 73, 1);
         transform: scale(1.1);
         box-shadow: 0 6px 25px rgba(40, 49, 73, 0.4);
         border-color: rgba(255, 255, 255, 0.3);
       }
-      
+
       &:active {
         transform: scale(0.95);
       }
-      
+
       @media (max-width: 1400px) {
         font-size: 28px;
         width: 52px;
@@ -446,8 +452,6 @@ watch(locale, (newLocale) => {
     border-bottom-left-radius: 15px;
     right: 0;
     top: 170px;
-    background: #fffffff7;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     @media (max-width: 1400px) {
       top: 160px;
     }
@@ -459,9 +463,10 @@ watch(locale, (newLocale) => {
     }
     @media (max-width: 575px) {
       top: 130px;
+      padding: 30px 20px 30px 20px;
     }
     p {
-      color: #283149;
+      color: #262e3e;
       font-weight: 500;
       line-height: 150%;
     }
@@ -495,7 +500,8 @@ watch(locale, (newLocale) => {
 }
 
 @keyframes tooltipPulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.8;
     transform: scale(1);
   }

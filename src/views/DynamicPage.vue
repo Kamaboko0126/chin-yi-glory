@@ -16,6 +16,7 @@ const loadedComponents = ref<Record<string, any>>({});
 // 計算屬性
 const currentLanguage = computed(() => locale.value);
 const pageId = computed(() => route.params.pageId as string);
+const isArtworksPage = computed(() => pageId.value === 'artworks');
 
 // 語言切換功能
 const switchLanguage = (lang: string) => {
@@ -49,6 +50,7 @@ async function loadComponents(components: ComponentConfig[]) {
   // 靜態組件映射，避免 Vite 分析問題
   const componentMap: Record<string, () => Promise<any>> = {
     'DynamicCardGroup': () => import('../components/common/DynamicCardGroup.vue'),
+    'MapItem': () => import('../components/MapItem.vue'),
   };
   
   for (const comp of components) {
@@ -178,9 +180,9 @@ watch(locale, async (newLocale) => {
     </section>
 
     <!-- Main Content -->
-    <div class="container">
-      <section class="content-section">
-        <div class="content-wrapper">
+    <div class="container" :class="{ 'artworks-container': isArtworksPage }">
+      <section class="content-section" :class="{ 'artworks-content-section': isArtworksPage }">
+        <div class="content-wrapper" :class="{ 'artworks-content-wrapper': isArtworksPage }">
           
           <!-- 動態渲染內容區塊 -->
           <template v-for="(section, index) in currentPageConfig.layout" :key="index">
@@ -209,6 +211,16 @@ watch(locale, async (newLocale) => {
 
             <!-- 卡片組件區塊 -->
             <div v-else-if="section.type === 'cards'" class="card-section">
+              <component 
+                :is="loadedComponents[section.component || '']" 
+                v-if="section.component && loadedComponents[section.component]"
+                :class="section.className"
+                v-bind="section.props || {}"
+              />
+            </div>
+
+            <!-- 地圖組件區塊 -->
+            <div v-else-if="section.type === 'map'" class="map-section">
               <component 
                 :is="loadedComponents[section.component || '']" 
                 v-if="section.component && loadedComponents[section.component]"
@@ -406,6 +418,10 @@ $bg-light: #fafafa;
   max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
+
+  &.artworks-container {
+    max-width: 1200px;
+  }
 }
 
 // 內容區塊 - 簡約文字設計
@@ -413,9 +429,16 @@ $bg-light: #fafafa;
   padding: 60px 0 80px;
   background: $white;
 
+  &.artworks-content-section{
+    padding: 0px 0 ;
+  }
+
   .content-wrapper {
     max-width: 800px;
     margin: 0 auto;
+    &.artworks-content-wrapper{
+    max-width: 1100px;
+    }
   }
 
   .section-title {
@@ -483,6 +506,17 @@ $bg-light: #fafafa;
 
     @media (max-width: 768px) {
       margin: 40px 0;
+    }
+  }
+
+  .map-section {
+    margin: 30px 0;
+    background: $white;
+    padding: 0;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      margin: 20px 0;
     }
   }
 

@@ -291,10 +291,6 @@ export const pageConfigs: Record<string, PageConfig> = {
     ],
     layout: [
       {
-        type: "title",
-        title: "title1",
-      },
-      {
         type: "map",
         component: "MapItem",
       },
