@@ -1,3 +1,906 @@
-{
-    "title1": "Artworks"
-}
+[
+  {
+    "id": 1,
+    "title": "Tranquil",
+    "artist": "Jin-Long Lu",
+    "year": "2014",
+    "description": [
+      "Chin-Yi places education above all else, giving priority to the halls of learning; administration and residence quietly await their turn.",
+      "Completed in 1983, this humble white building— four stories high, with a single basement— sits gracefully at the heart of the campus. With elegant simplicity, its symmetrical form unfolds gently from a central canopy, once the seat of Chin-Yi’s highest councils until 2009.Though modest in height, its vision is grand, reaching beyond horizons.",
+      "A commemorative monument before the building, raised by alumni on July 1, 1992, honors the founders’ virtue and grace. Engraved words ' Zhu Si High Winds ' proclaim an ideal in education, lofty and profound.",
+      "In this first drawing by Lü Jin-long dedicated to our beloved school, the chosen vantage carries symbolic weight. Though Chin-Yi Boulevard buzzes with voices and steps at the ringing of every bell, the little white building stands serene beneath the expanse of sky— quiet, humble, radiant with hidden light."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 2,
+    "title": "Mountain Mist and Literary Profundity",
+    "artist": "Jin-Long Lu",
+    "year": "2014",
+    "description": [
+      "Chin-Yi's earliest library was housed in a round building that also served as the student activity hub, Student Activity Division, and counseling center— a form reminiscent of a Roman colosseum. When its duty was fulfilled, on the very same ground rose this magnificent structure, dedicated foremost to knowledge, and secondarily to administration.",
+      "Rendered with distant strokes, the earthy tones of the building dominate the scene, mountains in the far horizon softened by mist, hued in ethereal jade. To its right, an aged phoenix tree stands sentinel; on the left, coconut palms line Chin-Yi Boulevard, other structures barely glimpsed through the gentle haze. The horizon rests at a golden proportion, a tennis court blurred in the foreground enhancing depth and air.",
+      "“Wen Yuan Ge”— the famed imperial library of Ming and Qing dynasties, symbolizing a repository where the world’s wisdom gathered. Thus titled, this painting signifies Chin-Yi’s enduring commitment to cultivating generations, rooted deeply in the soil of knowledge."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 3,
+    "title": "Leisure",
+    "artist": "Jin-Long Lu",
+    "year": "2014",
+    "description": [
+      "Originating as a technical university, Chin-Yi is often perceived as dignified and reserved, with little room for romantic flourish. Yet, beneath its austere facade, the founders carried a deep passion for arts and culture, leaders who understood beauty beyond practicality. Within the limited campus grounds, they ingeniously adopted the method of 'adorned scenery,' creating countless moments of charm in every small corner.",
+      "In this artwork, stone tables and chairs anchor the foreground, complemented by bauhinia blossoms and lush greenery in a cozy garden. Behind them stands the warmly hued Mechanical Engineering Building, a few parked vehicles scattered casually in front. The carefully balanced composition, skillfully arranged from foreground through midground to background, utilizes color contrasts to invigorate an atmosphere rich in leisurely charm.",
+      "Around the year 2000, this space featured an open-air café offering delicious waffles at affordable prices, injecting brief moments of rest with delightful vitality."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 4,
+    "title": "Tracing the Quiet Path",
+    "artist": "Jin-Long Lu",
+    "year": "2014",
+    "description": [
+      "This artwork conveys a serene melancholy, where one seems almost to hear the distant chirping of birds hidden in the woods. On the right, a narrow path meanders gently into the depths, guiding the eye toward a tranquil old house nestled quietly amidst the trees.",
+      "Long ago, this site was sternly guarded as a military encampment, the aged, white-walled house itself once housing army quarters. In 2007, when President Shui-bian Chen visited Chin-Yi, he promised the transfer of 20 hectares from the Ministry of National Defense's Pinglin military zone to the university. Thus, a space once echoing with martial vigor was transformed into a harmonious sanctuary of scholarly melodies, open and welcoming to all.",
+      "Jin-Long Lu's profound mastery of Eastern Gouache deepened further after enduring life's many twists and turns, shifting from earlier works of mere visual perception toward expressions rooted in existential insights. Rendered in cool hues that capture the subtle moods of space and time, this piece stands as an outstanding achievement in his artistic journey."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 5,
+    "title": "Majestic Halls of Learning",
+    "artist": "Jin-Long Lu",
+    "year": "2014",
+    "description": [
+      "This artwork, gazing upward from the courtyard of the Management Building, boldly employs an extreme upward perspective, with daring composition and vivid use of color.",
+      "One might ask: is this merely viewing the sky through a narrow tube, or discovering a hidden realm beyond?",
+      "The artist once taught briefly within these walls. Passing in and out, did he ever feel humbled by towering walls of knowledge—so lofty and so vast?",
+      "Rendered in vibrant hues, the work frames a profound cobalt-blue sky with tones of brick red and verdant green, creating, almost invisibly, a sense of solemnity and grandeur. Truly, it exemplifies the union of modern science, management, and aesthetic grace within the campus landscape."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 6,
+    "title": "Sunset's Embrace Memories of Chin-Yi",
+    "artist": "Jin-Long Lu",
+    "year": "2014",
+    "description": [
+      "The grounds of Chin-Yi are modest in scale! Yet, among those who spend four years here, few can claim to have explored every corner of the campus. Although students set foot on campus for at least two hundred days a year, like squirrels scurrying through familiar paths seeking daily sustenance, they rarely venture even a step beyond their accustomed spaces, even if separated merely by a small road.",
+      "Artists, however, differ greatly—they continually uncover wonders hidden within the ordinary, guided by unique perspectives and acute sensitivities.",
+      "This artwork portrays a scene from the old woods in the new campus area, bathed in the warm glow of the setting sun. Several nameless trees—some slender, some stout—stand like travelers, each poised distinctively upon the sturdy ground carpeted in fallen leaves.",
+      "Through precise proportions of three-quarters to one-quarter, the composition elegantly captures the subtle relationship between fallen leaves, solid earth, and trees—interdependent yet freely breathing, with air and life weaving effortlessly among them.",
+      "Thus, the humble path gently becomes a guiding invitation, leading travelers softly toward distant shores."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 7,
+    "title": "Whirl back to the source",
+    "artist": "Jin-Long Lu",
+    "year": "2014",
+    "description": [
+      "The “Cultural and Leisure Building” was originally built in 1979 and remains the oldest building on the Chin-yi campus to this day. Despite withstanding the 921 earthquake, it stands tall and sturdy. The elegant and serene white building is surrounded by lush greenery. It was previously used as the Electronics Department building and student club offices. In 2007, it was renovated and reborn as a shared department building for the Department of Cultural and Creative Industries and the Department of Health Industry Technology Research and Management. It now combines dual functions of humanities and arts with sports and leisure, offering a compact yet fully equipped space with specialized classrooms, a mixology lab, a photography studio, and a multi-purpose computer lab to meet all learning needs. The “Cultural Art Gallery” on the first and fourth floors hosts year-round exhibitions of works by faculty and students from the Cultural and Creative Industries Department, while the second floor houses a sports facility. The compact yet elegant space harmoniously blends theory and practice, nurturing talent that excels in both academic knowledge and practical skills.",
+      "This work employs a cool color palette complemented by warm yellow lighting, creating a serene and tranquil nighttime ambiance. “Whirl back to the source” symbolizes the idea that everything has its origins and should not lose sight of its original intentions, embodying the principles of inheriting the past while forging ahead into the future, forever evolving."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 8,
+    "title": "Zhu Si High Winds",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "The “Administrative Building,” affectionately known as the “Little White House,” is a compact white building with a rhythmic, layered design. It is located at the center of Ching-Yi Boulevard and served as the administrative office of the college before 2009.The fourth floor houses the offices of the chairman, principal, human resources, and finance departments. Before the campus was donated to the government, the two founders once worked here, enjoying a panoramic view of the campus. The “Zhu Si High Winds” commemorative monument, dedicated by graduates to honor the founders' benevolence, was established on July 1, 1981.Since Confucius established his school and taught in the area between the Zhu and Si rivers in Qufu, Shandong Province, this monument was established to praise the educational ideals of the two founders.",
+      "The building was demolished in 2024 due to campus planning needs, and this painting has become a precious record.",
+      "The painting is structurally rigorous. The artist, with his profound mastery of perspective, skillfully uses delicate brushstrokes to outline objects, faithfully recreating the building's appearance while using the courtyard trees to create a rhythmic and layered spatial sense.The tall coconut palms standing before the building symbolize the backbone of the institution, the lush cypress trees represent its resilience, and the Common Jasmin Orange embody the continuity of the teaching tradition."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 9,
+    "title": "A Corner of Chin-yi",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "This work is a pencil sketch of the watercolor painting “A Corner of Chin-yi”. Because the leisurely and casual style of pure pencil sketching is quite interesting, it has been included in the collection.",
+      "When Chin-Yi was first established, it had only eight hectares of land. With limited space, it was impossible to fulfill its educational aspirations without divine intervention, so it could only move forward inch by inch with hard work and determination. Thus, one by one, teaching buildings were constructed, with no time for leisure or entertainment, all in pursuit of the noble goal of industrial salvation.",
+      "Fortunately, such small corners inevitably emerged spontaneously over time, eventually becoming a place where weary and rigid minds and bodies could find a moment of respite and relaxation."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 10,
+    "title": "A Corner of Chin-yi",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "Chin-Yi was founded by a highly disciplinary person, so there were few people who had time to relax. The only exception was the Malayan Night Herons that would occasionally stroll around the campus.",
+      "This painting depicts a corner in front of the Industrial Engineering Management Building, with three short trees, a small flower bed, and a bicycle leaning against it. The birds have hidden themselves for a moment, creating a peaceful atmosphere.",
+      "Shih-Yu Shih excels at using varying shades of color to create a sense of relative relationships between objects. Despite the limited space, he manages to transform this small world into a delicate and elegant little universe."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 11,
+    "title": "Morning Mist over Guoxiu",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "Shih-Yu Shih (1971-) holds a PhD in Calligraphy and Painting from National Taiwan University of Arts. He started out painting with Eastern gouache, but now focuses on ink painting and calligraphy.",
+      "This painting, “Morning Mist over Guoxiu”, was the first large work the artist created for Chin-Yi. It depicts the front building of Guoxiu Building in front of the second-generation school gate and Ming Hsiu Lu, and it has strong symbolic meaning.",
+      "The artist demonstrates his mastery of perspective, seamlessly integrating the grand front building of the teaching complex with the small garden featuring the university emblem in front of the gate. The delicate and grand elements create a striking yet harmonious contrast. In terms of color, the Guoxiu Building uses the brownish-yellow bricks commonly used in Chin-Yi buildings, complemented by brownish-red decorative strips that echo the red bricks of the courtyard walls and ground, with the plum blossom university emblem naturally becoming one of the visual focal points. Each finely carved corridor column and square brick, as well as the three characters “Guoxiu Building” on the outer wall of the sixth floor, which are a perfect reproduction of the original, showcase the artist's exceptional talent in traditional fine brushwork and imitation techniques."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 12,
+    "title": "Chin-Yi Boulevard",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "Chin-Yi has a diverse landscape, with interesting buildings and a small but charming campus. For more than half a century, Chin-Yi Boulevard has been a shared memory for all Chin-Yi people.",
+      "Rushing to class, heading to the cafeteria... occasionally, one can catch a glimpse of the autonomous vehicles developed by the Mechanical Engineering Department speeding down the main campus road in their dazzling forms. Despite the campus's ever-changing landscape due to the school's growth and development, one thing remains constant: the majestic coconut palms lining both sides of this broad boulevard, standing tall and steadfast.",
+      "In the early days of the school, there were few buildings. Upon entering the campus, one would first see the Junshan Pavilion and the Zhi Shan Garden, and further ahead, there was even a lychee orchard. Imagine the gentle breeze and the fragrance of lychees in those days—how could the students resist the urge to sit still and listen to lectures?",
+      "This work was created using a water-based fountain pen. Occasional leaks from the pen tip created larger areas of ink, which paradoxically form rhythmic dividing lines along the road. The coconut palms and buildings stand tall and imposing on either side, giving the entire piece a bright and powerful composition."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 13,
+    "title": "Silent Wind Blows",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "In 1999, the 921 Earthquake struck central Taiwan, a magnitude 7.3 earthquake with its epicenter in Zhongliao Township, Nantou County, causing severe changes to the terrain and landscape in many areas. Several of our school's old buildings, including Men's Dormitory 1 and Men's Dormitory 2, were completely destroyed.",
+      "Located in the new campus, the Chin-Yi Dormitory was finally completed after several years of construction. It once again provides accommodation for lower grade students. With a view of the green mountains in the distance, it is both novel and comfortable.",
+      "This work was drawn with a water-based pen. Except for the towering building, the rest of the picture is left blank. At that time, Ming Hsiu Lake had not yet been dug, and the cold wind revealed the strength of the grass.",
+      "The inscription at the bottom left reads: “In the first semester of the 103rd academic year of the Republic of China, the Chin-Yi Dormitory was opened for the first time. The trees had not yet grown, and it took ten years for them to reach maturity. Painted and inscribed by Shih-Yu Shih."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 14,
+    "title": "Reminiscing",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "Since 2010, when the Ministry of National Defense officially transferred 20 hectares of land in the Pinglin Camp to Chin-Yi, the ecology of the campus has become much richer and more interesting, with many more paths to explore and unexpected discoveries to be made.",
+      "When this sketch was created, the new campus was still in its early stages of development, with lush greenery and few buildings in sight. Today, following the map back to the same location, little remains of the original landscape. Only the words “Iron Transport Binding Site” on the sketch serve as a reminder of the area's former military use.",
+      "The overall composition features deep greenery contrasting with the blue sky, echoing the uneven grassy slopes and muddy ground, highlighting the openness of the space. The undulating horizon line blends seamlessly with the white walls, while the foreground showcases the “railway cargo yard” with its concrete structures and steep slopes, clearly defining the focal point of the painting.",
+      "This work skillfully contrasts natural forests with human-made ruins through metaphorical imagery, making it a truly ingenious masterpiece."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 15,
+    "title": "Absent",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "The new campus is surrounded by old trees, and the spaces between them form a universe of their own, rich in ecology.",
+      "The foreground of this sketch is composed of several tree crowns that form a large viewing window. As the viewer's gaze moves, rows of old trees can be seen on the horizon, which should be the current location of “General's Road.”",
+      "The clear, deep shadows of the tree trunks in the foreground suggest the intense midday sun, while the absence of birds and the stillness of the day create a surreal, otherworldly atmosphere.",
+      "The artist's delicate brushwork skillfully employs changes in perspective—from near to middle to far—to naturally convey a sense of depth and layering, with each layer rendered with clarity and precision."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 16,
+    "title": "The Colors of Youth",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "The mountain is Santing Mountain, and the building is the library.",
+      "The white building to the right of the library is the “Little White Palace” administration building. Behind the library is the “Chengpu Building,” and further away is the “Guoxiu Building,” which is close to the old school gate on Sanfan Street.",
+      "In front of the building was the flagpole platform, which was still in use at the time. In front of the flagpole platform were a spacious tennis court, a basketball court, and a running track surrounding the area; to the left stood the old Phoenix tree.",
+      "Since the sports field was moved to the new campus, a functional building was constructed on the original site, and this majestic and open landscape has become a page in the annals of history. Just like the old phoenix tree that leaned gracefully, it was reduced to dust in a windstorm, and the bright red petals scattered all over the ground became a beautiful and romantic memory for the people of Chin-Yi.",
+      "Fortunately, the library still exists, and the green mountains are still there!"
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 17,
+    "title": "Directions",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "Like “Absent,” this work features two trees forming a viewing window, highlighting the rear building of the Management Building at the eastern end of Ming Hsiu East Road.",
+      "The romantic pointed dome pavilion on the roof of the Management Building softens the rational lines of the main structure's massive volume.",
+      "The entire work is rendered in a quick sketch style, with the road running straight toward the building, giving a sense of haste, yet the flickering streetlights illuminate the path ahead. This symbolizes the self-exploration of students, constantly engaging in dialogue with themselves between the real and the imaginary."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 18,
+    "title": "Afternoon at the entrance",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "This work depicts the semicircular entrance hall surrounded by six pillars in front of the management department building.",
+      "The artist used perspective to depict the scenery from left to right, with the view windows gradually becoming smaller, forming four long paintings between the pillars. There are bulletin boards and trees on the sidewalk in front of the Guoxiu Building, coconut trees on Chin-Yi Boulevard reaching up to the top of the corridor, and a tall, solitary figure holding a book in front of the right-hand window.",
+      "Vaguely, one can hear the loud recitation from Guoxiu Building, and the quietness is filled with vitality. The deep shadows on the ground echo the inscription on the upper right: “Afternoon at the entrance of the Management department Building.”"
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 19,
+    "title": "Lofty and Upright",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "Among all the colleges and universities, Chin-Yi is probably one of the few schools with a flagpole. In the early days, people used to mock it as the “Chin-Yi Military Academy.”",
+      "Of course, it is not a military academy, but since its founders, General Zhang Ming and Ms. Wang Guo-Hsiu, both enlisted in the military to serve the nation during times of crisis, the school was governed with strict discipline. As a result, even the students feared that the elderly founders might suddenly appear at the classroom door, so they dared not arrive late for class!",
+      "The tall lamp posts on either side of the flagpole were erected to illuminate the nighttime athletes, and every detail reflects the founders' prioritization of students' well-being.", 
+      "Until the school was donated to the government, assemblies were often held in front of the flagpole to sing the national anthem as the sun rose, which was often very moving. On school anniversary days, all the teachers and students would gather around the sports field, with the older students scrambling for the best photo spots to watch the cheerleading performances of the freshmen, It is now a thing of the past.",
+      "This work adopts a vertical composition, with the horizontal lines of the track and flagpole contrasting vertically with the lamp posts and flagpoles, and the red, white, blue, and green colors harmoniously balanced, further enhancing the sense of grandeur and stability."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 20,
+    "title": "From Afar to Up Close",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "From the rooftop of the Cultural and Recreation Building, the artist’s gaze sweeps across the entire campus—beginning with the Library and Information Building at the focal center, extending rightward over a chain of campus and neighboring rooftops, reaching the nearby Santing Mountain, and beyond, to the layered ranges of Nantou.",
+      "Whether in the foreground—where the crowns of the trees form a continuous canopy—or in the middle distance—where rooftops and rolling hills flow as one—the scene is gathered beneath a vast, majestic sky streaked with drifting clouds, stirring the heart to deeper reverie.",
+      "In color arrangement, the cool tones of blue and green above and below contrast with the warm hues of the central settlement, embodying the harmony of nature and culture. Here, one feels the quiet humility of humanity when standing before the boundless universe.",
+      "A poem marks the sentiment:",
+      "**Crimson at dusk**",
+      "Like the gentle hands of time",
+      "Layer upon layer, tenderly embracing.",
+      "",
+      "**Evergreen cypress**",
+      "Carrying earnest ideals",
+      "Leaf by leaf, into the human heart.",
+      "",
+      "Bathed in the warmth of sunlight,",
+      "With the enduring green of pine and cypress as its soul,",
+      "It is infused with boundless care, devotion, and resolve.",
+      "",
+      "**Education—nothing more**",
+      "Than the power of example.",
+      "*(Text: Jiang Shu-Han, 5th graduating class, Department of Cultural Studies)*"
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 21,
+    "title": "Upward Gaze",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "Whether it stems from the founder’s military background or the campus’s overall spirit, it is hard to say. Yet in many of Shih-Yu Shih ’s depictions of Chin-Yi, a natural sense of uprightness, composure, and steadiness emerges. Learning, after all, is like laying bricks—each one must fit precisely, with perseverance and care—yet one must avoid closing oneself off, and instead climb high to gain a broader view.",
+      "The Chin-Yi Tower, built in 2001 as part of the second-generation campus gate, originally housed the campus security office on its ground floor. Though the main gate has since moved to the new campus, the tower still stands at the start of Chin-Yi Boulevard, quietly watching over the flow of teachers and students heading to dine on bustling Sanfan Street.",
+      "In this work, an inverted T-shaped perspective looks upward, each brick rendered with deliberate care: the lower ones layered with repeated, heavy strokes for a sense of weight and stability; the higher ones growing lighter, lifting the eye toward the sky in a soaring effect.",
+      "The color palette is dominated by expanses of brick red, accented with golden bands, set against the blue sky and a fringe of varied, deep greens—a composition at once simple and vivid."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 22,
+    "title": "Amidst Geometric Order",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "At first glance, this piece appears simple, fresh, and plainly functional—almost like an illustration from a real estate brochure—yet it carries the quiet charm of an unassuming jewel.",
+      "I once asked the artist bluntly: “It’s one thing to make it look realistic, but why include that ugly air conditioner?” The artist replied: “Don’t you think that’s part of Chin-Yi’s culture? It shows the building is alive, with people and their traces within.”",
+      "In composition, the work is nothing more than a few intersecting horizontal and vertical strokes—yet with remarkable precision, it captures the essence of the Mechanical Engineering Building’s entrance. The rectilinear form, accented by several circular air-conditioning vents, is flanked by two flourishing cypress trees. Together, they suggest a harmony between human presence and the ancient philosophy of “heaven round, earth square,” blending the warmth of habitation with the order of geometry."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 23,
+    "title": "Amidst Geometric Order",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "The unique essence of artistic creation can be savored in the two versions of Amidst Geometric Order.",
+      "In the sketch version, Amidst Geometric Order stands with the elegance of jade—simple, clean, and upright.",
+      "In the color rendering, however, human presence enters the scene. The deep, chestnut-red brickwork framing the building’s entrance evokes the heavy, clattering vigor of machinery, while the blue glass curtain wall, reflecting the sky, conveys the mechanical spirit of reason and cool detachment. Yet, the figures moving before the door and the sign reading “Examination Room 102” hint at important events unfolding at this very moment.",
+      "The building’s cold rigidity contrasts with the supple resilience of the people and the cypress trees. Even the air conditioner’s fan blades are rendered with visible clarity—a blend of expressive suggestion and concrete realism."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 24,
+    "title": "Mind Bound to Wealth",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "In an age of commerce and industry, who does not love money? Who does not need it? The painting bears the title Mind Bound to Wealth—half in jest, yet wholly true.",
+      "The students of Chin-Yi are known for their pragmatism and diligence; nearly half take on part-time work in addition to their studies. Whether employed or not, every member of the campus community, from the youngest to the most senior, eventually finds their way to the ATM pavilion at the school’s gate, installed by First Commercial Bank.",
+      "Built alongside the campus wall, the pavilion is framed by a luohan pine on the left and an old banyan in front. Its long shelter of glass and metal bears the bank’s signage above, with yellow-brick paving underfoot and a large ventilation fan running around the clock. Beneath the bank’s bilingual logo hangs a warning banner: “Do not follow mobile phone instructions to operate the ATM. The ATM only dispenses cash, never accepts it. Taiping Precinct, Pinglin Police Station.” This not only records the rising wave of fraud in Taiwan’s society but also foreshadows the bank’s own later security breach.",
+      "In July 2016, First Commercial Bank suffered a shocking cross-border cyberheist, the work of an international hacker syndicate, resulting in heavy losses. For months thereafter, the pavilion stood abandoned, its floor littered with fallen leaves, devoid of human presence. Eventually, service resumed—but where once there were three ATMs, now there was only one. The lively, bustling scenes of the past had given way to stifling heat and the scatter of dust and trash. This artwork thus becomes a remembrance of a more vibrant time now gone."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 25,
+    "title": "Close Reflections",
+    "artist": "Shih-Yu Shih",
+    "year": "2014",
+    "description": [
+      "In writing about this piece, I am unexpectedly struck by a feeling akin to the trepidation of returning home.",
+      "In earlier days, I would traverse the long stretch from the front of campus to attend classes here; on occasion, misjudging the time by a full hour, I would begin this trek far too early, turning it into a small pilgrimage. Back then, this was the domain of the Department of Electronics. Even now, this building remains the lowest, most remote corner of Chin-Yi—and the oldest surviving structure on campus.",
+      "After the 921 Earthquake, time and circumstance reduced it to near ruin, earning it the nickname “Haunted House.” Yet, to establish the new departments, the administration invested NT$15 million in structural reinforcement and the installation of a small elevator, making it a shared home for the Departments of Cultural Creativity and Leisure Management. An additional NT$8 million went into facilities, reflecting the university’s earnest hopes.",
+      "With that sense of expectation, I spent a year teaching, organizing exhibitions, and devoting what strength I could spare—despite ill health—to endless rounds of meetings, space allocation, design decisions, and equipment purchases. At last, in late 2007, the newly renewed building opened its doors. But the following summer, Typhoon Kalmaegi swept in, flooding the first floor to a depth of 80 centimeters—just shy of the desk height in the computer lab. By some fortune, all 33 treasured Apple computers remained unharmed, like white lotuses blooming in a sea of mud.",
+      "We waded through the muck in the urgent aftermath, rescuing the computers, while the basement, auditorium seats, and critical equipment racks were all lost. What followed was yet another round of funding negotiations.",
+      "At that time, with only a single class in the department’s first cohort and the summer break in full swing, I feared the cleaning would be impossible. But to my surprise, many students returned voluntarily to help. From then on, our camaraderie was forged—working side by side, discussing and deciding everything together, achieving more with less."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 26,
+    "title": "Leisurely summer",
+    "artist": "Qing-Chuan Wu",
+    "year": "2014",
+    "description": [
+      "Qing-Chuan Wu (1964-) uses a large number of collages to compile the lively and exciting aspects of the campus into a long scroll composition. Although the main subject is still the bustling Chin-Yi Boulevard lined with coconut trees, the high-rise buildings and gardens on the left side of the boulevard have been rearranged or embellished to such an extent that it is difficult to recognize the original campus scenery.",
+      "This work fully complies with the mobile perspective layout method of ink and wash scrolls, dividing the picture into two parts along the center line. On the right are the buildings along Chin-Yi Boulevard, and on the left are other high-rise buildings hidden behind dense trees, as well as a small path with a fence in front of the forest and several patches of grass.",
+      "Unlike Shih-Yu Shih's cool and detached style, Qing-Chuan Wu has a lively and sociable personality. This work features six groups of people, with only one solitary figure walking in the opposite direction of the crowd on the sidewalk.Among the six groups, four use height proportions and gender-specific colors to highlight family outings. Friends chatting under the shaded trees contrast with the laughter of the crowd, creating a dynamic interplay of movement and stillness.",
+      "The entire work is rendered in bold, vibrant colors, unified by shades of dark green, light green, and emerald green, with peach blossoms reflecting on the faces of the figures, further enhancing the lively and playful atmosphere."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 27,
+    "title": "Return",
+    "artist": "Qing-Chuan Wu",
+    "year": "2014",
+    "description": [
+      "This work depicts the evening scene of the old school campus's sports field in a impressionistic style. Large areas of blue-purple, yellow-green, and orange-red dominate half of the sky, creating an atmosphere of colorful sunset.",
+      "The use of an ultra-wide-angle lens and deep depth of field is a distinctive feature of this composition. The lower quarter of the frame is dedicated to dynamic narrative elements, including the large sports field, where the flagpole and basketball hoops are clearly visible, with five athletes sprinting across the field. In the lower right corner, the parking lot in front of the Qingyong Hall is depicted with a family of three strolling leisurely, creating a contrast and echo with the competitive activities on the field.",
+      "The horizon is defined by green trees and a cluster of buildings. The artist, with his excellent modeling skills, simplifies the complex from left to right, arranging the buildings in a straight line. The distinctive features of each building are clearly discernible, and against the backdrop of dazzling red clouds, they appear magnificent, happy, and lively."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 28,
+    "title": "Relaxing",
+    "artist": "Qing-Chuan Wu",
+    "year": "2014",
+    "description": [
+      "This work depicts a corner of the small courtyard to the right front of the Mechanical Engineering Building. The building is hidden behind flowering trees, and the left side is filled with parked vehicles, suggesting a busy atmosphere. People rushing by would instinctively overlook this hidden gem.",
+      "The artist employs a third eye, using ink wash techniques to render watercolors, alternately applying impressionistic brushstrokes and meticulous details, thereby inheriting the artistic essence of his teacher, Wu Xuelang.",
+      "The roots of the Hong Kong orchid tree and the grass in the lower left corner are delicately outlined, evoking the graceful form of orchids. The flowers on the right are rendered with dense ink, blending seamlessly with the grass to create a refreshing summer atmosphere. The overall composition is meticulously structured and stable, with every element essential to the whole. The use of color is particularly effective, adding the finishing touches that bring the painting to life.",
+      "There used to be a large Hong Kong orchid trees forest here. Every spring, the falling flowers were romantic. With the development of the school, every inch of land at Chin-Yi became valuable, and this place was once used as a landscape design laboratory for the Department of Landscape Architecture. Later, it was designated as a small garden for relaxation. Although there are no towering old trees, it is like a small comma, allowing travelers to take a short break."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 29,
+    "title": "Face the sun",
+    "artist": "Qing-Chuan Wu",
+    "year": "2014",
+    "description": [
+      "This building was originally named the “Library and Information Building” and was put into use in 1987. When I first arrived at the campus at the foot of this mountain in early 1988, Ms. Guan, who was then the Human Resources Manager, took me past this building and proudly pointed to it, telling me, “It's just been completed!”",
+      "I and other teaching staff temporarily stayed in the basement of this building until the Guoxiu Building was completed. We left behind many happy memories of our youth here.",
+      "Now known as the “Innovation and Research Building,” this grand and layered structure features a grid design on the third floor and above, with four corridors surrounding an atrium. This design brings natural light, air, and rain into the otherwise dull offices, allowing one to sit comfortably in the corridors and enjoy the rain and clouds, creating a serene and unique atmosphere.",
+      "Qing-Chuan Wu adopted a realistic and faithful painting style here, using a side view to create an atmosphere that is both stable and grand yet relaxed. On one hand, he realistically painted the long posters on the outside of the building, highlighting the key moment when President Chao Min-Hsun was vigorously promoting and fighting for “Model University.” On the other hand, he arranged people riding bicycles and chatting in front of the building to convey the artist's expectation of a relaxed and carefree campus, which is also Qing-Chuan Wu 's most typical way of expressing Chin-Yi."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 30,
+    "title": "Original Aspiration",
+    "artist": "Shih-Yu Shih",
+    "year": "2019",
+    "description": [
+      "The “Little White House” stands out among the surrounding buildings with its unique and eye-catching design. Except for the rolled-up roof of the entrance, the entire exterior wall is composed of 90-degree angular blocks, creating a simple yet grand appearance. This design focuses on the details of the entrance, with glass curtains reflecting natural light, making the white color even whiter and evoking a sense of sanctity.",
+      "This “Administrative Building,” completed as late as 1984, was only three years after the founders wrote a letter to Minister Mao Gaowen expressing their intention to donate the school in 1987.",
+      "The decision to donated to the government was not made impulsively but after careful consideration and consultation with their descendants.During this period, school operations continued as usual, and the funds required for construction not only remained substantial but actually increased. In 1984, in addition to the completion of the Administrative Building, the massive “Library and Student Activity Center,” resembling a Roman colosseum, and the compact yet elegant “Male Faculty Dormitory” were also put into use in the same year.",
+      "These three places collectively hold many fond memories for the older members of the Chin-Yi community. A group of male and female friends would gather at the male faculty dormitory to drink tea and chat about their aspirations in life; former members of the Academic Affairs Office would frequently gather at the round building to oversee student activities late into the night; and the old professor would occasionally visit the Counseling Center to check on me and offer advice on how to be a good wife!Ha! I wonder why the old professor always treated me like a little girl who never grew up? Not to mention being summoned to the fourth floor of the White Palace to the chairman's office to be scolded for my bedtime and wake-up times!",
+      "Back then, the midterm and final exam questions were randomly selected by President Weng Chi-hsiung.One day, I hurriedly passed by the White Palace, preparing to exit through the back door from the front entrance, when I happened to bump into Principal Weng. He jokingly asked me, “Hey? Your math is so bad? How did you get a total score of 110?” He knew full well that the teachers were afraid of failing too many students, so they intentionally added a few extra questions to make it easier!",
+      "Otherwise, the “Qinyi Pawnshop” reputation would scare away students!",
+      "This Little White Palace served as both a decision-making center and a shield protecting teachers from external interference. Unfazed by the “pawnshop” label, it upheld rigorous teaching standards, laying the foundation for today's Chin-Yi—a school that is both capable and principled. The wise have passed, but their legacy endures!"
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 31,
+    "title": "The Wish of Youth",
+    "artist": "Shih-Yu Shih",
+    "year": "2019",
+    "description": [
+      "This work is bright and crisp, minimalist yet rich in detail.",
+      "Just like “The Wish of Youth,” it is simple yet thorough in every aspect: maintaining a regular routine, practicing good health, being strict with oneself, diligent in public service, willing to help others, and kind to juniors... The elderly man's daily routines were simple: before dawn, he would stroll through the campus, bending down to pick up cigarette butts; he would ask a young female teacher what time she woke up and went to bed, then scold her for not taking care of her health... so simple. Yet, they leave behind a legacy that inspires others to care for them, look after their students, and strive for excellence all their lives! (Note: General Zhang Ming, the founder of Chin-Yi, whose courtesy name was Qingyong, is honored by this building.)"    
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 32,
+    "title": "Gateway to Technology",
+    "artist": "Shih-Yu Shih",
+    "year": "2019",
+    "description": [
+      "The most renowned industry in Central Taiwan is the precision machinery industry. Spanning a 60-kilometer area from the Dadu Mountain Plateau to Fengyuan, Taiping, Dali, and the Nantou Industrial Zone, this region is home to 1,500 precision machinery companies and over 10,000 downstream suppliers. It is the world's leading precision machinery cluster in terms of output per unit area and density, earning it the nickname “Golden Valley.”Nearly half of Taiwan's trillion-dollar machine tool industry output originates from central Taiwan, underscoring its pivotal role in industrial development.",
+      "Chin-Yi University of Technology was founded with engineering as its core discipline, with mechanical engineering, electronics, electrical engineering, and chemical engineering being its oldest departments. To fulfill its mission of industrial development for the nation, the founder actively encouraged young faculty members to lead students in innovative research and development. As early as 1991, Chin-Yi developed the first generation of robotic arms, playing a pioneering role in the machine tool industry.",
+      "The “Machine Tool Academy Building” was completed in 2018. This multi-functional building serves as a hub for industry-academia collaboration and innovative research and development. In addition to housing companies, it also features state-of-the-art internship factories that keep pace with the industry.",
+      "This work employs a vertical composition, focusing on the entrance's imagery. The artist demonstrates mastery of the medium, conveying the spirit of technology through precise, calm, rational, clean, and meticulous execution—neither too much nor too little."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 33,
+    "title": "Technology and Humanities",
+    "artist": "Shih-Yu Shih",
+    "year": "2019",
+    "description": [
+      "Although this building is marketed as a high-tech research and development facility for precision machinery, its exterior design seamlessly blends strength and elegance. The grand and imposing structure features arched entrances with a futuristic, tech-inspired design that soften the sharp, straight lines of the mechanical elements. This central motif is symmetrically extended outward on both sides.The color scheme combines pure white with soft orange-red tones, arranged in a stepped pattern that gradually fades from the top down, creating a sense of depth and rhythm.",
+      "In recognition of the architectural design, the composition of this work focuses on the building, which occupies approximately two-thirds of the canvas, with the remaining space filled by the small plaza, pathways, and trees in front of the building. The grass and leaves are meticulously rendered, resulting in a highly detailed and meticulous painting. The color palette remains consistent with the artist's signature clean and dust-free style."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 34,
+    "title": "The Wisdom Clock",
+    "artist": "Shih-Yu Shih",
+    "year": "2019",
+    "description": [
+      "This painting, “The Wisdom Clock” employs a high-angle composition, which, though lofty, remains clear thanks to meticulous brushwork, allowing both the window partitions and clock hands to be clearly visible. The strong color contrast and skillful use of grayscale enhance the whiteness of the white elements, further emphasizing the majestic grandeur of the “Library and Information Building.”",
+      "The right side of the building follows the design of the previous library, featuring a curved shape that symbolizes continuity and innovation. A white corner tower with a clock on top has been added, whose sound is loud and echoes far and wide.",
+      "When Chin-Yi was first established, the area was surrounded by bamboo and lychee forests, with no roads and no people. As the school grew and prospered, it became a hub of activity, attracting communities and shops that brought vitality to the area. Many neighbors also settled nearby, living close to the walls of the building. Perhaps this is why, despite its initial use, the bell, whose sound once echoed for miles, eventually fell silent. However, educators continue to enlighten and guide, whether the bell rings or not, never hesitating to share their knowledge and wisdom."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 35,
+    "title": "Engineering path",
+    "artist": "Shih-Yu Shih",
+    "year": "2019",
+    "description": [
+      "In literature, few figures are as iconic as Zhu Ziqing's back view. However, in painting, there are few works that focus on the back. Yet Shih-Yu Shih seems to have a particular fondness for painting backs—whether it be self-portraits, models, or even the school buildings of Chin-Yi, where he often depicts both the front and back in meticulous detail.",
+      "The importance of the back view is akin to a person's private virtues or the corners of a home.",
+      "The back views of Chin-Yi may not be its facade, but they are always bright and beautiful. Thus, whether it is the front or the back, there seems to be no difference. It is always upright and open, allowing people to come and go freely.",
+      "This massive Engineering Building was originally the first teaching building of Chin-Yi. After the 921 earthquake completely destroyed it, it was rebuilt on the same site as a large-scale structure combining east and west wings. It primarily serves the departments of the Engineering and Electrical and Information Engineering Colleges, generating tens of millions of dollars in industry-academia collaboration performance for Chin-Yi each year. Calling it a cash cow would not be an exaggeration.",
+      "In contrast to its serious economic value, the back of the Engineering Building focuses on the soft and fresh beauty of the small path along the lake on the west side of the entrance, where flowers and grass grow abundantly and greenery provides shade. The rural ambiance behind the building has seamlessly integrated with the massive structure, yet it humorously adds air conditioners to each floor's windows and solar panels on the roof, further emphasizing that this is an “engineering” building.",
+      "Throughout the work, whether it be the depiction of flowers and trees, the vehicles parked in front of the building, or the walls themselves, the colors are distinct and vibrant, bringing the scene to life on the page."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 36,
+    "title": "Chin-Yi Dormitory",
+    "artist": "Shih-Yu Shih",
+    "year": "2019",
+    "description": [
+      "Due to the 1999 September 21st earthquake, the student dormitories were completely destroyed, forcing all students to rent accommodations off-campus. Due to various complex reasons, the application for dormitory construction was repeatedly rejected. Thus, several years passed, with students coming and going through multiple cohorts, waiting a full 14 years. When this modern-style building was finally completed, all faculty and staff eagerly entered to tour and explore, their excitement and anticipation as vivid as if it were yesterday.",
+      "When the Chin-Yi Dormitory was first built, there was no “Ming Hsiu Lake,” but the view was spacious, with mountain mist seeming to drift through the windows, comparable to a high-end scenic hotel. Students studied diligently by the windows, pondered facing the mountains, or laughed and played in the rooms, all becoming the most profound shared memories of their four years at university.",
+      "In terms of composition, the building's highly designed structure was allowed to occupy four-fifths of the main frame. The color scheme utilized varying shades of gray-green, indigo, and pure white to highlight the building's three-dimensionality, while the grassy slopes along the lake in the foreground added layers of richness and a warm, harmonious atmosphere."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 37,
+    "title": "Art Corridor",
+    "artist": "Shih-Yu Shih",
+    "year": "2019",
+    "description": [
+      "Many works of art often hold meaning only for the artist who created them, leaving viewers perplexed by their intent. However, it is precisely because artists can transcend the constraints of time and space, leaving behind fragments of bygone eras for posterity, that their creations are truly a blessing.",
+      "This work is located on the left side of the Engineering B, between the massive columns leading to the staircase to the basement. A wooden carving inscribed with the characters “Art Corridor” in seal script hangs on the staircase wall. The carving is executed with bold, precise strokes, reminiscent of chiseled stone, while the warm-toned tiles effectively soften the space's cool ambiance, evoking memories of the past.",
+      "This plaque was lost due to a change in management of the site, and its original function was lost. It now stands as a testament to the “Department of Cultural and Creative Industries,” which, during its long preparatory period, held monthly art exhibitions in the underground corridor connecting the two buildings of the Engineering Hall, attracting distinguished guests and students who brought their lunches to enjoy music, rest, and admire the artworks."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 38,
+    "title": "Memories of Youth",
+    "artist": "Shih-Yu Shih",
+    "year": "2019",
+    "description": [
+      "Shih-Yu Shih (b. 1971) holds a PhD in Calligraphy and Painting from National Taiwan University of Arts. He is one of the few scholars who excel in both research and creation. In recent years, he has achieved notable success in interpreting Li Qimiao through the lens of Western philosophy. In his early years, he engaged in gouache painting, but as he grew older, he developed a preference for ink wash painting and calligraphy. However, like Ni Zan (1301–1374), he dislikes depicting figures in his landscape paintings. Ni Zan was a reclusive and enigmatic figure, and while Shi is not one to admire himself in isolation, the passage of time and the turmoil of the world have left him with a sense of incomprehension, hence the absence of figures in his paintings.",
+      "This work, however, features three or four young friends. They were companions who followed their teacher to explore and seek painting subjects on campus, and the scene depicts their helpless struggle against a swarm of mosquitoes at the lakeside. It is said that the heights of the imperial court are beyond our reach, but the green campus is where humanities thrive, and thus it should have people!",
+      "The perspective of the painting looks back from the lakeside to the 1950s, when the Nationalist Army established a military camp in Pinglin and planted these green old trees. From the terraced grass slopes, Chinaberry, Formosa acacia, and other trees have grown into a dense forest, suddenly reminding one of the stories of Kua Fu chasing the sun and planting his staff into the ground when he grew too tired to continue.",
+      "Without worry or exhaustion, for there will always be those who follow!"
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 39,
+    "title": "Journey",
+    "artist": "Shih-Yu Shih",
+    "year": "2019",
+    "description": [
+      "With over half a century of history, people come and go. Some are merely passersby, while others grow close and visit frequently, leaving only when they have had their fill. Even those who are just passersby leave behind fragments that are worth remembering and tracing. Thus, the journey along this small path gains meaning.",
+      "This tree-lined path, where the sound of insects seems to echo, is located to the left front of the former camp headquarters. Walking through this path not only shields one from the sun but also leads to the teaching area. As one walks slowly, everything seems to have a sound yet remains silent, making it an ideal place for self-reflection.",
+      "The artist used a fountain pen to sketch the outlines of all the scenery and figures, then filled in the details with a fine brush to create the rich layers of lush green leaves.",
+      "If I recall correctly, the main character in the painting is a top student from the Cultural and Creative Industries Department currently working at ASUS Design Department. Raised in a single-parent household, she has been diligent and ambitious since childhood, never giving up on any opportunity to learn. Though the path ahead is long, she bravely forges forward, inspiring admiration."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 40,
+    "title": "Woods",
+    "artist": "Shih-Yu Shih",
+    "year": "2019",
+    "description": [
+      "Chin-Yi's campus planning marks a significant turning point in 2010, when the Ministry of National Defense officially transferred the 20-hectare site of the former Pinglin Military Camp to our university.",
+      "What was once a mysterious place visible only from the old campus was a strict and closed-off area.Amidst the lush greenery, the barracks were not visible, though military trucks could occasionally be seen speeding by. The military base became a place of imagination.",
+      "As the veil of mystery was lifted, the old military camp/new campus became a place for everyone to explore; we gradually discovered many friends, both familiar and unfamiliar, who had trained here before being assigned to various locations across the country.",
+      "From soldiers to students, though both lead group lives, the former adheres to strict discipline, while the latter seek to break free from constraints and keep pace with the times, resulting in vastly different cultures. As time passed, new buildings continued to emerge, and upon returning, the once-familiar scenery was unrecognizable.",
+      "The camp is home to numerous old trees. Having lived long enough to withstand the test of time, they each stand tall in their unique forms. This piece was sketched with a fountain pen and colored with colored pencils, using darker shades at the base and lighter shades toward the tips, to capture the natural growth patterns of photosynthesis. The branches stretch out in graceful poses, as if narrating the stories of days gone by."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 41,
+    "title": "Brightness",
+    "artist": "Shih-Yu Shih",
+    "year": "2019",
+    "description": [
+      "This is a small forest path branching off from Ming Hsiu East Road and leading to the new school gate.",
+      "When it was first built, it may have been intended as a scenic spot or to separate pedestrians from vehicles. The motorcycle lane on the side had not yet been planned, so there was still a patch of mixed woodland on the right, retaining its original charm.",
+      "However, the newly constructed yellow-brown brick path lacks the accumulated patina of time, giving it a sense of newly claimed territory. In contrast to the dense forests and grassy slopes on either side, it stands out sharply.",
+      "The artist first sketched the overall outline with a pen, clearly defining the foreground, middle ground, and background, creating a sense of spatial depth;Finally, watercolor pencils were used to apply different colors based on the characteristics and textures of the scenery, creating a sense of seclusion and isolation for the shaded path. However, the brick path inherently has sharp angles, lacking softness and instead exuding a strong, independent, and forward-moving vigor, forming a powerful contrast with the surrounding mountains and forests."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 42,
+    "title": "Searching the way",
+    "artist": "Shih-Yu Shih",
+    "year": "2019",
+    "description": [
+      "This is a quick sketch primarily done with blue and black ink pens, with light green pencils used as an accent. The perspective of the drawing is from Ming Hsiu North Road, looking east toward Zhongshan Road Section 2, No. 57, which was the original entrance to the military camp. The road intersecting Ming Hsiu North Road at a T-junction is Ming Hsiu East Road, the main access road to the educational zone, which also passes by the former “Pinglin New Recruit Training Center” and its “ammunition depot,” now known as the “Qinchuang Base.”",
+      "At the time of creation, less than a decade had passed since the Pinglin Military Camp was transferred to the Chin-Yi Base, and only the southern half of the new campus had been utilized. The northern area, densely forested with old barracks, was temporarily off-limits due to safety concerns about curious explorers entering the site. A fence was erected to cordon off the area.",
+      "The overall composition uses the road to divide the two sides with different landscapes. On the right, the trees grow freely along the newly constructed pedestrian path, while on the left, the old forest struggles to expand despite the constraints. This shallow barbed wire fence was not completely removed until 2023, marking the completion of the Chin-Yi campus and the beginning of a new era.",
+      "At the end of this path lies the planned new main gate. Upon entering, one becomes part of the Chin-Yi community. Though the gatehouse has yet to be constructed, the distant view of the green-clad mountains evokes the charm of a neighboring village, exuding a rustic, natural ambiance."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 43,
+    "title": "Draw the shadows",
+    "artist": "Shih-Yu Shih",
+    "year": "2019",
+    "description": [
+      "The Industrial Engineering Building, constructed in 1990, is affiliated with the College of Management. The Department of Industrial Engineering and Management was the first management-related department established after the four engineering departments of Mechanical Engineering, Electrical Engineering, Electronic Engineering, and Chemical Engineering. As a result, it transitioned from a technical college to a college and has since had the opportunity to develop into a university of science and technology.",
+      "This aging building, though not the oldest on campus, clearly reflects the simplicity and restraint of early architectural design, yet it exudes a subtle elegance that is both understated and profound.",
+      "The artist, who prefers the rarely used fountain pen, employs it to create both delicate and bold strokes, with a sense of casual ease in the lines. The mastery of architectural details in this work need not be elaborated upon. What is particularly intriguing is that, due to the medium of the fountain pen, it naturally evokes the fluidity of ink wash painting, with shades of depth blending seamlessly. The entire composition is sparse yet rich, exuding a sense of tranquility and the passage of time."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 44,
+    "title": "Miday",
+    "artist": "Shih-Yu Shih",
+    "year": "2019",
+    "description": [
+      "This work is a quick sketch of the sidewalk in front of the Engineering Building, done with a steel pen.",
+      "The overall lines are different from those in “Sketching” of the Industrial Engineering Building, appearing much more rigorous. Each stroke stands alone without any residual traces, and every scene and object is as clear as if it were in the middle of the day, extremely bright and clean.",
+      "The overall composition demonstrates the artist's profound perspective skills. There are actually two roads in the painting: one is the pedestrian walkway in the center, and the other is Chin-Yi Boulevard lined with coconut trees. These two roads merge into one in the painting, with buildings gradually extending from both sides and connecting to the three peaks of San Ting Mountain in the distance. Finally, students running on the sidewalk add a lively and energetic touch to the campus.",
+      "This Chin-Yi Boulevard isn't very long! But walking from the old school gate to the Engineering Building on a clear, sunny day can be quite a challenge! So, occasionally, you might see someone skating or riding a bicycle, and if there's a gentle breeze, they must be having a wonderful time!"
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 45,
+    "title": "Lush Greenery",
+    "artist": "Shih-Yu Shih",
+    "year": "2019",
+    "description": [
+      "The author had some discussions with the painter. In essence, I was puzzled by his extensive use of color to depict the school buildings, which seemed to be almost exact replicas of the actual structures.",
+      "Shih-Yu Shih strongly argued that the school buildings are expressions of the humanistic landscape, and that the scenes must be recognizable so that future generations can trace them back to the original site and pay their respects.",
+      "Sure enough, like his work “Warm Sun and Gentle Wind,” which was done with a needle pen, this piece lacks recognizable landmarks. Combined with the fact that the campus landscape has undergone many changes, it is difficult to trace the original location. The only thing that can be confirmed is that this dense forest must belong to the new campus, but its exact location cannot be determined. There is nothing more to say about the painting itself.",
+      "This work uses a quick pencil sketch to outline the forest, with precise handling of both the depth of space and the posture of the trees. The closer elements are detailed, while the distant ones are rendered in a more abstract manner, fully adhering to visual principles. In the depiction of the tree canopies, the closer ones are detailed, while the distant ones are rendered in a more abstract style, further emphasizing that this dense forest has never been disturbed by human intervention, remaining untouched and free."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 46,
+    "title": "Warm Sun and Gentle Wind",
+    "artist": "Shih-Yu Shih",
+    "year": "2019",
+    "description": [
+      "Along both sides of the winding road, neatly arranged grassy fields and an old forest at the end of the road create a scene reminiscent of a rural landscape. Without any obvious landmarks, there is no trace of a campus atmosphere. If this were not identified as the campus of Chin-Yi University, one might mistake it for a village in southern Taiwan.",
+      "This pen-and-ink sketch captures the entire process of the quick sketch. It begins with the spatial structure, then moves on to the contours, and finally to the overall size and light and dark adjustments of the image, all of which can be traced.",
+      "The effect of pen and ink is similar to that of Chinese brush strokes. Depending on the angle of the brush, it can be applied with a flat or side stroke, and the lightness or heaviness can be controlled to achieve a rich or light effect as required by the image.",
+      "In terms of composition, the relative positions of the trees are appropriately distributed. The five trees at the center form a group, while the two trees on the left create a triangular relationship with them. The Z-shaped curve between the sky and the ground leaves blank space, giving the entire composition an open and expansive spatial sense."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 47,
+    "title": "Afternoon leisure",
+    "artist": "Shih-Yu Shih",
+    "year": "2020",
+    "description": [
+      "The Administration Building, which was put into use in 2003, houses four departments. When viewed from the rear, it gives an impression of immense scale. In contrast, the “Innovation and Research Building” (formerly the Library and Information Building), completed in 1987, appears much more slender.",
+      "This offers another perspective on Chin-Yi. Without strolling around the campus like the black-crowned night heron, the school's mascot, it would be hard to notice the subtle changes brought about by time.",
+      "This piece uses a light crimson color palette to depict a summer afternoon, with the entire building bathed in the heat of the sun, appearing as clear and delicate as water, mist-like and ethereal. Due to its subtle tones, there is no sense of oppression from the tall building, but rather a feeling of leisurely ease. The leisurely figures of children lying, sitting, or running on the large lawn in front of the building add a lively, vibrant touch to the quiet scene, infusing it with the unique atmosphere of a campus.",
+      "The only puzzling aspect of this work is the overly neat patch of grass, neatly divided into rows and sections. Is this the artist's perfectionism at play?"
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 48,
+    "title": "A Verdant Sea of Lotus Leave",
+    "artist": "Jin-Long Lu",
+    "year": "2021",
+    "description": [
+      "This is a meticulously crafted Eastern gouache painting that demands patience and precision. Artist Lyu Jinlong often draws inspiration from everyday scenes, which he then refines through his subjective perspective to create new, evocative images that he refers to as “spiritual landscapes.”",
+      "In Chapter 42 of Dream of the Red Chamber, titled “Hengwu Junlan Resolves a Curiosity, and Xiao Xiangzi Adds a Witty Comment,” there is a lengthy and vividly entertaining episode. The story begins when Jia Mu asks Xue Baochai to paint a large-scale view of the Grand View Garden. Xue Baochai, focusing on the materials and tools required for Eastern gouache painting, compiles an extensive list of over a hundred items, nearly driving Lin Daiyu to the brink of desperation. This shows how complicated the process of making Eastern gouache paintings is!",
+      "The colors of the entire work are uniform, and the proportions of the lotus leaves, lake surface, and distant trees are appropriate, creating a cold, clear, and quiet atmosphere.",
+      "Ming Hsiu Lake is named after its founders, General Zhang Ming and Ms. Wang Guo-Hsiu. It is located on the west side of the new campus, adjacent to Chin-Yi dormitory. This small pond actually serves as a flood control reservoir. Following the 2008 flood that submerged the original Pinglin Camp and spread all the way to the Cultural and Leisure Building, this flood control measure was implemented, which also added a place for rest and leisure to the campus.",
+      "\"During the day, the sun sparkles with golden light, and egrets and night herons pause to rest. Green lotus leaves and lush vegetation complement each other beautifully. At night, the lights cast a soft glow, reflecting the twinkling stars. Ming Hsiu Lake lies nestled behind the dense trees, with a gentle breeze rustling through the leaves. It resembles a swaying boat, carrying hopes and aspirations toward the future.\" (Written by Yang Kaiting)"
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 49,
+    "title": "Fresh Spirit",
+    "artist": "Shih-Yu Shih",
+    "year": "2020",
+    "description": [
+      "The new campus and sports field were officially opened in 2016. The original sports field, which had been in use for 40 years, was renovated into the Machine Tool College Building. As a result, the teaching area and recreational sports area now have distinct functions, and the campus layout has become more complete.",
+      "The new sports field includes a 400-meter standard track, basketball courts, volleyball courts, and tennis courts. The most distinctive feature is that competitions can be held surrounded by large trees! What a blessing!",
+      "This design creates a cool and serene atmosphere through the layered relationship between the dense forest and mountains. The pine forest on the second layer of mountains further enhances the illusion of a sports field atop a mountain peak, effectively creating a sense of openness.",
+      "This piece, sketched with a ballpoint pen and colored with watercolor pencils, resembles a sketch. The sports field features 15 people and 5 balls, with a row of contemplative figures beneath the trees, each in their own pose, full of dynamic movement."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 50,
+    "title": "Sprout",
+    "artist": "Shih-Yu Shih",
+    "year": "2020",
+    "description": [
+      "This “ammunition depot” at the former Pinglin Recruit Training Center has been a highly mysterious site since the Nationalist Army established its presence here in 1950.Originally guarded by two white sentry posts and an ancient camphor tree at the base entrance, it is regrettable that one sentry post was accidentally destroyed in 2023 during the construction of a new motorcycle parking lot adjacent to the site. The lone remaining post now stands solitary beneath the sky, silently recounting tales of bygone days.",
+      "This work focuses on the smallest structure to the right front of the ammunition depot entrance. The mud-and-thatch roof has been removed and replaced with a lightning rod. However, the four larger warehouses retain their camouflage patterns and overgrown roofs, preserving the historical traces of the camouflage used to conceal military equipment during combat operations. The thick reinforced concrete walls remain sturdy and waterproof, standing resilient after 75 years—a testament to the standard military spirit.",
+      "The author's choice to represent this site through this perspective—depicting the “Qinchuang Base” formed by these five old ammunition depots—may reveal a playful, hidden thought process? Rumor has it this space once housed detention cells, but viewers must surely wonder: isn't it now open to the sky, bright and airy, with pleasant garden views?Such a place—ideal for tea, wine, poetry, painting, song, and dance—how could it be confinement? It’s practically a vacation!",
+      "Indeed! This is precisely the role the “Qinchuang Base” now embodies. Quoting two lines from the opening ribbon-cutting promotional card of the “Department of Cultural and Creative Industries” on November 23, 2019, we record this beautiful chapter:",
+      "Chin-Yi's experimental base for innovation, creativity, and entrepreneurship,",
+      "Let the bullets fly! Soar into the cosmos! Sail toward the unknown.",
+      "Once, brothers of the National Army toiled here with sweat.",
+      "Now, Chin-Yi students cultivate the future right here."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 51,
+    "title": "Morning Light at the Industrial Engineering Building",
+    "artist": "Shih-Yu Shih",
+    "year": "2020",
+    "description": [
+      "The Industrial Engineering and Management Building stands at the far end of Chin-Yi Boulevard. Compared to the nearby “Engineering Building” and the “Qingyong Building” directly ahead—two colossal structures—this modest building, which withstood the 921 earthquake, bridges engineering and management through scientific and rational communication. It holds particular foresight and historical significance.",
+      "his watercolor work, executed through multiple layers of thin, translucent washes, achieves both saturated and delicate color expression. Unlike the restrained subtlety of earlier sketches, it captures the building—though 35 years old—in the pristine, luminous beauty of dawn's first light or the clear skies after rain. Combined with its precise, crisp lines, it stands as a true masterpiece of architectural painting."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 52,
+    "title": "Blessed by Heaven's grace",
+    "artist": "Shih-Yu Shih",
+    "year": "2020",
+    "description": [
+      "The two founders, who regarded the school as their home, built the Founders' Residence only twelve years after establishing the institution. While ostensibly a residence, it also served as a venue for meetings and social gatherings. Receiving red envelopes from the elders here during festivals became the most cherished memory for all Chin-Yi members!",
+      "Nearly all senior faculty and staff have shared meals here with the founders. While deeply invested in students' academic growth, he equally prioritized staff well-being, constantly imparting wisdom on health preservation and personally demonstrating therapeutic exercises.",
+      "The original wooden plaque inscribed “Zongta Club” in the hall's central chamber stands as testament to Wang Guo-Hsiu's pioneering new woman movement during the May Fourth era—a vivid testament to “female power”!",
+      "This sketch, executed solely with a ballpoint pen, employs mechanical lines akin to technical pens to meticulously capture the mansion's artistic stained-glass windows and the ancient pine trees in the courtyard. Yet it conveys a gentle, refined elegance, aptly interpreting the virtues of the two founders."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 53,
+    "title": "Guidance",
+    "artist": "Shih-Yu Shih",
+    "year": "2020",
+    "description": [
+      "The Library and Information Center, situated beside Chin-Yi Boulevard, features a sleek and elegant curved canopy at its first-floor entrance and a roofline on the sixth floor designed with continuous triangular elements—a structure that harmoniously blends rationality and sensibility. The clock tower atop the building symbolizes perpetual vitality!",
+      "From ancient “scholars' retreats” to modern “secret chambers,” today we call it the “library.” If time is a trickling stream, culture is the iridescent shimmer upon its surface. This place is both a treasure trove of knowledge and a haven for leisure. It houses an audiovisual room, E2-coffee, self-study rooms, discussion rooms... Within its walls, students acquire new knowledge, discuss life, and savor living. The value it bestows upon Chin-Yi students shines as brilliantly as its golden exterior. (Yang Kaiting)",
+      "The author employs a wide-angle perspective to depict the relative positions of surrounding structures, arranging them from near to far with distinct layers and absolute clarity, demonstrating formidable mastery of perspective. In color composition, the vibrant greenery of the garden plants creates a striking contrast with the ochre-red paving bricks, lending a lively and lighthearted aesthetic to Chin-Yi Boulevard—dominated by coconut trees—as if it were a small garden."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 54,
+    "title": "Qingyong Building Hero’s slope",
+    "artist": "Shih-Yu Shih",
+    "year": "2020",
+    "description": [
+      "Wherever there are elevation changes or slopes on campus, you'll often find long staircases dubbed “Hero's Slope” by pranksters. The most famous example is probably Tamkang University's multi-tiered staircase winding up the hillside toward the campus summit—so daunting that people would rather take the longer loop around the mountain than face it head-on!",
+      "Qingyong Building, rising six stories high, features exceptionally high ceilings on each floor to accommodate multifunctional uses like assemblies, sports, and gymnastics. This massive V-shaped structure opens onto the “Bingqiao Lawn,” carving out the pilgrimage route known as Hero's' Slope. It serves as both a landscape feature and an entrance/exit, an emergency escape route, and a source of natural light for each floor, combining visual impact with practical functionality.",
+      "The staircase, climbable only by the brave, sees little foot traffic. Yet it serves as an ideal platform for group photos, its terminus reaching skyward with a sci-fi aura. Currently, the third floor on the left side of the V houses the Department of Artificial Intelligence Applications Engineering and the Department of Intelligent Automation Engineering, seemingly aligning perfectly with the imagined scene.",
+      "This work centers on the “Hero's Slope” as its primary visual element, meticulously depicting the countless tiers of ascending steps. The color scheme employs a continuous interplay of yin-yang contrasts across every large and small surface detail. The steep staircase, stained by years of rain seeping into the red bricks, exhibits mottled layers of color, evoking the majestic grandeur and historical depth of a Mayan pyramid. The stairway, serving as a watershed between the two vertical walls, features a red-yellow contrast complemented by blue handrails. This effectively mitigates the visual tension of the soaring structure, creating a space that invites exploration, contemplation, and quiet reflection."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 55,
+    "title": "Diligence, Benefit, Sincerity, Simplicity",
+    "artist": "Shih-Yu Shih",
+    "year": "2020",
+    "description": [
+      "his work focuses on depicting the small garden beside Chengpu Building, adjacent to Guoxiu Building and facing Chin-Yi Boulevard. With its young trees and grass, it exudes a fresh and bright atmosphere, evoking a sense of home.",
+      "Indeed, this white house embodies the very concept of home. In the early days, with poor transportation and no access roads to Chin-Yi, the campus became muddy during rainy weather. This dormitory for unmarried male faculty members served as their sanctuary and foundation.",
+      "A stone tablet before the building bears the inscription “Chengpu Building,” with the smaller characters reading “Education has no other purpose but to set an example.” The former name derives from the school motto “Diligence, Benefit, Sincerity, Simplicity”—a principle Mr. Zhang Ming constantly emphasized as “Diligence yields results; playfulness yields nothing.” The latter phrase, also personally inscribed by Zhang Ming, has long become the guiding spirit of Chin-Yi's educational philosophy.",
+      "The artist's meticulous brushwork captures every detail, even the air conditioner outside the small window, adding to the scene's warmth and charm. One can imagine the many teachers who once hosted friends and students here, sharing aged tea and wine while engaging in lively discussions about life—how delightful it must have been!"
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 56,
+    "title": "Journey of Chin-Yi",
+    "artist": "Qing-Chuan Wu",
+    "year": "2021",
+    "description": [
+      "Qing-Chuan Wu (1964--) dared to challenge the 630-centimeter-long scroll “Clear Summer in Gusu” as early as his sophomore year in college, demonstrating his solid mastery of ink painting.",
+      "This work employs the traditional Chinese brush painting technique of mobile perspective for its composition and layout, characteristic of a long scroll. The relaxed and lively atmosphere. It conveys the effect of a comic strip.",
+      "Three groups of figures appear: on the right, a couple strolls hand-in-hand before the Ming Hsiu Lu; in the center, a young man sits cross-legged by a flower bed, talking on the phone; the left side bustles with a family outing—four adults and four children, some holding hands, others being carried, all gazing about with dynamic energy.",
+      "This ‘Journey of Chin-Yi’ does not aim for literal realism but rather an expressive rendering of the artist's impressions of Chin-Yi. The entire scene brims with rustic charm. Within the deep green shade rendered with dense ink washes, one feels transported to a primeval forest deep in the mountains."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 57,
+    "title": "Chin-Yi Moonlit Night",
+    "artist": "Qing-Chuan Wu",
+    "year": "2021",
+    "description": [
+      "This is one of the few nighttime views of Chin-Yi.",
+      "Most people are accustomed to viewing landscapes in daylight, while night often remains shrouded in mystery and obscurity. However, Chin-Yi's nights are always bustling, with a constant flow of people and vehicles. Due to its diverse academic programs, many still need to attend classes in the evening.",
+      "During its early years as a private school, every night along the perimeter fence of the old teaching building, large insulated tea barrels were placed outside every other classroom for students to access. Across all universities nationwide, this thoughtful gesture for faculty and students was undoubtedly a unique innovation. The reason was simple: the founding couple, deeply caring for the students studying hard late into the night, specifically instructed the janitors to provide hot tea during evening classes to help students stay alert.",
+      "Qing-Chuan Wu's “Chin-Yi Moonlit Night,” dominated by dark blue tones, employs a vertical scroll composition to depict the nocturnal ambiance of the Administration Building in semi-realistic style. Skillful interplay of dry and wet brushstrokes frames the full moon mirroring the circular building, while pedestrians leisurely traverse the interplay of darkness and light. The warm yellow lamplight piercing through the blue-dominated palette evokes not desolation, but the warmth of campus life. The entire work carries the distinctive flavor reminiscent of the watercolor paintings by Yang Qidong, a predecessor from the Japanese colonial period.",
+      "Inscription: Moonlit Night at Chin-Yi. Painted by Qingchuan in Taichung during the winter of 2020. Seals: Upper right, red text: “Heart Clouds, Nature Moon.” Lower left, white text: “Wu,” red text: “Qingchuan Calligraphy and Painting.”"
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 58,
+    "title": "Administration Building night view",
+    "artist": "Qing-Chuan Wu",
+    "year": "2021",
+    "description": [
+      "The author holds a special affection for our university's Administration Building, deliberately crafting the composition with distinct perspectives and a color scheme.",
+      "This piece adopts the viewpoint of entering Chin-Yi Boulevard through the old campus gate, facing the Administration Building, depicting the warm, brilliant yellow light radiating from each floor and the circular entrance hall. Against a night sky composed of deep inks—green, blue, purple, and black—a crescent moon hangs in the heavens. Contrasting with the dazzling, daylight-like intensity of the streetlights, the moonlight appears gentle and unassuming in the shadow of human technology. Yet, it remains a subtle, serene presence that cannot be ignored.",
+      "This is why everything has its own reason."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 59,
+    "title": "Reflections at the Former Residence",
+    "artist": "Jin-Long Lu",
+    "year": "2021",
+    "description": [
+      "Since 2013, Jin-Long Lu 's works have frequently featured towering trees as foreground elements, becoming a defining characteristic of his artistic expression over the past decade. This piece continues his signature style, placing a soaring Norfolk Island Pine as the visual focal point, with the dignified and elegant Ming Hsiu Lu nestled behind it. Bathed in the golden glow of the sky, the giant tree appears even more majestic, symbolizing the sacred significance of the Founder's Mansion to the Chin-Yi community.",
+      "The Mansion preserves an original wooden plaque from the early “Zonta Club,” bearing witness to the global aspirations of women's empowerment.",
+      "Founded in 1919, the International Zonta Society saw its Taichung chapter established on May 9, 1972, by Ms. Wang Guo-Hsiu, founding president of Chin-Yi University of Science and Technology, who also served as its inaugural president. This chapter has now flourished for over half a century. Zontans aspire to build a world where women's rights are respected, enabling them to realize their full potential. Every woman should have access to education, healthcare, legal support, and economic resources, thriving in a rose-filled world free from the fear of violence.",
+      "Given this background, particularly with the founding couple setting an exemplary precedent, it comes as no surprise that the entire Chin-Yi community—faculty and students alike—places such high importance on gender equality awareness and healthy attitudes.",
+      "Jin-Long Lu extensively employs the airbrush technique he developed for background coloring in his artwork. After finalizing the composition, the artist establishes a detailed color plan and selects the primary color scheme. Following the painting process, beyond the fundamental step of applying alum, he first lightly sprays the background, gradually building layers. He then applies colors from back to front, sequentially, repeatedly refining and adjusting. Each step requires patient waiting for the pigments to dry naturally before proceeding.",
+      "Thus, artists working with mineral pigments like gesso-based tempera must possess the meditative discipline of an ascetic. The serene, refined atmosphere of this work stems not only from the artist's personal cultivation but also from the inherent demands of the medium's creative process."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 60,
+    "title": "Solitude",
+    "artist": "Jin-Long Lu",
+    "year": "2021",
+    "description": [
+      "Although this work features the Management Building as its subject, its composition, color palette, and the unique effects of the Eastern gouache technique evoke a distinctly Japanese aesthetic, creating a sense of temporal disorientation. This demonstrates how the artist's prolonged residence in Japan and immersion in the cultural atmosphere of the Land of the Rising Sun have subtly yet naturally influenced the style of his work.",
+      " In terms of color expression, the complementary use of blue, green, ochre, and yellow creates a vivid yet harmonious palette. The composition employs trees of varying heights to build rich layers reminiscent of deep mountain forests, successfully enveloping the buildings within lush greenery. The overall effect closely resembles Tang and Song dynasty blue-green landscape paintings.",
+      " Finally, the artist employs white outlines to define the contours, allowing all elements to naturally radiate a soft, silvery glow. This creates a serene yet elegant atmosphere."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 61,
+    "title": "Borrowed scenery",
+    "artist": "Jin-Long Lu",
+    "year": "2021",
+    "description": [
+      "Jin-Long Lu (1969-) masterfully harnesses the unique properties of mineral pigments, combined with his consummate technique. Drawing inspiration from the dome of Italy's Pantheon, he meticulously applies layer upon layer of thin glazes. Under the reflection of natural light, this creates a dazzling, iridescent effect on the ceiling of the museum's entrance hall.",
+      "The overall color scheme contrasts pink tones with the ochre red of the colonnade columns, accented by verdant greenery between the columns. Combined with the blue-violet reflections on the floor, this successfully evokes the effect of a sacred temple."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 62,
+    "title": "Serene Lakeshore",
+    "artist": "Shih-Yu Shih",
+    "year": "2021",
+    "description": [
+      "This is an outdoor sketching class, with the focus on identifying one's own subject matter and compositional perspective.",
+      "The artist employs a monochromatic palette of green to create rich layers, accented with diverse human landscapes. He depicts his students—some standing, some crouching, some pacing, some gazing intently, some studying—each pursuing their own purpose, each with distinct intentions and movements. Distant dwellings stand solemnly, evoking the passage of time.",
+      "Spring deepens its Chin-Yi; fragrant grasses carpet the ground, verdant trees flourish, and emerald waves mirror the sky. A fleeting illusion arises—these figures resemble anglers by the pond, fishing for the sustenance of youth, preserving it for dreams yet to come.",
+      "Only as I neared the end of this writing did I learn from the artist, Shih-Yu Shih, that this work had been rescued from the scrap pile in his study. How fortunate! Otherwise, this serene and beautiful scene of campus tranquility would have faded away with blurred memories."
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 63,
+    "title": "Source of Innovation",
+    "artist": "Shih-Yu Shih",
+    "year": "2021",
+    "description": [
+      "Merely a highly recognizable landscape sketch, yet it evokes a multitude of adjectives!",
+      "Peaceful and balanced, grand and majestic, dignified and imposing... These seemingly conflicting qualities are precisely where its artistic charm lies.",
+      "This work employs a central axis composition with symmetrical arrangements on both sides.The single coconut tree trunks flanking the foreground immediately evoke the soaring minarets before the Taj Mahal.",
+      "The central axis runs from the semicircular parapet at the entrance foyer upward to the concave glass curtain wall adorned with arches. Radiating from this axis like wings are the projecting corner towers and massive walls on either side.",
+      "The artist masterfully conveys physical texture: the coconut trees, the reflected light on the glass curtain wall, and every brick in the walls are rendered with uncompromising precision. This embodies the spirit of “innovation and research.”"
+    ],
+    "url": "",
+    "location": []
+  },
+  {
+    "id": 64,
+    "title": "Gazing across the lake",
+    "artist": "Shih-Yu Shih",
+    "year": "2021",
+    "description": [
+      "This work employs a wide-angle composition, serving as the final piece in this online exhibition's curated text and the author's ultimate tribute to Chin-Yi.",
+      "From the shores of Ming Hsiu Lake on the new campus, the artist gazes toward the teaching district. With his signature refined and delicate brushwork, he unfolds the scene from right to left: the Chin-Yi dormitories, Longda residential buildings, the Industrial Engineering Management Building, and the Engineering Building form the background.The foreground is rendered with color according to form, employing both meticulous and freehand techniques. The tranquil lake merges with the azure sky, while the grassy slopes burst with verdant life. Irises swaying in the breeze add a touch of enchanting charm. The entire work exudes a profound yet serene aura, where heaven and earth, rippling waters and drifting clouds, flowers and dwellings gaze at each other in silent communion, eloquently narrating the mysterious and distant past and present.",
+      "The universe is boundless and primordial, The world's ways are complex and fraught with hardship. ",
+      "Chin-Yi nurtures and sustains me, Sincerity and simplicity drive me to relentless self-improvement."
+    ],
+    "url": "",
+    "location": []
+  }
+  
+]
