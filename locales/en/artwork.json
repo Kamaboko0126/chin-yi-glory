@@ -1,0 +1,11 @@
+{
+  "artist": "Artist",
+  "year": "Year",
+  "id": "ID",
+  "description": "Description",
+  "notFound": "Artwork Not Found",
+  "notFoundDescription": "The artwork you are looking for does not exist.",
+  "multipleInfo": "This location contains multiple artworks",
+  "artworkView": "Artwork",
+  "realPhotoView": "Real Photo"
+}
