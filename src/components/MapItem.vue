@@ -34,6 +34,7 @@ const mapChineseList = [
   "17.管理館",
   "18.勤創基地",
   "19.創辦人故居",
+  "20.其他",
 ];
 
 const mapEnglishList = [
@@ -56,6 +57,7 @@ const mapEnglishList = [
   "17.Management Building",
   "18.Qin-Chuang Base",
   "19.Founder's Former Residence",
+  "20.Others",
 ];
 
 // 根據當前語言選擇對應的列表
@@ -66,18 +68,16 @@ const currentMapList = computed(() => {
 // 載入關鍵點數據
 const loadKeypoints = async () => {
   try {
-    const response = await fetch("/location.json");
+    const response = await fetch("/artworkLocation.json");
     const data = await response.json();
 
-    if (data.length > 0 && data[0].annotations && data[0].annotations[0]) {
-      const annotations = data[0].annotations[0].result;
-      keypoints.value = annotations.map((annotation: any) => ({
-        id: annotation.id,
-        x: annotation.value.x,
-        y: annotation.value.y,
-        label: annotation.value.keypointlabels[0],
-      }));
-    }
+    keypoints.value = data.map((item: any, index: number) => ({
+      id: `point-${index}`,
+      x: item.x,
+      y: item.y,
+      label: item.keypointlabels[0],
+    }));
+    console.log("載入的關鍵點數據:", keypoints.value);
   } catch (error) {
     console.error("載入關鍵點數據失敗:", error);
   }
@@ -93,8 +93,18 @@ const getKeypointStyle = (point: { x: number; y: number }) => {
 
 // 獲取關鍵點標題
 const getKeypointTitle = (label: string) => {
-  const index = parseInt(label) - 1;
-  return currentMapList.value[index] || label;
+  // 處理複合標籤，如 "9&10", "22&23" 等
+  if (label.includes("&")) {
+    const numbers = label.split("&");
+    const titles = numbers.map((num) => {
+      const index = parseInt(num.trim()) - 1;
+      return currentMapList.value[index]?.replace(/^\d+\./, "") || num;
+    });
+    return titles.join(" & ");
+  } else {
+    const index = parseInt(label) - 1;
+    return currentMapList.value[index]?.replace(/^\d+\./, "") || label;
+  }
 };
 
 onMounted(() => {
@@ -115,9 +125,7 @@ onMounted(() => {
         class="keypoint"
         :style="getKeypointStyle(point)"
         :title="getKeypointTitle(point.label)"
-      >
-        {{ point.label }}
-      </div>
+      ></div>
     </div>
 
     <!-- 地圖說明列表 -->
@@ -172,10 +180,11 @@ onMounted(() => {
 
     .keypoint {
       position: absolute;
-      width: 30px;
-      height: 20px;
+      width: 15px;
+      height: 15px;
       border: 2px solid #5659a5;
-      border-radius: 40%;
+      background: #5659a5;
+      border-radius: 50%;
       transform: translate(-70%, -80%);
       cursor: pointer;
       display: flex;
@@ -189,8 +198,8 @@ onMounted(() => {
       z-index: 10;
 
       &:hover {
-        width: 32px;
-        height: 22px;
+        width: 18px;
+        height: 18px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         z-index: 20;
       }
