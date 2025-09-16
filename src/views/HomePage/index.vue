@@ -32,7 +32,7 @@ async function loadLocaleMessages(locale: string) {
   }
 }
 
-const artwork = "/artworks/02.jpg";
+const artwork = "/artworks/20.webp";
 const logo = "/ncut-brown.png";
 const isInfoOpen = ref(false);
 const isInitial = ref(true);

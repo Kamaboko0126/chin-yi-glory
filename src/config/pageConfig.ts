@@ -3,27 +3,27 @@
 // 圖片資源配置 - 使用 public 目錄路徑
 export const imageAssets = {
   curation: {
-    pic1: "/curation/02.jpg",
-    pic2: "/curation/03.jpg",
-    pic3: "/curation/04.jpg",
-    pic4: "/curation/05.jpg",
-    pic5: "/curation/06.jpg",
-    pic6: "/curation/07.jpg",
-    pic7: "/curation/08.jpg",
-    pic8: "/curation/09.jpg",
-    pic9: "/curation/10.jpg",
-    pic10: "/curation/11.jpg",
-    pic11: "/curation/12.jpg",
-    pic12: "/curation/13.jpg",
+    pic1: "/curation/02.webp",
+    pic2: "/curation/03.webp",
+    pic3: "/curation/04.webp",
+    pic4: "/curation/05.webp",
+    pic5: "/curation/06.webp",
+    pic6: "/curation/07.webp",
+    pic7: "/curation/08.webp",
+    pic8: "/curation/09.webp",
+    pic9: "/curation/10.webp",
+    pic10: "/curation/11.webp",
+    pic11: "/curation/12.webp",
+    pic12: "/curation/13.webp",
   },
   school: {
-    pic1: "/school/02.jpg",
-    pic2: "/school/04.jpg",
+    pic1: "/school/02.webp",
+    pic2: "/school/04.webp",
   },
   founder: {
-    pic1: "/founder/01.jpg",
-    pic2: "/founder/02.jpg",
-    pic3: "/founder/03.jpg",
+    pic1: "/founder/01.webp",
+    pic2: "/founder/02.webp",
+    pic3: "/founder/03.webp",
   },
 };
 
@@ -145,7 +145,7 @@ export const pageConfigs: Record<string, PageConfig> = {
     layout: [
       {
         type: "image",
-        image: "/school/01.jpg",
+        image: "/school/01.webp",
         title: "banner",
       },
       {
@@ -272,7 +272,7 @@ export const pageConfigs: Record<string, PageConfig> = {
       },
       {
         type: "image",
-        image: "/foundation/01.jpg",
+        image: "/foundation/01.webp",
       },
     ],
   },

@@ -1,8 +1,23 @@
 <script setup lang="ts">
 import { computed, ref, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
+import ArtworkModal from "./ArtworkModal.vue";
+import ArtworkSelector from "./ArtworkSelector.vue";
+import BuildingArtworkSelector from "./BuildingArtworkSelector.vue";
 
 const { locale } = useI18n();
+
+// 地圖類型
+type MapType = 'building' | 'artwork';
+const currentMapType = ref<MapType>('building');
+
+// 彈窗狀態
+const showArtworkModal = ref(false);
+const showArtworkSelector = ref(false);
+const showBuildingArtworkSelector = ref(false);
+const selectedArtworkId = ref<string>('');
+const selectedArtworkIds = ref<string>('');
+const selectedBuildingLocation = ref<string>('');
 
 // 關鍵點數據
 const keypoints = ref<
@@ -66,9 +81,10 @@ const currentMapList = computed(() => {
 });
 
 // 載入關鍵點數據
-const loadKeypoints = async () => {
+const loadKeypoints = async (mapType: MapType = currentMapType.value) => {
   try {
-    const response = await fetch("/artworkLocation.json");
+    const fileName = mapType === 'building' ? '/buildingLocation.json' : '/artworkLocation.json';
+    const response = await fetch(fileName);
     const data = await response.json();
 
     keypoints.value = data.map((item: any, index: number) => ({
@@ -77,10 +93,16 @@ const loadKeypoints = async () => {
       y: item.y,
       label: item.keypointlabels[0],
     }));
-    console.log("載入的關鍵點數據:", keypoints.value);
+    console.log(`載入的${mapType}關鍵點數據:`, keypoints.value);
   } catch (error) {
     console.error("載入關鍵點數據失敗:", error);
   }
+};
+
+// 切換地圖類型
+const switchMapType = async (type: MapType) => {
+  currentMapType.value = type;
+  await loadKeypoints(type);
 };
 
 // 獲取關鍵點樣式
@@ -107,6 +129,60 @@ const getKeypointTitle = (label: string) => {
   }
 };
 
+// 處理建築物圖例點擊
+const handleBuildingLegendClick = (buildingNumber: number) => {
+  selectedBuildingLocation.value = String(buildingNumber);
+  showBuildingArtworkSelector.value = true;
+};
+
+// 處理關鍵點點擊事件
+const handleKeypointClick = (point: { id: string; x: number; y: number; label: string }) => {
+  if (currentMapType.value === 'artwork') {
+    // 確保標籤是字符串類型
+    const label = String(point.label);
+    
+    // 如果是作品模式，檢查是否為複合標籤
+    if (label.includes('&')) {
+      // 多個作品，顯示選擇器
+      selectedArtworkIds.value = label;
+      showArtworkSelector.value = true;
+    } else {
+      // 單個作品，直接顯示作品彈窗
+      selectedArtworkId.value = label;
+      showArtworkModal.value = true;
+    }
+  } else {
+    // 如果是建築物模式，顯示該建築物的作品選擇器
+    selectedBuildingLocation.value = String(point.label);
+    showBuildingArtworkSelector.value = true;
+  }
+};
+
+// 處理作品選擇
+const handleArtworkSelect = (artworkId: string) => {
+  showArtworkSelector.value = false;
+  selectedArtworkId.value = String(artworkId);
+  showArtworkModal.value = true;
+};
+
+// 關閉彈窗
+const closeArtworkModal = () => {
+  showArtworkModal.value = false;
+  selectedArtworkId.value = '';
+};
+
+// 關閉選擇器
+const closeArtworkSelector = () => {
+  showArtworkSelector.value = false;
+  selectedArtworkIds.value = '';
+};
+
+// 關閉建築物作品選擇器
+const closeBuildingArtworkSelector = () => {
+  showBuildingArtworkSelector.value = false;
+  selectedBuildingLocation.value = '';
+};
+
 onMounted(() => {
   loadKeypoints();
 });
@@ -114,22 +190,45 @@ onMounted(() => {
 
 <template>
   <div class="map-item">
+    <!-- 地圖類型切換按鈕 -->
+    <div class="map-toggle">
+      <button 
+        :class="['toggle-btn', { active: currentMapType === 'building' }]"
+        @click="switchMapType('building')"
+      >
+        {{ locale === "zh" ? "地圖探索" : "Campus Map" }}
+      </button>
+      <button 
+        :class="['toggle-btn', { active: currentMapType === 'artwork' }]"
+        @click="switchMapType('artwork')"
+      >
+        {{ locale === "zh" ? "藝術家眼中的校景" : "Campus Artworks" }}
+      </button>
+    </div>
+
     <!-- 地圖容器 -->
     <div class="map-container">
-      <img src="/map.png" alt="Campus Map" class="map-image" />
+      <img src="/map.webp" alt="Campus Map" class="map-image" />
 
       <!-- 關鍵點標記 -->
       <div
         v-for="point in keypoints"
         :key="point.id"
         class="keypoint"
+        :class="currentMapType === 'building' ? 'building-point' : 'artwork-point'"
         :style="getKeypointStyle(point)"
         :title="getKeypointTitle(point.label)"
-      ></div>
+        @click="handleKeypointClick(point)"
+      >
+        <!-- 建築物顯示數字 -->
+        <span v-if="currentMapType === 'building'" class="point-number">
+          {{ point.label }}
+        </span>
+      </div>
     </div>
 
-    <!-- 地圖說明列表 -->
-    <div class="map-legend">
+    <!-- 地圖說明列表 (只在建築物模式下顯示) -->
+    <div v-if="currentMapType === 'building'" class="map-legend">
       <h3 class="legend-title">
         {{ locale === "zh" ? "校園地圖說明" : "Campus Map Legend" }}
       </h3>
@@ -137,12 +236,36 @@ onMounted(() => {
         <div
           v-for="(item, index) in currentMapList"
           :key="index"
-          class="legend-item"
+          class="legend-item clickable"
+          @click="handleBuildingLegendClick(index + 1)"
         >
           {{ item }}
         </div>
       </div>
     </div>
+
+    <!-- 建築物作品選擇器 -->
+    <BuildingArtworkSelector
+      :isVisible="showBuildingArtworkSelector"
+      :buildingLocation="selectedBuildingLocation"
+      @close="closeBuildingArtworkSelector"
+      @select="handleArtworkSelect"
+    />
+
+    <!-- 作品選擇器 -->
+    <ArtworkSelector
+      :isVisible="showArtworkSelector"
+      :artworkIds="selectedArtworkIds"
+      @close="closeArtworkSelector"
+      @select="handleArtworkSelect"
+    />
+
+    <!-- 作品彈窗 -->
+    <ArtworkModal
+      :isVisible="showArtworkModal"
+      :artworkId="selectedArtworkId"
+      @close="closeArtworkModal"
+    />
   </div>
 </template>
 
@@ -157,6 +280,36 @@ onMounted(() => {
   border-radius: 8px;
   margin: 20px auto;
   max-width: 100%;
+
+  .map-toggle {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+
+    .toggle-btn {
+      padding: 10px 20px;
+      border: 1px solid #e0e0e0;
+      background: white;
+      color: #666;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 400;
+      transition: all 0.2s ease;
+
+      &:hover {
+        border-color: #999;
+        background: #f8f8f8;
+        color: #333;
+      }
+
+      &.active {
+        background: #333;
+        color: white;
+        border-color: #333;
+      }
+    }
+  }
 
   .map-image {
     width: 90%;
@@ -182,27 +335,89 @@ onMounted(() => {
       position: absolute;
       width: 15px;
       height: 15px;
-      border: 2px solid #5659a5;
-      background: #5659a5;
       border-radius: 50%;
       transform: translate(-70%, -80%);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 15px;
+      font-size: 12px;
       font-weight: bold;
-      color: #5659a5;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
       transition: all 0.3s ease;
       z-index: 10;
+      
+      // 添加脈衝動畫效果
+      &::before {
+        content: '';
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
+        border-radius: 50%;
+        background: rgba(86, 89, 165, 0.3);
+        animation: pulse 5s infinite;
+        z-index: -1;
+      }
+
+      &.building-point {
+        border: 2px solid #5659a5;
+        background: white;
+        color: #5659a5;
+        width: 20px;
+        height: 20px;
+
+        .point-number {
+          font-size: 10px;
+          font-weight: bold;
+        }
+
+        &::before {
+          top: -6px;
+          left: -6px;
+          right: -6px;
+          bottom: -6px;
+        }
+      }
+
+      &.artwork-point {
+        border: 2px solid #5659a5;
+        background: #5659a5;
+        width: 12px;
+        height: 12px;
+      }
 
       &:hover {
         width: 18px;
         height: 18px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         z-index: 20;
+        transform: translate(-70%, -80%) scale(1.1);
+
+        &.building-point {
+          width: 22px;
+          height: 22px;
+        }
+
+        &::before {
+          opacity: 0.5;
+        }
       }
+    }
+  }
+
+  // 脈衝動畫關鍵幀
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.3);
+      opacity: 0.3;
+    }
+    100% {
+      transform: scale(1.6);
+      opacity: 0;
     }
   }
 
@@ -243,6 +458,21 @@ onMounted(() => {
         &:hover {
           background: #f0f0f0;
           border-left-color: #666;
+        }
+
+        &.clickable {
+          cursor: pointer;
+          
+          &:hover {
+            background: #e8f4f8;
+            border-left-color: #5659a5;
+            color: #5659a5;
+            transform: translateX(2px);
+          }
+
+          &:active {
+            transform: translateX(1px);
+          }
         }
       }
     }

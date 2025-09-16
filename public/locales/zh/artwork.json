@@ -1,0 +1,11 @@
+{
+  "artist": "藝術家",
+  "year": "年份",
+  "id": "編號",
+  "description": "描述",
+  "notFound": "作品未找到",
+  "notFoundDescription": "您要查找的作品不存在。",
+  "multipleInfo": "此位置包含多個作品",
+  "artworkView": "藝術作品",
+  "realPhotoView": "現實對比"
+}

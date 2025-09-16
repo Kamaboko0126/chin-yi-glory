@@ -7,6 +7,12 @@ const routes = [
     component: () => import("../views/DynamicPage.vue"),
     props: true
   },
+  // 藝術品頁面路由 (使用query參數)
+  {
+    path: "/page/artwork",
+    component: () => import("../views/ArtworkDetailPage/index.vue"),
+    props: (route: any) => ({ id: route.query.id })
+  },
   // 保持向後兼容的舊路由（重定向到新的動態路由）
   {
     path: "/curationintro",
