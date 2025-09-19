@@ -3,7 +3,11 @@ import { onMounted, ref, watch, computed, defineAsyncComponent } from "vue";
 import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
 import i18n from "../i18n";
-import { pageConfigs, type PageConfig, type ComponentConfig } from "../config/pageConfig";
+import {
+  pageConfigs,
+  type PageConfig,
+  type ComponentConfig,
+} from "../config/pageConfig";
 
 const route = useRoute();
 const { locale, t } = useI18n();
@@ -16,7 +20,7 @@ const loadedComponents = ref<Record<string, any>>({});
 // 計算屬性
 const currentLanguage = computed(() => locale.value);
 const pageId = computed(() => route.params.pageId as string);
-const isArtworksPage = computed(() => pageId.value === 'artworks');
+const isArtworksPage = computed(() => pageId.value === "artworks");
 
 // 語言切換功能
 const switchLanguage = (lang: string) => {
@@ -32,60 +36,67 @@ async function loadLocaleMessages(targetLocale: string, localeFile: string) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const messages = await response.json();
-    
+
     i18n.global.setLocaleMessage(targetLocale, {
       ...i18n.global.getLocaleMessage(targetLocale),
       ...messages,
     });
-    console.log(`Successfully loaded ${targetLocale} messages for ${localeFile}`);
+    console.log(
+      `Successfully loaded ${targetLocale} messages for ${localeFile}`
+    );
   } catch (error) {
-    console.error(`Failed to load ${targetLocale} messages for ${localeFile}:`, error);
+    console.error(
+      `Failed to load ${targetLocale} messages for ${localeFile}:`,
+      error
+    );
   }
 }
 
 // 動態載入組件
 async function loadComponents(components: ComponentConfig[]) {
   const loadedComps: Record<string, any> = {};
-  
+
   // 靜態組件映射，避免 Vite 分析問題
   const componentMap: Record<string, () => Promise<any>> = {
-    'DynamicCardGroup': () => import('../components/common/DynamicCardGroup.vue'),
-    'MapItem': () => import('../components/MapItem.vue'),
+    DynamicCardGroup: () => import("../components/common/DynamicCardGroup.vue"),
+    MapItem: () => import("../components/MapItem.vue"),
   };
-  
+
   for (const comp of components) {
     try {
       const componentKey = comp.name;
       const importFn = componentMap[componentKey];
-      
+
       if (importFn) {
         loadedComps[comp.name] = defineAsyncComponent(importFn);
       } else {
         // 回退到動態 import（帶有忽略註解）
-        loadedComps[comp.name] = defineAsyncComponent(() => import(/* @vite-ignore */ comp.path));
+        loadedComps[comp.name] = defineAsyncComponent(
+          () => import(/* @vite-ignore */ comp.path)
+        );
       }
     } catch (error) {
       console.error(`Failed to load component ${comp.name}:`, error);
     }
   }
-  
+
   loadedComponents.value = loadedComps;
 }
 
 // 初始化頁面
 async function initializePage(pageId: string) {
   const config = pageConfigs[pageId];
-  
+
   if (!config) {
     console.error(`Page config not found for: ${pageId}`);
     return;
   }
 
   currentPageConfig.value = config;
-  
+
   // 載入語言文件
   await loadLocaleMessages(locale.value, config.localeFile);
-  
+
   // 載入組件
   if (config.components) {
     await loadComponents(config.components);
@@ -95,7 +106,7 @@ async function initializePage(pageId: string) {
 // 渲染文字區塊
 const renderTextBlock = (content: string | string[]) => {
   if (Array.isArray(content)) {
-    return content.map(key => t(key));
+    return content.map((key) => t(key));
   }
   return [t(content)];
 };
@@ -116,15 +127,18 @@ onMounted(async () => {
 });
 
 // 監聽頁面變化
-watch(() => pageId.value, async (newPageId) => {
-  if (newPageId) {
-    isLoading.value = true;
-    await initializePage(newPageId);
-    setTimeout(() => {
-      isLoading.value = false;
-    }, 300);
+watch(
+  () => pageId.value,
+  async (newPageId) => {
+    if (newPageId) {
+      isLoading.value = true;
+      await initializePage(newPageId);
+      setTimeout(() => {
+        isLoading.value = false;
+      }, 300);
+    }
   }
-});
+);
 
 // 監聽語言變化
 watch(locale, async (newLocale) => {
@@ -140,7 +154,11 @@ watch(locale, async (newLocale) => {
 </script>
 
 <template>
-  <div class="dynamic-page" :class="{ loading: isLoading }" v-if="currentPageConfig">
+  <div
+    class="dynamic-page"
+    :class="{ loading: isLoading }"
+    v-if="currentPageConfig"
+  >
     <!-- 語言切換按鈕 (右上角) -->
     <div class="language-switcher">
       <button
@@ -171,26 +189,46 @@ watch(locale, async (newLocale) => {
     <section class="hero-section">
       <div class="hero-content">
         <h1 class="hero-title">
-          {{ currentLanguage === 'zh' ? currentPageConfig.titleKey : currentPageConfig.enTitleKey }}
+          {{
+            currentLanguage === "zh"
+              ? currentPageConfig.titleKey
+              : currentPageConfig.enTitleKey
+          }}
         </h1>
         <p class="hero-subtitle" v-if="currentPageConfig.subtitleKey">
-          {{ currentLanguage === "zh" ? currentPageConfig.subtitleKey : currentPageConfig.enSubtitleKey }}
+          {{
+            currentLanguage === "zh"
+              ? currentPageConfig.subtitleKey
+              : currentPageConfig.enSubtitleKey
+          }}
         </p>
       </div>
     </section>
 
     <!-- Main Content -->
     <div class="container" :class="{ 'artworks-container': isArtworksPage }">
-      <section class="content-section" :class="{ 'artworks-content-section': isArtworksPage }">
-        <div class="content-wrapper" :class="{ 'artworks-content-wrapper': isArtworksPage }">
-          
+      <section
+        class="content-section"
+        :class="{ 'artworks-content-section': isArtworksPage }"
+      >
+        <div
+          class="content-wrapper"
+          :class="{ 'artworks-content-wrapper': isArtworksPage }"
+        >
           <!-- 動態渲染內容區塊 -->
-          <template v-for="(section, index) in currentPageConfig.layout" :key="index">
-            
+          <template
+            v-for="(section, index) in currentPageConfig.layout"
+            :key="index"
+          >
             <!-- 文字區塊 -->
             <div v-if="section.type === 'text'" class="text-content">
               <div class="text-block" :class="section.className">
-                <p v-for="(text, textIndex) in renderTextBlock(section.content || '')" :key="`text-${index}-${textIndex}`">
+                <p
+                  v-for="(text, textIndex) in renderTextBlock(
+                    section.content || ''
+                  )"
+                  :key="`text-${index}-${textIndex}`"
+                >
                   {{ text }}
                 </p>
               </div>
@@ -199,20 +237,26 @@ watch(locale, async (newLocale) => {
             <!-- 標題區塊 -->
             <div v-else-if="section.type === 'title'" class="text-content">
               <div class="text-block" :class="section.className">
-                <h2 class="section-title">{{ t(section.title || '') }}</h2>
+                <h2 class="section-title">{{ t(section.title || "") }}</h2>
               </div>
             </div>
 
             <!-- 圖片區塊 -->
             <div v-else-if="section.type === 'image'" class="image-content">
-              <img :src="section.image" :alt="section.title ? t(section.title) : ''" :class="section.className" />
-              <p v-if="section.title" class="image-title">{{ t(section.title) }}</p>
+              <img
+                :src="section.image"
+                :alt="section.title ? t(section.title) : ''"
+                :class="section.className"
+              />
+              <p v-if="section.title" class="image-title">
+                {{ t(section.title) }}
+              </p>
             </div>
 
             <!-- 卡片組件區塊 -->
             <div v-else-if="section.type === 'cards'" class="card-section">
-              <component 
-                :is="loadedComponents[section.component || '']" 
+              <component
+                :is="loadedComponents[section.component || '']"
                 v-if="section.component && loadedComponents[section.component]"
                 :class="section.className"
                 v-bind="section.props || {}"
@@ -221,16 +265,14 @@ watch(locale, async (newLocale) => {
 
             <!-- 地圖組件區塊 -->
             <div v-else-if="section.type === 'map'" class="map-section">
-              <component 
-                :is="loadedComponents[section.component || '']" 
+              <component
+                :is="loadedComponents[section.component || '']"
                 v-if="section.component && loadedComponents[section.component]"
                 :class="section.className"
                 v-bind="section.props || {}"
               />
             </div>
-
           </template>
-
         </div>
       </section>
     </div>
@@ -421,6 +463,10 @@ $bg-light: #fafafa;
 
   &.artworks-container {
     max-width: 1200px;
+    @media screen and (max-width: 1200px) {
+      max-width: 100%;
+      padding: 0;
+    }
   }
 }
 
@@ -429,15 +475,15 @@ $bg-light: #fafafa;
   padding: 60px 0 80px;
   background: $white;
 
-  &.artworks-content-section{
-    padding: 0px 0 ;
+  &.artworks-content-section {
+    padding: 0px 0;
   }
 
   .content-wrapper {
     max-width: 800px;
     margin: 0 auto;
-    &.artworks-content-wrapper{
-    max-width: 1100px;
+    &.artworks-content-wrapper {
+      max-width: 1100px;
     }
   }
 
@@ -490,7 +536,7 @@ $bg-light: #fafafa;
           color: $accent-red;
           text-decoration: none;
           font-weight: 400;
-          
+
           &:hover {
             text-decoration: underline;
           }
@@ -549,13 +595,13 @@ $bg-light: #fafafa;
   justify-content: center;
   min-height: 100vh;
   text-align: center;
-  
+
   h1 {
     font-size: 2rem;
     color: $text-dark;
     margin-bottom: 1rem;
   }
-  
+
   p {
     color: $text-light;
     font-size: 1.1rem;
