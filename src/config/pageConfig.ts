@@ -7,7 +7,6 @@ export const imageAssets = {
     pic2: "/curation/03.webp",
     pic3: "/curation/04.webp",
     pic4: "/curation/05.webp",
-    pic5: "/curation/06.webp",
     pic6: "/curation/07.webp",
     pic7: "/curation/08.webp",
     pic8: "/curation/09.webp",
@@ -109,7 +108,6 @@ export const pageConfigs: Record<string, PageConfig> = {
         props: {
           items: [
             { image: imageAssets.curation.pic4, descriptionKey: "pic4" },
-            { image: imageAssets.curation.pic5, descriptionKey: "pic5" },
             { image: imageAssets.curation.pic6, descriptionKey: "pic6" },
             { image: imageAssets.curation.pic7, descriptionKey: "pic7" },
             { image: imageAssets.curation.pic8, descriptionKey: "pic8" },

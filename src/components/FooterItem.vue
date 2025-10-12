@@ -17,7 +17,7 @@ async function loadLocaleMessages(locale: string) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const messages = await response.json();
-    
+
     i18n.global.setLocaleMessage(locale, {
       ...i18n.global.getLocaleMessage(locale),
       ...messages,
@@ -60,13 +60,13 @@ footer {
   background: #d2d2d213;
   padding: 0rem 3rem;
   width: 100%;
-  
+
   // 在非首頁且非移動端時為側邊欄預留空間
   @media (min-width: 769px) {
     margin-left: $sidebar-width;
     width: calc(100% - #{$sidebar-width});
   }
-  
+
   // 首頁樣式 - 不為側邊欄預留空間
   &.homepage-footer {
     @media (min-width: 769px) {
@@ -74,7 +74,7 @@ footer {
       width: 100%;
     }
   }
-  
+
   @media (max-width: 1400px) {
     padding: 0rem 3rem;
   }
@@ -90,17 +90,17 @@ footer {
   @media (max-width: 575px) {
     padding: 0rem 3rem;
   }
-  
+
   .content {
     padding: 1.5rem 0rem;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
     max-width: 1728px;
     border-top: 1px solid #e2e8f0;
     margin: 0 auto;
   }
-  
+
   p {
     font-size: 12px;
     color: #334155;
@@ -109,7 +109,7 @@ footer {
       margin-top: 5px;
     }
   }
-  
+
   a {
     color: #334155;
     font-weight: 500;
