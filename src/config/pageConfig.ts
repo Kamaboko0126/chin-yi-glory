@@ -206,6 +206,19 @@ export const pageConfigs: Record<string, PageConfig> = {
         ],
       },
       {
+        type: "cards",
+        component: "DynamicCardGroup",
+        props: {
+          items: [
+            { image: imageAssets.founder.pic1, descriptionKey: "pic1" },
+            { image: imageAssets.founder.pic2, descriptionKey: "pic2" },
+            { image: imageAssets.founder.pic3, descriptionKey: "pic3" },
+          ],
+          localeFile: "founderIntro",
+          autoplayInterval: 8000, // 增加到8秒
+        },
+      },
+      {
         type: "title",
         title: "title3",
       },
@@ -225,19 +238,6 @@ export const pageConfigs: Record<string, PageConfig> = {
           "section22",
           "section23",
         ],
-      },
-      {
-        type: "cards",
-        component: "DynamicCardGroup",
-        props: {
-          items: [
-            { image: imageAssets.founder.pic1, descriptionKey: "pic1" },
-            { image: imageAssets.founder.pic2, descriptionKey: "pic2" },
-            { image: imageAssets.founder.pic3, descriptionKey: "pic3" },
-          ],
-          localeFile: "founderIntro",
-          autoplayInterval: 8000, // 增加到8秒
-        },
       },
     ],
   },

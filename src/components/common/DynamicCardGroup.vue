@@ -448,7 +448,7 @@ $shadow-dark: rgba(0, 0, 0, 0.25);
   .description-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 16px 20px;
     height: 100%;
@@ -468,12 +468,12 @@ $shadow-dark: rgba(0, 0, 0, 0.25);
     font-size: 1rem;
     line-height: 1.5;
     font-weight: 400;
-    text-align: center;
+    text-align: left;
     letter-spacing: 0.3px;
     opacity: 0;
     transform: translateY(10px);
     animation: fadeInText 0.6s ease-out 0.3s forwards;
-    max-width: 90%;
+    width: 100%;
     transition: all 0.3s ease;
 
     // 預設狀態：限制行數
@@ -520,6 +520,7 @@ $shadow-dark: rgba(0, 0, 0, 0.25);
     transition: all 0.3s ease;
     opacity: 0;
     animation: fadeInText 0.6s ease-out 0.5s forwards;
+    align-self: flex-start;
 
     &:hover {
       background: rgba(201, 169, 97, 0.1);
