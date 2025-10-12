@@ -79,20 +79,16 @@
           <h1 class="artwork-title">{{ artwork.title }}</h1>
 
           <div class="artwork-meta">
-            <div class="meta-item">
-              <span class="meta-label"></span>
+            <div class="meta-item" v-if="artwork.artist">
               <span class="meta-value">{{ artwork.artist }}</span>
             </div>
-            <div class="meta-item">
-              <span class="meta-label"></span>
+            <div class="meta-item" v-if="artwork.material">
               <span class="meta-value">{{ artwork.material }}</span>
             </div>
-            <div class="meta-item">
-              <span class="meta-label"></span>
+            <div class="meta-item" v-if="artwork.size">
               <span class="meta-value">{{ artwork.size }}</span>
             </div>
-            <div class="meta-item">
-              <span class="meta-label"></span>
+            <div class="meta-item" v-if="artwork.year">
               <span class="meta-value">{{ artwork.year }}</span>
             </div>
           </div>
@@ -535,23 +531,42 @@ onMounted(async () => {
 
       .artwork-meta {
         margin-bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2px;
 
         .meta-item {
-          display: flex;
-          margin-bottom: 8px;
-          align-items: center;
+          display: inline-block;
+          background: transparent;
+          padding: 4px 0;
+          border: none;
+          position: relative;
 
-          .meta-label {
-            font-weight: 600;
-            color: #555;
-            min-width: 70px;
-            margin-right: 12px;
-            font-size: 0.9rem;
+          &:not(:last-child)::after {
+            content: '•';
+            color: #666;
+            margin: 0 8px;
+            font-weight: normal;
           }
 
           .meta-value {
             color: #333;
-            font-size: 1rem;
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin: 0;
+            letter-spacing: 0.02em;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .meta-item {
+            &:not(:last-child)::after {
+              margin: 0 6px;
+            }
+            
+            .meta-value {
+              font-size: 0.85rem;
+            }
           }
         }
       }
