@@ -80,23 +80,25 @@
 
           <div class="artwork-meta">
             <div class="meta-item">
-              <span class="meta-label"
-                >{{ $t("artwork.artist") || "Artist" }}:</span
-              >
+              <span class="meta-label"></span>
               <span class="meta-value">{{ artwork.artist }}</span>
             </div>
-
             <div class="meta-item">
-              <span class="meta-label"
-                >{{ $t("artwork.year") || "Year" }}:</span
-              >
+              <span class="meta-label"></span>
+              <span class="meta-value">{{ artwork.material }}</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label"></span>
+              <span class="meta-value">{{ artwork.size }}</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label"></span>
               <span class="meta-value">{{ artwork.year }}</span>
             </div>
           </div>
 
           <!-- 藝術品描述 -->
           <div class="artwork-description">
-            <h3>{{ $t("artwork.description") || "Description" }}</h3>
             <div class="description-content">
               <p v-for="(paragraph, index) in artwork.description" :key="index">
                 {{ paragraph }}
