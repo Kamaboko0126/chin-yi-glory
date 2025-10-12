@@ -278,8 +278,8 @@ export const pageConfigs: Record<string, PageConfig> = {
     id: "artworks",
     titleKey: "藝術家眼中的校園",
     enTitleKey: "The Chin-yi Campus Through The Eyes of Artists",
-    subtitleKey: "副標題",
-    enSubtitleKey: "Subtitle",
+    // subtitleKey: "副標題",
+    // enSubtitleKey: "Subtitle",
     localeFile: "artworksIntro",
     components: [
       {
